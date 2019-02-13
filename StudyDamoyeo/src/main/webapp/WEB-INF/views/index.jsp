@@ -16,14 +16,14 @@
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="index.jsp">Hielo <span>by TEMPLATED</span></a></div>
+				<div class="logo"><a href="/">Hielo <span>by TEMPLATED</span></a></div>
 				<a href="#menu">Menu</a>
 			</header>
 
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.jsp">Home</a></li>
+					<li><a href="/">Home</a></li>
 					<li><a href="generic.html">Generic</a></li>
 					<li><a href="elements.html">Elements</a></li>
 				</ul>
@@ -47,7 +47,7 @@
 							<p>Lorem ipsum dolor sit amet nullam feugiat</p>
 							<h2>Magna etiam</h2>
 						</header>
-					</div>
+					</div> 	
 				</article>
 				<article>
 					<img src="/resources/main/images/slide03.jpg"  alt="" />
