@@ -1,4 +1,4 @@
-package com.StudyDamoyeo.myapp.controller;
+package com.StudyDamoyeo.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

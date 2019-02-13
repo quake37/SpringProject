@@ -29,7 +29,7 @@
 	</beans:bean>
 
 	<context:component-scan
-		base-package="com.StudyDamoyeo.myapp.controller" /> 
+		base-package="com.StudyDamoyeo.controller" /> 
 		
 	<beans:bean id="multipartResolver"
 		class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
