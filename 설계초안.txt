@@ -1,0 +1,158 @@
+커넥션풀 hikariCP 근래에 빠른 속도로 더 많이 쓰임
+디자인 https://tonhnegod.tistory.com/102
+색 https://color.adobe.com/ko/Ocean-Sunset-color-theme-46355/
+====================================================================================================================
+1. 메인커버(시작하기 개인/기업)
+2. 기업회원
+	1)회원가입(member)
+		-주소 api
+		-이메일 인증
+		-중복 체크(아이디 닉네임)
+	
+	2) 로그인(web-security)
+		-rsa/ssl -> security 사용시 ssl 적용되니 따로 rsa적용 X 관련 링크 : 
+								https://hamait.tistory.com/325?category=128263
+		-sns 로그인 api
+		
+			http://blog.naver.com/PostView.nhn?blogId=sam_sist&logNo=220969407741
+			https://blog.naver.com/sam_sist/220969414214
+			https://alpreah.tistory.com/121
+		-비밀번호 찾기
+		-아이디 기억하기(remeber me)
+	3)업체 등록하기(room)/수정/삭제
+		-1개 또는 여러개 가능 (체인점)
+		-구글맵 api
+			https://rongscodinghistory.tistory.com/16
+	4) 메시지함(웹소켓)
+		-메시지확인 및 답장가능 (예약 요청 예약완료 알림으로 구현) 상세는 현황
+	5) 예약현황(지점별)-reservation
+		-예약 대기
+		-입금 대기
+		-예약 확정	
+3. 개인회원
+	1) 회원가입/로그인 동일
+	2) 모집 게시판 (board) crud
+		-1개(어학/취업/기타)  <--게시판3개를 만드는것보다 게시판하나에 말머리에 분야를 선택해서 작성하는게 나을듯?
+		$$이부분 좀 고민됨$$
+		- 댓글 reply(대댓글) rereply
+		1> 스터디 참여요청 -웹소켓 메시지로 채팅방 생성 / 서로 의견 조율 /참여확정/거절
+		2> 스터디장이 모집 완료 처리 스터디룸 예약 진행 
+		3> 업체와 메시지 교환 sucess -> 결제 /fail -> 스터디룸 예약 진행
+		4> 결제 모듈
+	3) 내정보
+	4) 모집중인 스터디 (참여확정된 스터디원) 
+	5) 참여 요청중인 스터디(현황 보여주기)
+	6) 메시지함/채팅<관련 db 생성 필요>
+		-메시지함
+			참여신청 시 쪽지로 필요한 내용을 스터디장에게 보냄 
+			스터디장이 참여 확정/거절 내용은 답장
+			- 모두 알림 처리
+			- 스터디장이 모집 마감 처리시 참여자및 스터디장으로 그룹채팅 생성
+			- 댓글 알림처리
+	7) 스터디룸 살펴보기(room)
+		-추천순 으로 보여주기
+		-클릭하면 정보 및 리뷰(review)
+		-구글맵 api
+
+추가사항
+-에러페이지 404. 500
+
+시큐리티 사용위해 필요한것
+-로그인을 하지 않은 사용자도 접근 가능 페이지 메인/ 스터디룸 보기
+-로그인한 사용자 중 업주일 경우 접근 가능 페이지 업체 등록 등록된 업체별 예약현황 
+-로그인한 사용자 중 사용자일 경우 접근 가능 페이지 내 현황 내정보 모집게시판
+-로그인한 사용자 중 관리자일 경우 
+-권한테이블
+
+web socket url
+https://shj7242.github.io/2018/01/23/Spring37/
+https://m.blog.naver.com/scw0531/221052774287
+=======================================================================
+DB초안
+1.member 
+	- 회원번호 integer
+	- 아이디(pk) string
+	- 비밀번호(not null) string
+	- 이름닉네임(중복값 허용x) string
+	- 휴대폰번호 sring
+	- 이메일 string
+	- 기업/일반(not null) boolean
+	- 이미지파일 
+	- regdate(가입날짜) date
+	- update(갱신날짜) date
+
+2.room
+ 	- 업체번호 integer
+	- 아이디(fk) string
+	- 업체명(지점,pk) string
+	- 주소 string
+	- 업체소개(상세설명1) string <! 업체소개폼을 만들어서 각 부분의 설명을 넣어줘야함>
+	- 이미지명 string <! 아이디명폴더생성에 해당지점이름폴더생성후 이미지를 넣어줘야함>
+	- 가격 integer
+	<!이미지 여러장 가능??> --> 찾아봐야함 이미지명이 복수일경우 '#'을 넣으면 되지않을까함.
+	- 평균평점 integer
+	- regdate(생성날짜) date
+	- update(갱신날짜) date
+	
+3.reservation
+	- 아이디(fk,예약자(닉네임 또는 아이디)) string
+	- 예약번호(pk) integer
+	- 예약장소(fk 업체명(지점)) string 
+	- 예약상태(not null) int (-1 : 예약요청 0:입금대기 1:예약확정)
+	- 예약인원(not null) integer
+	- 에약시간 date
+	
+4.recruitment(3개)[languageRecruitment / jobRecruitment/ etcRecruitment] <!하나의 테이블에 넣으면 될듯>
+	- 번호(pk) integer
+	- 작성자(not null , fk(닉네임 또는 아이디),스터디장) string
+	- 지역(selected) 
+	- 모집인원(not null) integer
+	- 현재인원 defalut 1 integer
+	- 제목(not null) string
+	- 시간 및 내용 string
+	- 분야구분(not null) string 
+	- 모집구분(not null) boolean <!모집마감,모집중>
+	- regdate(생성날짜) date
+	- update(갱신날짜) date
+	
+5. review
+	- 번호(pk) integer
+	- 스터디룸 업체명(fk,업체명) string 
+	- 평점 integer
+	- 리뷰내용 string
+	- 작성자(fk,닉네임 또는 아이디) string
+	- 조회수 integer
+	- regdate(생성날짜) date
+	- update(갱신날짜) date
+	
+6. comment(댓글)
+	- 번호(pk) integer
+	- 게시글 번호(fk,recruitment) integer
+	- 내용 string
+	- 작성자(fk,닉네임 또는 아이디) string
+	- regdate(생성날짜) date
+	- update(갱신날짜) date
+	
+7. reply(대댓글)
+	- 번호(pk) integer
+	- 댓글번호(fk,comment) integer
+	- 내용 string
+	- 작성자(fk닉네임 또는 아이디) string
+	- regdate(생성날짜) date
+	- update(갱신날짜) date
+8 application
+	- 번호(pk) int
+	- 주제(not null) String 
+	- 참여자(작성자) String (fk닉네임 또는 아이디)
+	- 스터디장(모집게시판 작성자)(not null) String (fk닉네임 또는 아이디)
+	- 모집글 번호 int (fk, recruitment) 
+9. authority
+	-userid varchar2(fk member)
+	-auth varchar2
+10. rememberLogin
+	-username String notnull
+	-series (pk) String
+	-token	String notnull
+	-last_used timestamp notnull
+11.chatroom
+12.message
