@@ -7,7 +7,7 @@
 
 <html>
 	<head>
-		<title>Hielo by TEMPLATED</title>
+		<title>StudyDamoyeo</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="/resources/main/assets/css/main.css" type="text/css" />
@@ -16,7 +16,7 @@
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="/">Hielo <span>by TEMPLATED</span></a></div>
+				<div class="logo"><a href="/">StudyDamoyeo <span>by TEMPLATED</span></a></div>
 				<a href="#menu">Menu</a>
 			</header>
 
