@@ -16,7 +16,7 @@
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="/"><font>StudyDamoyeo</font> <img src="/resources/main/images/studytimeLogo2.png" alt="" /></a></div>
+				<div class="logo"><a href="/"><font >StudyDamoyeo</font> <img src="/resources/main/images/studytimeLogo2.png" alt="" /></a></div>
 				<a href="#menu">Menu</a>
 			</header>
 
