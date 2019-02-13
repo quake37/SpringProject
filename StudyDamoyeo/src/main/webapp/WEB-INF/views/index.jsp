@@ -16,7 +16,7 @@
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="/">StudyDamoyeo <span>by TEMPLATED</span></a></div>
+				<div class="logo"><a href="/">StudyDamoyeo <span>(공백)</span></a></div>
 				<a href="#menu">Menu</a>
 			</header>
 
