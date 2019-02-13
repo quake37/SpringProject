@@ -1,6 +1,7 @@
 커넥션풀 hikariCP 근래에 빠른 속도로 더 많이 쓰임
 디자인 https://tonhnegod.tistory.com/102
 색 https://color.adobe.com/ko/Ocean-Sunset-color-theme-46355/
+폰트 http://makebct.net/%EA%B5%AC%EA%B8%80%EC%9B%B9%ED%8F%B0%ED%8A%B8-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0/?cat=148/
 ====================================================================================================================
 1. 메인커버(시작하기 개인/기업)
 2. 기업회원
