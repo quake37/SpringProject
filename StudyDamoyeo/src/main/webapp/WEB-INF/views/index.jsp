@@ -35,7 +35,7 @@
 					<img src="/resources/main/images/slide01.jpg" alt="" />
 					<div class="inner">
 						<header>
-							<p>(공백)</p>
+							<p>쉽고 편하게 다함께 공부해보자!</p>
 							<h2>스터디다모여</h2>
 						</header>
 					</div>
@@ -44,7 +44,7 @@
 					<img src="/resources/main/images/slide02.jpg" alt="" />
 					<div class="inner">
 						<header>
-							<p>(공백)</p>
+							<p>쉽고 편하게 다함께 공부해보자!</p>
 							<h2>스터디다모여</h2>
 						</header>
 					</div> 	
@@ -53,7 +53,7 @@
 					<img src="/resources/main/images/slide03.jpg"  alt="" />
 					<div class="inner">
 						<header>
-							<p>(공백)</p>
+							<p>쉽고 편하게 다함께 공부해보자!</p>
 							<h2>스터디다모여</h2>
 						</header>
 					</div>
@@ -62,7 +62,7 @@
 					<img src="/resources/main/images/slide04.jpg"  alt="" />
 					<div class="inner">
 						<header>
-							<p>(공백)</p>
+						<p>쉽고 편하게 다함께 공부해보자!</p>
 							<h2>스터디다모여</h2>
 						</header>
 					</div>
@@ -71,7 +71,7 @@
 					<img src="/resources/main/images/slide05.jpg"  alt="" />
 					<div class="inner">
 						<header>
-							<p>(공백)</p>
+							<p>쉽고 편하게 다함께 공부해보자!</p>
 							<h2>스터디다모여</h2>
 						</header>
 					</div>
@@ -86,14 +86,14 @@
 						<div>
 							<div class="box">
 								<div class="image fit">
-									<img src="/resources/main/images/pic02.jpg" alt="" />
+									<img src="/resources/main/images/pic01.png" alt="" style="width: 60%;"/>
 								</div>
 								<div class="content">
 									<header class="align-center">
 										<p>자신의 스터디그룹을 만들어보아요.</p>
 										<h2>일반 회원</h2>
 									</header>
-									<p> </p>
+									<p>자신의 스터디그룹을 모집해보고 또 원하는 스터디그룹에 참여해보자. &nbsp; 쉽게 서로 같은 지역의 사람과 원하는 스터디그룹을 만들어 원하는 스터디룸을 예약해보자. </p>
 									<footer class="align-center">
 										<a href="#" class="button alt">로그인</a>
 										<a href="#" class="button alt">회원 가입</a>
@@ -105,14 +105,14 @@
 						<div>
 							<div class="box">
 								<div class="image fit">
-									<img src="/resources/main/images/pic03.jpg" alt="" />
+									<img src="/resources/main/images/pic02.png" alt="" style="width: 60%;" />
 								</div>
 								<div class="content">
 									<header class="align-center">
-										<p>자신의 스터디카페를 홍보해보아요.</p>
-										<h2>업주 회원</h2>
+										<p>자신의 스터디카페를 홍보해보자. </p>
+										<h2>기업 회원</h2>
 									</header>
-									<p> </p>
+									<p>자신의 스터디카페를 홍보해보자.&nbsp; 쉽게 자신의 스터디카페를 그 지역 사람들에게 홍보하고 예약된 스터디룸을 결제해보자.</p>
 									<footer class="align-center">
 										<a href="#" class="button alt">로그인</a>
 										<a href="#" class="button alt">회원 가입</a>
