@@ -90,10 +90,10 @@
 								</div>
 								<div class="content">
 									<header class="align-center">
-										<p>maecenas sapien feugiat ex purus</p>
+										<p>자신의 스터디그룹을 만들어보아요.</p>
 										<h2>일반 회원</h2>
 									</header>
-									<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+									<p> </p>
 									<footer class="align-center">
 										<a href="#" class="button alt">로그인</a>
 										<a href="#" class="button alt">회원 가입</a>
@@ -109,10 +109,10 @@
 								</div>
 								<div class="content">
 									<header class="align-center">
-										<p>mattis elementum sapien pretium tellus</p>
+										<p>자신의 스터디카페를 홍보해보아요.</p>
 										<h2>업주 회원</h2>
 									</header>
-									<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+									<p> </p>
 									<footer class="align-center">
 										<a href="#" class="button alt">로그인</a>
 										<a href="#" class="button alt">회원 가입</a>
