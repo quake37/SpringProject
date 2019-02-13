@@ -35,8 +35,8 @@
 					<img src="/resources/main/images/slide01.jpg" alt="" />
 					<div class="inner">
 						<header>
-							<p>StudyDamoyeo</p>
-							<h2>StudyDamoyeo</h2>
+							<p>(공백)</p>
+							<h2>스터디다모여</h2>
 						</header>
 					</div>
 				</article>
@@ -44,8 +44,8 @@
 					<img src="/resources/main/images/slide02.jpg" alt="" />
 					<div class="inner">
 						<header>
-							<p>StudyDamoyeo</p>
-							<h2>StudyDamoyeo</h2>
+							<p>(공백)</p>
+							<h2>스터디다모여</h2>
 						</header>
 					</div> 	
 				</article>
@@ -53,8 +53,8 @@
 					<img src="/resources/main/images/slide03.jpg"  alt="" />
 					<div class="inner">
 						<header>
-							<p>StudyDamoyeo/p>
-							<h2>StudyDamoyeo</h2>
+							<p>(공백)</p>
+							<h2>스터디다모여</h2>
 						</header>
 					</div>
 				</article>
@@ -62,8 +62,8 @@
 					<img src="/resources/main/images/slide04.jpg"  alt="" />
 					<div class="inner">
 						<header>
-							<p>StudyDamoyeo</p>
-							<h2>StudyDamoyeo</h2>
+							<p>(공백)</p>
+							<h2>스터디다모여</h2>
 						</header>
 					</div>
 				</article>
@@ -71,8 +71,8 @@
 					<img src="/resources/main/images/slide05.jpg"  alt="" />
 					<div class="inner">
 						<header>
-							<p>StudyDamoyeo</p>
-							<h2>StudyDamoyeo</h2>
+							<p>(공백)</p>
+							<h2>스터디다모여</h2>
 						</header>
 					</div>
 				</article>
