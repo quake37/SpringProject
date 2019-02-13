@@ -16,7 +16,7 @@
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="/"><img src="/resources/main/images/studydamoyeoLOGO.png" alt="" /></a></div>
+				<div class="logo"><a href="/"><img src="/resources/main/images/studydamoyeoLOGO3.png" alt="" /></a></div>
 				
 			</header>
 
