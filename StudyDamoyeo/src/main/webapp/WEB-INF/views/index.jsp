@@ -16,18 +16,12 @@
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="/"><font>StudyDamoyeo</font> <img src="/resources/main/images/studytimeLogo2.png" alt="" /></a></div>
-				<a href="#menu">Menu</a>
+				<div class="logo"><a href="/"><img src="/resources/main/images/studydamoyeoLOGO.png" alt="" /></a></div>
+				
 			</header>
 
 		<!-- Nav -->
-			<nav id="menu">
-				<ul class="links">
-					<li><a href="/">Home</a></li>
-					<li><a href="generic.html">Generic</a></li>
-					<li><a href="elements.html">Elements</a></li>
-				</ul>
-			</nav>
+		
 
 		<!-- Banner -->
 			<section class="banner full">
@@ -85,7 +79,7 @@
 
 						<div>
 							<div class="box">
-								<div class="image fit" >
+								<div class="image fit">
 									<img src="/resources/main/images/pic01.png" alt="" style="width: 60%;"/>
 								</div>
 								<div class="content">
