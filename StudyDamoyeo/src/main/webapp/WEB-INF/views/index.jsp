@@ -96,7 +96,7 @@
 							<p>자신의 스터디그룹을 모집해보고 또 원하는 스터디그룹에 참여해보자. &nbsp; 쉽게 서로 같은 지역의
 								사람과 원하는 스터디그룹을 만들어 원하는 스터디룸을 예약해보자.</p>
 							<footer class="align-center">
-								<a href="#" class="button alt">입장하기</a> 
+								<a href="#" class="button alt" onclick="">입장하기</a> 
 							</footer>
 						</div>
 					</div>
