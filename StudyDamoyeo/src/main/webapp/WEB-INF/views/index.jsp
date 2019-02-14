@@ -199,10 +199,10 @@
 		</div>
 	</section>
 
-	<%@include file="LoginUser.html"%>
-	<%@include file="LoginCom.html"%>
-	<%@include file="RegisterUser.html"%>
-	<%@include file="RegisterCom.html"%>
+	<%@include file="modal/LoginUser.jsp"%>
+	<%@include file="modal/LoginCom.jsp"%>
+	<%@include file="modal/RegisterUser.jsp"%>
+	<%@include file="modal/RegisterCom.jsp"%>
 	<!-- Footer -->
 	<footer id="footer">
 		<div class="container">
