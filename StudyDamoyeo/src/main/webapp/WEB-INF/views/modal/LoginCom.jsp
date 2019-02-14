@@ -14,8 +14,11 @@
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">로그인</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+       <span>계정이 없나요? <a href=# data-dismiss="modal"
+					data-toggle="modal" data-target="#ComModalCenter">회원가입</a></span>
+				<button type="button" class="btn btn-primary">로그인</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+			
       </div>
     </div>
   </div>
