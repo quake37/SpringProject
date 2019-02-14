@@ -129,10 +129,9 @@
 	<section id="two" class="wrapper style3">
 		<div class="inner">
 			<header class="align-center">
-				<p>Nam vel ante sit amet libero scelerisque facilisis eleifend
-					vitae urna</p>
-				<h2>Morbi maximus justo</h2>
-				>>>>>>> branch 'master' of https://github.com/quake37/SpringProject
+				<p>혼자 공부가 막막할때, 정보가 필요할때, 같은 목표를 가진 사람과 교류하고 싶을때</p>
+				<h2>스터디다모여를 통해 다함께 공부해보자!</h2>
+				
 			</header>
 		</div>
 	</section>
@@ -141,9 +140,8 @@
 	<section id="three" class="wrapper style2">
 		<div class="inner">
 			<header class="align-center">
-				<p class="special">Nam vel ante sit amet libero scelerisque
-					facilisis eleifend vitae urna</p>
-				<h2>Morbi maximus justo</h2>
+				<p class="special">스터디원들과 원하는 스터디룸을 살펴보고 예약하자.</p>
+				<h2>지점별 스터디룸 사진</h2>
 			</header>
 			<div class="gallery">
 				<div>
