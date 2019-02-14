@@ -147,21 +147,22 @@
 				<div>
 					<div class="image fit">
 						<a href="#"><img src="/resources/main/images/pic01.jpg" alt="" /></a>
+						<div class="name">강남점</div>
 					</div>
 				</div>
 				<div>
 					<div class="image fit">
-						<a href="#"><img src="/resources/main/images/pic02.jpg" alt="" /></a>
+						<a href="#"><img src="/resources/main/images/pic02.jpg" alt="" />강북점</a>
 					</div>
 				</div>
 				<div>
 					<div class="image fit">
-						<a href="#"><img src="/resources/main/images/pic03.jpg" alt="" /></a>
+						<a href="#"><img src="/resources/main/images/pic03.jpg" alt="" />서초점</a>
 					</div>
 				</div>
 				<div>
 					<div class="image fit">
-						<a href="#"><img src="/resources/main/images/pic04.jpg" alt="" /></a>
+						<a href="#"><img src="/resources/main/images/pic04.jpg" alt="" />종로점</a>
 					</div>
 				</div>
 			</div>
