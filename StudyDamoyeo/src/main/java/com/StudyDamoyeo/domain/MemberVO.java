@@ -1,12 +1,12 @@
 package com.StudyDamoyeo.domain;
 
-import java.util.Date;
+
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.ToString;
 
 @Data
+@ToString
 public class MemberVO {
 
 	private String id;
@@ -16,8 +16,7 @@ public class MemberVO {
 	private String profile_Img;
 	private String phone;
 	private String email;
-	private Date regDate;
-	private Date uDate;
+	
 	public String getId() {
 		return id;
 	}
@@ -63,18 +62,14 @@ public class MemberVO {
 	public void setMemberType(String memberType) {
 		this.memberType = memberType;
 	}
+
+	@Override
+	public String toString() {
+		return "MemberVO [id=" + id + ", pw=" + pw + ", nickname=" + nickname + ", memberType=" + memberType
+				+ ", profile_Img=" + profile_Img + ", phone=" + phone + ", email=" + email + "]";
+	}
 	
-	public Date getRegDate() {
-		return regDate;
-	}
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
-	}
-	public Date getuDate() {
-		return uDate;
-	}
-	public void setuDate(Date uDate) {
-		this.uDate = uDate;
-	}
+	
+	
 	
 }

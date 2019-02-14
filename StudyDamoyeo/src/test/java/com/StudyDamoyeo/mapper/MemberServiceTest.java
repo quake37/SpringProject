@@ -20,10 +20,10 @@ public class MemberServiceTest {
 	private MemberService service;
 	
 	@Test
-	@Ignore
+	
 	public void testInsert() {
 		MemberVO vo = new MemberVO();
-		vo.setId("test");
+		vo.setId("444");
 		vo.setMemberType("0");
 		vo.setNickname("test");
 		vo.setProfile_Img("default");

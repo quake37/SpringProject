@@ -21,17 +21,22 @@ public class MemberController {
 	private MemberService service;
 	
 	@PostMapping("/insertUser")
-	private String insertUser(MemberVO vo, RedirectAttributes rttr) {
+	private String insertUser(MemberVO vo, Model model) {
+		vo.setMemberType("0");
+		vo.setProfile_Img("null");
+		System.out.println(vo.toString());
 		service.insert(vo);
-		rttr.addAttribute("member",vo);
-		return "redirect:/mainUser";
+		model.addAttribute("member",vo);
+		return "index";
 		
 	}
 	@PostMapping("/insertCom")
-	private String insertCom(MemberVO vo, RedirectAttributes rttr) {
+	private String insertCom(MemberVO vo, Model model) {
+		vo.setMemberType("1");
+		vo.setProfile_Img("null");
 		service.insert(vo);
-		rttr.addAttribute("member",vo);
-		return "redirect:/mainCom";
+		model.addAttribute("member",vo);
+		return "index";
 		
 	}
 

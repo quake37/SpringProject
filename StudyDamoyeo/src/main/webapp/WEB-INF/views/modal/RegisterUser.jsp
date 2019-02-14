@@ -16,7 +16,7 @@
 			</div>
 			<div class="modal-body">
 
-				<form method="post">
+				<form method="post"  action="/member/insertUser">
 					<div class="box-body">
 						<div class="form-group">
 							<label for="userid">아이디</label> <input type="text" name="id"
@@ -35,7 +35,7 @@
 						</div>
 						<div class="form-group">
 							<label for="inputEmail">휴대전화 (-없이)</label> <input type="text"
-								name="email" class="form-control" placeholder="Email address"
+								name="phone" class="form-control" placeholder="Phone"
 								required="required">
 						</div>
 						<div class="form-group">
