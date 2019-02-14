@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+
 <div class="modal fade" id="UserModalRegister" tabindex="-1"
 	role="dialog" aria-labelledby="exampleModalCenterTitle"
 	aria-hidden="true">
@@ -14,40 +15,42 @@
 				</button>
 			</div>
 			<div class="modal-body">
+
 				<form method="post">
 					<div class="box-body">
 						<div class="form-group">
-							<label for="userid">아이디</label> <input type="text" name="userid"
+							<label for="userid">아이디</label> <input type="text" name="id"
 								class="form-control" id="userid" placeholder="ID"
-								required="required" autofocus="autofocus"> <br>
-							<button class=" btn btn-primary" onclick="checkFunction();">ID
-								중복체크</button>
+								required="required" autofocus="autofocus">
 						</div>
 						<div class="form-group">
-							<label for="username">이름</label> <input type="text"
-								name="username" class="form-control" placeholder="Name"
+							<label for="username">이름(닉네임)</label> <input type="text"
+								name="nickname" class="form-control" placeholder="Name"
 								required="required">
 						</div>
 						<div class="form-group">
 							<label for="inputPassword">비밀번호</label> <input type="password"
-								name="userpw" class="form-control" placeholder="Password"
+								name="pw" class="form-control" placeholder="Password"
 								required="required">
 						</div>
-
 						<div class="form-group">
-
+							<label for="inputEmail">휴대전화 (-없이)</label> <input type="text"
+								name="email" class="form-control" placeholder="Email address"
+								required="required">
+						</div>
+						<div class="form-group">
 							<label for="inputEmail">이메일 주소</label> <input type="email"
-								name="useremail" class="form-control"
-								placeholder="Email address" required="required">
-
+								name="email" class="form-control" placeholder="Email address"
+								required="required">
 						</div>
 					</div>
 					<div class="box-footer">
-						<button class="btn btn-primary" type="submit">회원가입</button>
+						<button class="btn btn-primary" type="submit" style="background-color: #FF974F; border-color: #FFFFFF;">회원가입</button>
 					</div>
 				</form>
+
 			</div>
-			
+
 		</div>
 	</div>
 </div>
