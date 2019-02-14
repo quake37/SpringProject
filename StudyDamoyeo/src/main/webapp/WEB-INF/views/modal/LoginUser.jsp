@@ -1,10 +1,11 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <div class="modal fade" id="UserModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="UserModalCenterTitle">ฝบลอต๐ศธฟ๘ ทฮฑืภฮ</h5>
+        <h5 class="modal-title" id="UserModalCenterTitle">์คํฐ๋””ํ์ ๋ก๊ทธ์ธ</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -13,8 +14,8 @@
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">ทฮฑืภฮ</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ดÝฑโ</button>
+        <button type="button" class="btn btn-primary">๋ก๊ทธ์ธ</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">๋ซ๊ธฐ</button>
       </div>
     </div>
   </div>
