@@ -146,23 +146,26 @@
 			<div class="gallery">
 				<div>
 					<div class="image fit">
-						<a href="#"><img src="/resources/main/images/pic01.jpg" alt="" /></a>
-						<div class="name">강남점</div>
+					<img src="/resources/main/images/pic01.jpg" alt="" />
+						<div class="name"><h2><a href="#">강남점</a></h2></div>
 					</div>
 				</div>
 				<div>
 					<div class="image fit">
-						<a href="#"><img src="/resources/main/images/pic02.jpg" alt="" />강북점</a>
+					<img src="/resources/main/images/pic02.jpg" alt="" />
+						<div class="name"><h2><a href="#">영통점</a></h2></div>
 					</div>
 				</div>
 				<div>
 					<div class="image fit">
-						<a href="#"><img src="/resources/main/images/pic03.jpg" alt="" />서초점</a>
+					<img src="/resources/main/images/pic03.jpg" alt="" />
+						<div class="name"><h2><a href="#">종로점</a></h2></div>
 					</div>
 				</div>
 				<div>
 					<div class="image fit">
-						<a href="#"><img src="/resources/main/images/pic04.jpg" alt="" />종로점</a>
+					<img src="/resources/main/images/pic04.jpg" alt="" />
+						<div class="name"><h2><a href="#">양재점</a></h2></div>
 					</div>
 				</div>
 			</div>

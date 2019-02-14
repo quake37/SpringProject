@@ -3592,7 +3592,7 @@
 				margin: 0;
 				position: relative;
 			}
-				.gallery .name{
+				.gallery .name h2 a{
 					position: absolute;
 					top: 50%;
 					left: 50%;
