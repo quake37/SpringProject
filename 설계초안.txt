@@ -2,6 +2,8 @@
 디자인 https://tonhnegod.tistory.com/102
 색 https://color.adobe.com/ko/Ocean-Sunset-color-theme-46355/
 폰트 http://makebct.net/%EA%B5%AC%EA%B8%80%EC%9B%B9%ED%8F%B0%ED%8A%B8-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0/?cat=148/
+이메일인증 https://shj7242.github.io/2017/12/04/Spring28/
+	  http://infondgndg91.blogspot.com/2018/01/spring-mybatismysql.html
 ====================================================================================================================
 1. 메인커버(시작하기 개인/기업)
 2. 기업회원
