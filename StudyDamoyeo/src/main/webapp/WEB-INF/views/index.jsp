@@ -97,8 +97,7 @@
 							<p>자신의 스터디그룹을 모집해보고 또 원하는 스터디그룹에 참여해보자. &nbsp; 쉽게 서로 같은 지역의
 								사람과 원하는 스터디그룹을 만들어 원하는 스터디룸을 예약해보자.</p>
 							<footer class="align-center">
-								<a href="#" class="button alt">로그인</a> <a href="#"
-									class="button alt">회원 가입</a>
+								<a href="#" class="button alt">입장하기</a> 
 							</footer>
 						</div>
 					</div>
@@ -118,8 +117,7 @@
 							<p>자신의 스터디카페를 홍보해보자.&nbsp; 쉽게 자신의 스터디카페를 그 지역 사람들에게 홍보하고 예약된
 								스터디룸을 결제해보자.</p>
 							<footer class="align-center">
-								<a href="#" class="button alt">로그인</a> <a href="#"
-									class="button alt">회원 가입</a>
+								<a href="#" class="button alt">입장하기</a>
 							</footer>
 						</div>
 					</div>
