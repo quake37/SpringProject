@@ -105,7 +105,7 @@
 								사람과 원하는 스터디그룹을 만들어 원하는 스터디룸을 예약해보자.</p>
 							<footer class="align-center">
 								<a href="#" class="button alt" data-toggle="modal"
-									data-target="#exampleModalCenter">입장하기</a>
+									data-target="#UserModalCenter">입장하기</a>
 							</footer>
 						</div>
 					</div>
@@ -125,7 +125,8 @@
 								스터디룸을 결제해보자.</p>
 							<br>
 							<footer class="align-center">
-								<a href="#" class="button alt">입장하기</a>
+								<a href="#" class="button alt" data-toggle="modal"
+									data-target="#ComModalCenter">입장하기</a>
 							</footer>
 						</div>
 					</div>
@@ -199,6 +200,9 @@
 	</section>
 
 	<%@include file="LoginUser.html"%>
+	<%@include file="LoginCom.html"%>
+	<%@include file="RegisterUser.html"%>
+	<%@include file="RegisterCom.html"%>
 	<!-- Footer -->
 	<footer id="footer">
 		<div class="container">
