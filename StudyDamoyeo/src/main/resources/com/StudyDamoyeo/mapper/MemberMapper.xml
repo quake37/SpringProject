@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.o//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.StudyDamoyeo.mapper.MemberMapper">
+
+	<select id="getList" resultType="com.StudyDamoyeo.domain.MemberVO">
+		select * from board where mno
+		&gt; 0 order by mno desc
+	</select>
+	
+	<insert id="insert">
+		insert into member (mno,id, pw, nickname, phone, email, memberType, profile_Img )
+		values(member_mno_seq.nextval, #{id}, #{pw}, #{nickname}, #{phone}, #{email}, #{memberType}, #{profile_Img})
+	</insert>
+	<select id="read" resultType="com.StudyDamoyeo.domain.MemberVO">
+		select * from board where id =#{id}
+	</select>
+	<delete id="delete">
+		delete board where id = #{id}
+	</delete>
+	<update id="update">
+		update board set pw=#{pw}, nickname =#{nickname},phone =#{phone}, email = #{email}, profile_img =#{profile_img},
+		udate = sysdate where id =#{id}
+	</update>
+</mapper>

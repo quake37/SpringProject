@@ -45,17 +45,18 @@
 
 	<tx:annotation-driven />
 
-	<!-- <mybatis-spring:scan base-package="org.zerok.mapper" /> <context:component-scan 
-		base-package="org.zerok.service"></context:component-scan> <context:component-scan 
-		base-package="org.zerok.aop"></context:component-scan> <context:component-scan 
-		base-package="org.zerok.task"></context:component-scan> -->
+	<mybatis-spring:scan
+		base-package="com.StudyDamoyeo.mapper" ></mybatis-spring:scan>
+	<context:component-scan
+		base-package="com.StudyDamoyeo.service"></context:component-scan>
+	
 
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
 	<task:annotation-driven />
-	
-	
-	
-	
-	
+
+
+
+
+
 </beans>
