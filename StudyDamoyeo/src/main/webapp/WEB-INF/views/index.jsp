@@ -86,8 +86,7 @@
 				<div>
 					<div class="box">
 						<div class="image fit">
-							<img src="/resources/main/images/pic01.png" alt=""
-								style="width: 60%;" />
+							<img src="/resources/main/images/groupstudypage.jpg" alt="" />
 						</div>
 						<div class="content">
 							<header class="align-center">
@@ -106,8 +105,7 @@
 				<div>
 					<div class="box">
 						<div class="image fit">
-							<img src="/resources/main/images/pic02.png" alt=""
-								style="width: 60%;" />
+							<img src="/resources/main/images/ownerpage.jpg" alt=""/>
 						</div>
 						<div class="content">
 							<header class="align-center">
@@ -115,7 +113,7 @@
 								<h2>기업 회원</h2>
 							</header>
 							<p>자신의 스터디카페를 홍보해보자.&nbsp; 쉽게 자신의 스터디카페를 그 지역 사람들에게 홍보하고 예약된
-								스터디룸을 결제해보자.</p>
+								스터디룸을 결제해보자.</p><br>
 							<footer class="align-center">
 								<a href="#" class="button alt">입장하기</a>
 							</footer>
