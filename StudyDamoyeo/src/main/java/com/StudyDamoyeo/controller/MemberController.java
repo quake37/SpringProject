@@ -34,20 +34,6 @@ public class MemberController {
 		return "redirect:/mainCom";
 		
 	}
-	@PostMapping("/loginUser")
-	private String loginUser(MemberVO vo, Model model) {
-		int result =service.login(vo);
-		model.addAttribute("login", result);
-		model.addAttribute("member", vo);
-		return "/";
-		
-	}
-	@PostMapping("/loginCom")
-	private String loginCom(MemberVO vo, Model model) {
-		int result =service.login(vo);
-		model.addAttribute("login", result);
-		model.addAttribute("member", vo);
-		return "/";
-	}
+
 	
 }
