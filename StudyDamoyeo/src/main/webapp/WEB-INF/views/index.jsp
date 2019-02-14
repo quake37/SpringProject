@@ -86,8 +86,7 @@
 				<div>
 					<div class="box">
 						<div class="image fit">
-							<img src="/resources/main/images/pic01.png" alt=""
-								style="width: 60%;" />
+							<img src="/resources/main/images/groupstudypage.jpg" alt="" />
 						</div>
 						<div class="content">
 							<header class="align-center">
@@ -97,8 +96,7 @@
 							<p>자신의 스터디그룹을 모집해보고 또 원하는 스터디그룹에 참여해보자. &nbsp; 쉽게 서로 같은 지역의
 								사람과 원하는 스터디그룹을 만들어 원하는 스터디룸을 예약해보자.</p>
 							<footer class="align-center">
-								<a href="#" class="button alt">로그인</a> <a href="#"
-									class="button alt">회원 가입</a>
+								<a href="#" class="button alt">입장하기</a> 
 							</footer>
 						</div>
 					</div>
@@ -107,8 +105,7 @@
 				<div>
 					<div class="box">
 						<div class="image fit">
-							<img src="/resources/main/images/pic02.png" alt=""
-								style="width: 60%;" />
+							<img src="/resources/main/images/ownerpage.jpg" alt=""/>
 						</div>
 						<div class="content">
 							<header class="align-center">
@@ -116,10 +113,9 @@
 								<h2>기업 회원</h2>
 							</header>
 							<p>자신의 스터디카페를 홍보해보자.&nbsp; 쉽게 자신의 스터디카페를 그 지역 사람들에게 홍보하고 예약된
-								스터디룸을 결제해보자.</p>
+								스터디룸을 결제해보자.</p><br>
 							<footer class="align-center">
-								<a href="#" class="button alt">로그인</a> <a href="#"
-									class="button alt">회원 가입</a>
+								<a href="#" class="button alt">입장하기</a>
 							</footer>
 						</div>
 					</div>
@@ -133,10 +129,9 @@
 	<section id="two" class="wrapper style3">
 		<div class="inner">
 			<header class="align-center">
-				<p>Nam vel ante sit amet libero scelerisque facilisis eleifend
-					vitae urna</p>
-				<h2>Morbi maximus justo</h2>
-				>>>>>>> branch 'master' of https://github.com/quake37/SpringProject
+				<p>혼자 공부가 막막할때, 정보가 필요할때, 같은 목표를 가진 사람과 교류하고 싶을때</p>
+				<h2>스터디다모여를 통해 다함께 공부해보자!</h2>
+				
 			</header>
 		</div>
 	</section>
@@ -145,29 +140,29 @@
 	<section id="three" class="wrapper style2">
 		<div class="inner">
 			<header class="align-center">
-				<p class="special">Nam vel ante sit amet libero scelerisque
-					facilisis eleifend vitae urna</p>
-				<h2>Morbi maximus justo</h2>
+				<p class="special">스터디원들과 원하는 스터디룸을 살펴보고 예약하자.</p>
+				<h2>지점별 스터디룸 사진</h2>
 			</header>
 			<div class="gallery">
 				<div>
 					<div class="image fit">
 						<a href="#"><img src="/resources/main/images/pic01.jpg" alt="" /></a>
+						<div class="name">강남점</div>
 					</div>
 				</div>
 				<div>
 					<div class="image fit">
-						<a href="#"><img src="/resources/main/images/pic02.jpg" alt="" /></a>
+						<a href="#"><img src="/resources/main/images/pic02.jpg" alt="" />강북점</a>
 					</div>
 				</div>
 				<div>
 					<div class="image fit">
-						<a href="#"><img src="/resources/main/images/pic03.jpg" alt="" /></a>
+						<a href="#"><img src="/resources/main/images/pic03.jpg" alt="" />서초점</a>
 					</div>
 				</div>
 				<div>
 					<div class="image fit">
-						<a href="#"><img src="/resources/main/images/pic04.jpg" alt="" /></a>
+						<a href="#"><img src="/resources/main/images/pic04.jpg" alt="" />종로점</a>
 					</div>
 				</div>
 			</div>
