@@ -18,4 +18,6 @@ public interface MemberMapper {
 	
 	public void update(MemberVO vo);
 	
+	public int login(MemberVO vo);
+	
 }

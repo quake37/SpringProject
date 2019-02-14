@@ -33,5 +33,8 @@ public class MemberService {
 	public List<MemberVO> getList(){
 		return mapper.getList();
 	}
+	public int login(MemberVO vo) {
+		return mapper.login(vo);
+	}
 	
 }
