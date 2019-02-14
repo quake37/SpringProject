@@ -1,4 +1,4 @@
-sqlplus "/as sysdba" - ¡¢º”
+sqlplus "/as sysdba" - √Å¬¢¬º√ì
 
 create user study identified by study;
 grant connect, resource,dba to study;
@@ -13,8 +13,8 @@ create table member(
  email VARCHAR2(50) ,
  membertype CHAR(1) CONSTRAINT type_CK CHECK(membertype IN ('0','1')) NOT NULL,
  profile_img VARCHAR2(150),
- regdate DATE NOT NULL,
- udate DATE NOT NULL
+ regdate DATE NOT NULL defalut 'sysdate',
+ udate DATE NOT NULL defalut 'sysdate'
 );
 
 create sequence member_mno_seq
