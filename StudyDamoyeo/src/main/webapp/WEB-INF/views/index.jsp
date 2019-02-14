@@ -105,7 +105,7 @@
 								사람과 원하는 스터디그룹을 만들어 원하는 스터디룸을 예약해보자.</p>
 							<footer class="align-center">
 								<a href="#" class="button alt" data-toggle="modal"
-									data-target="#UserModalCenter">입장하기</a>
+									data-target="#UserModalLogin">입장하기</a>
 							</footer>
 						</div>
 					</div>
@@ -126,7 +126,7 @@
 							<br>
 							<footer class="align-center">
 								<a href="#" class="button alt" data-toggle="modal"
-									data-target="#ComModalCenter">입장하기</a>
+									data-target="#ComModalLogin">입장하기</a>
 							</footer>
 						</div>
 					</div>
