@@ -20,7 +20,7 @@
 					<div class="box-body">
 						<div class="form-group">
 							<label for="userid">아이디</label> <input type="text" name="id"
-								class="form-control" id="userid" placeholder="ID"
+								class="form-control" id="RegisterUserId" placeholder="ID"
 								required="required" autofocus="autofocus">
 						</div>
 						<div class="form-group">
@@ -45,7 +45,7 @@
 						</div>
 					</div>
 					<div class="box-footer">
-						<button class="btn btn-primary" type="submit" style="background-color: #FF974F; border-color: #FFFFFF;">회원가입</button>
+						<button class="btn btn-primary" type="submit"  style="color:#fff; background-color: #FF974F; border-color: #FFFFFF;">회원가입</button>
 					</div>
 				</form>
 
