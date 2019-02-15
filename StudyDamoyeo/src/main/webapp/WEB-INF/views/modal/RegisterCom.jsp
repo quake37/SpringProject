@@ -19,7 +19,7 @@
 				<form method="post" action="/member/insertCom">
 					<div class="box-body">
 						<div class="form-group">
-							<label for="userid">아이디</label> <label id="comIdCheck" hidden="true">체크</label> 
+							<label for="userid">아이디</label> <label id="comIdCheck" style="color: red;" hidden="true" >체크</label> 
 							<input type="text" name="id" class="form-control" id="RegisterComId"
 								placeholder="ID" required="required" autofocus="autofocus">
 						</div>
