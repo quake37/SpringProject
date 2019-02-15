@@ -19,8 +19,8 @@
 			<div class="modal-body">
 				<div class="form">
 					<form class="login-form">
-						<input type="text" id="loginId" name="id" required="required"
-							placeholder="username" /> <input type="password" id="loginPw"
+						<input type="text" id="comloginId" name="id" required="required"
+							placeholder="username" /> <input type="password" id="comloginPw"
 							name="pw" placeholder="password" required="required" />
 						<button>로그인</button>
 						<p class="message">
