@@ -18,11 +18,12 @@
 			</div>
 			<div class="modal-body">
 				<div class="form">
-					<form class="login-form">
+					<form class="login-form" method="post" action="/loginCom">
 						<input type="text" id="comloginId" name="id" required="required"
 							placeholder="username" /> <input type="password" id="comloginPw"
 							name="pw" placeholder="password" required="required" />
-						<button>로그인</button>
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
+						<button type="submit">로그인</button>
 						<p class="message">
 							계정이 존재하지않나요? <a href="#" data-dismiss="modal" data-toggle="modal"
 								data-target="#ComModalRegister">회원가입</a>
