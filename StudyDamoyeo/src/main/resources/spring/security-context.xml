@@ -7,52 +7,31 @@
 
 
 
-	<!-- <bean id="customAccessDenied"
-		class="org.zerok.security.CustomAccessDeniedHandler"></bean>
-
-	<bean id="customLoginSuccess" class="org.zerock.security.CustomLoginSuccessHandler"></bean>
-	<bean id="customPasswordEncoder" class="org.zerock.security.CustomNoOpPasswordEncoder"></bean>
-
-	<bean id="bcryptPasswordEncoder"
-		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
-
-	<bean id="customUserDetailsService"
-		class="org.zerok.security.CustomUserDetailsService"></bean>
- -->
-<!-- 
-	<security:http>
-
-		<security:intercept-url pattern="/sample/all"
-			access="permitAll" />
-
-		<security:intercept-url
-			pattern="/sample/member" access="hasRole('ROLE_MEMBER')" />
-
-		<security:intercept-url pattern="/sample/admin"
-			access="hasRole('ROLE_ADMIN')" />
-
-		<security:access-denied-handler
-			ref="customAccessDenied" />
-
-		<security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess" 
-			/>
-
-		<security:form-login login-page="/customLogin" />
-
-		<security:csrf disabled="true"/>
-
-		<security:logout logout-url="/customLogout"
-			invalidate-session="true" />
-
-		<security:remember-me
-			data-source-ref="dataSource" token-validity-seconds="604800" />
-
-		<security:logout logout-url="/customLogout"
-			invalidate-session="true" delete-cookies="remember-me,JSESSION_ID" />
-
-
+	<bean id="customAccessDenied"
+		class="com.StudyDamoyeo.security.CustomAccessDeniedHandler"></bean>
+	<!-- <bean id="customLoginSuccess" class="org.zerock.security.CustomLoginSuccessHandler"></bean> 
+		<bean id="customPasswordEncoder" class="org.zerock.security.CustomNoOpPasswordEncoder"></bean> 
+		<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" 
+		/> <bean id="customUserDetailsService" class="org.zerok.security.CustomUserDetailsService"></bean> -->
+	<security:http auto-config="true" use-expressions="true">
+		<security:form-login login-page="/loginUser" />
+		<security:form-login login-page="/loginCom" />
+		<security:intercept-url pattern="/" access="permitAll"/>
+		<security:intercept-url pattern="/user/*" access="hasRole('ROLE_USER')"/>
+		<security:intercept-url pattern="/com/*" access="hasRole('ROLE_COM')"/>
+		<security:access-denied-handler ref="customAccessDenied"/>
 	</security:http>
- -->
+	
+	<!-- <security:http> <security:intercept-url pattern="/sample/all" access="permitAll" 
+		/> <security:intercept-url pattern="/sample/member" access="hasRole('ROLE_MEMBER')" 
+		/> <security:intercept-url pattern="/sample/admin" access="hasRole('ROLE_ADMIN')" 
+		/> <security:access-denied-handler ref="customAccessDenied" /> <security:form-login 
+		login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess" 
+		/> <security:form-login login-page="/customLogin" /> <security:csrf disabled="true"/> 
+		<security:logout logout-url="/customLogout" invalidate-session="true" /> 
+		<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800" 
+		/> <security:logout logout-url="/customLogout" invalidate-session="true" 
+		delete-cookies="remember-me,JSESSION_ID" /> </security:http> -->
 
 
 	<!-- <security:authentication-manager> <security:authentication-provider> 
@@ -69,17 +48,8 @@
 		ref="customPasswordEncoder" /> <security:password-encoder ref="bcryptPasswordEncoder" 
 		/> </security:authentication-provider> </security:authentication-manager> -->
 
-<!-- 
-	<security:authentication-manager>
-
-		<security:authentication-provider
-			user-service-ref="customUserDetailsService">
-
-			<security:password-encoder
-				ref="bcryptPasswordEncoder" />
-
-		</security:authentication-provider>
-
-	</security:authentication-manager> -->
+	<!-- <security:authentication-manager> <security:authentication-provider 
+		user-service-ref="customUserDetailsService"> <security:password-encoder ref="bcryptPasswordEncoder" 
+		/> </security:authentication-provider> </security:authentication-manager> -->
 
 </beans>
