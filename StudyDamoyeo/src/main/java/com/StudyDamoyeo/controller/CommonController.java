@@ -31,5 +31,8 @@ public class CommonController {
 		}
 		
 	}
-	
+	@GetMapping("/logout")
+	public String logout() {
+		return "index";
+	}
 }
