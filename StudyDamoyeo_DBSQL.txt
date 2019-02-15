@@ -23,3 +23,11 @@ create sequence member_mno_seq
  
  alter table member add(verified char(1) constraint verified_ck CHECK(verified IN('N','Y')));
  alter table member modify(verified char(1) default 'N');
+
+
+create table authority(
+ userid varchar2(30) not null,
+ auth varchar2(30) not null
+);
+
+alter table authority add constraint authority_fk foreign key(userid) references member(id) on delete cascade; 
