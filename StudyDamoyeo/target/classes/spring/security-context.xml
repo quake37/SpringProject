@@ -17,11 +17,12 @@
 		<security:form-login login-page="/loginUser" />
 		<security:form-login login-page="/loginCom" />
 		<security:intercept-url pattern="/" access="permitAll"/>
-		<security:intercept-url pattern="/user/*" access="hasRole('ROLE_USER')"/>
-		<security:intercept-url pattern="/com/*" access="hasRole('ROLE_COM')"/>
+		<security:intercept-url pattern="/user" access="hasRole('ROLE_USER')"/>
+		<security:intercept-url pattern="/com" access="hasRole('ROLE_COM')"/>
+		<security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
 		<security:access-denied-handler ref="customAccessDenied"/>
 	</security:http>
-	
+	<security:authentication-manager></security:authentication-manager>
 	<!-- <security:http> <security:intercept-url pattern="/sample/all" access="permitAll" 
 		/> <security:intercept-url pattern="/sample/member" access="hasRole('ROLE_MEMBER')" 
 		/> <security:intercept-url pattern="/sample/admin" access="hasRole('ROLE_ADMIN')" 
