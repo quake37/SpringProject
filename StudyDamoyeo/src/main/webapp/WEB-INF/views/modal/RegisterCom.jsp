@@ -19,14 +19,14 @@
 				<form method="post" action="/member/insertCom">
 					<div class="box-body">
 						<div class="form-group">
-							<label for="userid">아이디</label> <input type="text" name="id"
-								class="form-control" id="RegisterComId" placeholder="ID"
-								required="required" autofocus="autofocus">
+							<label for="userid">아이디</label> <label for="userid" id="userIdCheck" hidden="true">체크</label> <input
+								type="text" name="id" class="form-control" id="RegisterComId"
+								placeholder="ID" required="required" autofocus="autofocus">
 						</div>
 						<div class="form-group">
-							<label for="username">이름(닉네임)</label> <input type="text"
-								name="nickname" class="form-control" placeholder="Name"
-								required="required">
+							<label for="username">이름(닉네임)</label> <label for="username" id="userNickNameCheck" hidden="true">체크</label><input
+								type="text" name="nickname" class="form-control"
+								placeholder="Name" required="required">
 						</div>
 						<div class="form-group">
 							<label for="inputPassword">비밀번호</label> <input type="password"
@@ -45,11 +45,12 @@
 						</div>
 					</div>
 					<div class="box-footer">
-						<button class="btn btn-primary" type="submit"  style="color:#fff; background-color: #FF974F; border-color: #FFFFFF;">회원가입</button>
+						<button class="btn btn-primary" type="submit"
+							style="color: #fff; background-color: #FF974F; border-color: #FFFFFF;">회원가입</button>
 					</div>
 				</form>
 			</div>
-			
+
 		</div>
 	</div>
 </div>
