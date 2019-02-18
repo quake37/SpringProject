@@ -33,8 +33,8 @@
 		<security:intercept-url pattern="/admin/*"
 			access="hasRole('ROLE_ADMIN')" />
 
-		<security:access-denied-handler
-			ref="customAccessDenied" />
+		<!-- <security:access-denied-handler
+			ref="customAccessDenied" /> -->
 
 		<!-- <security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess" 
 			/> -->

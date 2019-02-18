@@ -12,7 +12,7 @@ import com.StudyDamoyeo.domain.MemberVO;
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration({"file:src/main/webapp/WEB-INF/spring/root-context.xml"})
+@ContextConfiguration({"classpath:/spring/root-context.xml"})
 @Log4j
 public class MemberMapperTests {
 
