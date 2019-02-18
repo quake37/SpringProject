@@ -43,6 +43,8 @@
 								name="email" class="form-control" placeholder="Email address"
 								required="required">
 						</div>
+							
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
 					</div>
 					<div class="box-footer">
 						<button class="btn btn-primary" type="submit"  style="color:#fff; background-color: #FF974F; border-color: #FFFFFF;">회원가입</button>

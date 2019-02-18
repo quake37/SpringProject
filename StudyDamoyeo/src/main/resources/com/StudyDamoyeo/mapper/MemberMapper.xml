@@ -11,11 +11,13 @@
 	</select>
 	
 	<insert id="insert">
-		insert into member (mno,id, pw, nickname, phone, email, memberType, profile_Img, authority)
-		values(member_mno_seq.nextval, #{id}, #{pw}, #{nickname}, #{phone}, #{email}, #{memberType}, #{profile_Img}, #{authority})
+		insert into member (mno,id, pw, nickname, phone, email, memberType, profile_Img)
+		values(member_mno_seq.nextval, #{id}, #{pw}, #{nickname}, #{phone}, #{email}, #{memberType}, #{profile_Img})
 	</insert>
 	
-	
+	<insert id="insertAuth">
+		insert into authority values(#{userid},#{auth} )
+	</insert>
 	<resultMap type="com.StudyDamoyeo.domain.MemberVO" id="memberMap">
 		<id property="userid" column="id" />
 		<result property="userid" column="id" />
