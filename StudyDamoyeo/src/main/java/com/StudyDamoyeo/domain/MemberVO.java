@@ -2,6 +2,8 @@ package com.StudyDamoyeo.domain;
 
 
 
+import java.util.List;
+
 import lombok.Data;
 import lombok.ToString;
 
@@ -17,6 +19,7 @@ public class MemberVO {
 	private String phone;
 	private String email;
 	private String authority;
+	private List<AuthVO> authList;
 	
 	public String getId() {
 		return id;
@@ -71,7 +74,12 @@ public class MemberVO {
 	public void setAuthority(String authority) {
 		this.authority = authority;
 	}
-
+	public List<AuthVO> getAuthList() {
+		return authList;
+	}
+	public void setAuthList(List<AuthVO> authList) {
+		this.authList = authList;
+	}
 	@Override
 	public String toString() {
 		return "MemberVO [id=" + id + ", pw=" + pw + ", nickname=" + nickname + ", memberType=" + memberType

@@ -4,36 +4,41 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.extern.java.Log;
+import lombok.extern.log4j.Log4j;
 
 @Controller
 @Log
 public class CommonController {
 
-	@GetMapping("/loginUser")
-	public String loginUser(String error, String logout, Model model) {
-		if(error!=null) {
-			model.addAttribute("error", "로그인 에러 아이디 및 비밀번호를 확인해주세요");
-		}
-		if(logout != null) {
-			model.addAttribute("logout", "로그아웃!");
-		}
-		return "/user/mainUser";
+	@GetMapping("/accessError")
+	public void accessDenied(Authentication auth, Model model) {
+
+		model.addAttribute("msg", "Access Denied");
 	}
-	@GetMapping("/loginCom")
-	public String loginCom(String error, String logout, Model model) {
-		if(error!=null) {
-			model.addAttribute("error", "로그인 에러 아이디 및 비밀번호를 확인해주세요");
+
+	@GetMapping("/customLogin")
+	public void loginInput(String error, String logout, Model model) {
+
+		if (error != null) {
+			model.addAttribute("error", "Login Error Check Your Account");
 		}
-		if(logout != null) {
-			model.addAttribute("logout", "로그아웃!");
+
+		if (logout != null) {
+			model.addAttribute("logout", "Logout!!");
 		}
-		return "/com/mainCom";
-		
 	}
-	@GetMapping("/logout")
-	public String logout() {
-		return "index";
+
+	@GetMapping("/customLogout")
+	public void logoutGET() {
+
 	}
+
+	@PostMapping("/customLogout")
+	public void logoutPost() {
+
+	}
+
 }

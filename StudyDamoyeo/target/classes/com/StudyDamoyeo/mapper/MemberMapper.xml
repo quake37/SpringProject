@@ -14,8 +14,30 @@
 		insert into member (mno,id, pw, nickname, phone, email, memberType, profile_Img, authority)
 		values(member_mno_seq.nextval, #{id}, #{pw}, #{nickname}, #{phone}, #{email}, #{memberType}, #{profile_Img}, #{authority})
 	</insert>
-	<select id="read" resultType="com.StudyDamoyeo.domain.MemberVO">
-		select * from member where id =#{id}
+	
+	
+	<resultMap type="com.StudyDamoyeo.domain.MemberVO" id="memberMap">
+		<id property="userid" column="id" />
+		<result property="userid" column="id" />
+		<result property="userpw" column="pw" />
+		<result property="userName" column="nickname" />
+		<result property="regDate" column="regdate" />
+		<result property="updateDate" column="udate" />
+		<collection property="authList" resultMap="authMap">
+		</collection>
+	</resultMap>
+
+	<resultMap type="com.StudyDamoyeo.domain.AuthVO" id="authMap">
+		<result property="userid" column="userid" />
+		<result property="auth" column="auth" />
+	</resultMap>
+
+	<select id="read" resultMap="memberMap">
+		SELECT
+		mem.id, pw, nickname, enabled, regdate, udate, auth
+		FROM
+		member mem LEFT OUTER JOIN member_auth auth on mem.id = auth.userid
+		WHERE mem.id = #{userid}
 	</select>
 	<delete id="delete">
 		delete member where id = #{id}
@@ -26,5 +48,10 @@
 	</update>
 	<select id="login" resultType="int">
 		select * from member where id = #{id} and pw=#{pw}
+	</select>
+	<select id="checkid"  parameterType="String" resultType="int">
+		  SELECT COUNT(*) FROM member
+      WHERE
+          id = #{userid}
 	</select>
 </mapper>

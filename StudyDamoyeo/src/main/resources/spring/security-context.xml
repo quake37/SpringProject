@@ -4,38 +4,70 @@
 	xmlns:security="http://www.springframework.org/schema/security"
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
 	<bean id="customAccessDenied"
 		class="com.StudyDamoyeo.security.CustomAccessDeniedHandler"></bean>
-	<bean id="customLoginSuccess"
-		class="com.StudyDamoyeo.security.CustomLoginSuccessHandler"></bean>
+
+	<!-- <bean id="customLoginSuccess" class="org.zerock.security.CustomLoginSuccessHandler"></bean> -->
+	<!-- <bean id="customPasswordEncoder" class="org.zerock.security.CustomNoOpPasswordEncoder"></bean> -->
+
 	<bean id="bcryptPasswordEncoder"
-		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+
+	<bean id="customUserDetailsService"
+		class="com.StudyDamoyeo.security.CustomUserDetailsService"></bean>
+
+
 	<security:http>
-		<security:form-login login-page="/loginUser"
-			authentication-success-handler-ref="customLoginSuccess" />
-		<security:form-login login-page="/loginCom"
-			authentication-success-handler-ref="customLoginSuccess" />
+
+		<security:intercept-url pattern="/"
+			access="permitAll" />
+
 		<security:intercept-url
-			pattern="/member/user/*" access="hasRole('ROLE_USER')" />
-		<security:intercept-url pattern="/member/com/*"
-			access="hasRole('ROLE_COM')" />
-		<security:intercept-url pattern="/admin"
+			pattern="/user/*" access="hasRole('ROLE_USER')" />
+			<security:intercept-url
+			pattern="/com/*" access="hasRole('ROLE_COM')" />
+
+		<security:intercept-url pattern="/admin/*"
 			access="hasRole('ROLE_ADMIN')" />
+
 		<security:access-denied-handler
 			ref="customAccessDenied" />
-	</security:http>
-	<security:authentication-manager
-		alias="authenticationManager">
-		<security:authentication-provider
-			ref="customAuthenticationProvider">
-		</security:authentication-provider>
-		<security:authentication-provider
-			user-service-ref="customeUserDetailsService">
-			<security:password-encoder
-				ref="bcryptPasswordEncoder"></security:password-encoder>
-		</security:authentication-provider>
-	</security:authentication-manager>
-	
 
+		<!-- <security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess" 
+			/> -->
+
+		<security:form-login login-page="/customLogin" />
+
+		<!-- <security:csrf disabled="true"/> -->
+
+		<security:logout logout-url="/customLogout"
+			invalidate-session="true" />
+
+		<security:remember-me
+			data-source-ref="dataSource" token-validity-seconds="604800" />
+
+		<security:logout logout-url="/customLogout"
+			invalidate-session="true" delete-cookies="remember-me,JSESSION_ID" />
+
+
+	</security:http>
+
+
+
+
+	<security:authentication-manager>
+
+		<security:authentication-provider
+			user-service-ref="customUserDetailsService">
+
+			<security:password-encoder
+				ref="bcryptPasswordEncoder" />
+
+		</security:authentication-provider>
+
+	</security:authentication-manager>
 
 </beans>
