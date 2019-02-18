@@ -61,11 +61,8 @@ public class MemberController {
 	@ResponseBody
 	public Map<Object, Object> idcheck(@RequestBody String userid) {
 		int count = 0;
-		System.out.println(userid);
 		Map<Object, Object> map = new HashMap<Object, Object>();
-		System.out.println(userid);
 		count = service.idcheck(userid);
-		System.out.println(userid);
 		map.put("cnt", count);
 		
 		return map;

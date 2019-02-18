@@ -25,6 +25,7 @@ $(document).ready(function() {
 		       clearTimeout(timeout);
 		    }
 		    timeout = setTimeout(function() {
+		    	alert(userid);
 		    	 $.ajax({
 			            async: true,
 			            type : 'POST',
