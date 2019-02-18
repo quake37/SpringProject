@@ -39,7 +39,7 @@ public class MemberService {
 	}
 
 	public int idcheck(String userid) {
-		
+		System.out.println(userid);
 		return mapper.checkid(userid);
 	}
 	public void insertAuth(AuthVO vo) {

@@ -1,8 +1,8 @@
-var token = $("meta[name='_csrf']").attr("content");
-var header = $("meta[name='_csrf_header']").attr("content");
 
 
 $(document).ready(function() {
+	var token = $("meta[name='_csrf']").attr("content");
+	var header = $("meta[name='_csrf_header']").attr("content");
 	 var idReg = /^[a-z0-9]{6,20}$/g;
 	 var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]/gi;
 	 var userid;
@@ -13,12 +13,12 @@ $(document).ready(function() {
 		
 		if(!idReg.test(userid)){
 			$("#comIdCheck").css({"color":"#f54f29"});
-			$("#comIdCheck2").text("if문 : "+idReg.test(userid));
+			//$("#comIdCheck2").text("if문 : "+idReg.test(userid));
 			$("#comIdCheck").text("6~20자 영문자 또는 숫자이어야 합니다.");
 			$("#comIdCheck").show(500);
 			$("#RegisterComId").focus();
 		}else{
-			$("#comIdCheck2").text("else문 : "+idReg.test(userid));
+			//$("#comIdCheck2").text("else문 : "+idReg.test(userid));
 			$("#comIdCheck").hide(500);
 			$("#RegisterComSpin").show(500);
 			if(timeout) {
