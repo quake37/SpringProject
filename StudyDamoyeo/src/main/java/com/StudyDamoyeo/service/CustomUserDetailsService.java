@@ -1,15 +1,17 @@
-package com.StudyDamoyeo.security;
+package com.StudyDamoyeo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.StudyDamoyeo.domain.MemberVO;
 
 import lombok.extern.java.Log;
 
 @Log
+@Service
 public class CustomUserDetailsService implements UserDetailsService {
 
 	@Autowired
@@ -21,8 +23,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
 		// userName means userid
 		MemberVO vo = memberMapper.read(userName);
-
-
+		System.out.println(vo.toString());
 		return vo == null ? null : new com.StudyDamoyeo.domain.CustomUser(vo);
 	} 
 

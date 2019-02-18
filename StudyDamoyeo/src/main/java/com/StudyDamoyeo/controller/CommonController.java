@@ -25,6 +25,7 @@ public class CommonController {
 
 		if (error != null) {
 			model.addAttribute("error", "Login Error Check Your Account");
+			return "error/error";
 		}
 
 		if (logout != null) {

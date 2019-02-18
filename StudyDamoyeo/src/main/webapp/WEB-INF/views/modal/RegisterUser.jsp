@@ -19,7 +19,7 @@
 				<form method="post"  action="/member/insertUser">
 					<div class="box-body">
 						<div class="form-group">
-							<label for="userid">아이디</label> <input type="text" name="id"
+							<label for="userid">아이디</label> <input type="text" name="userId"
 								class="form-control" id="RegisterUserId" placeholder="ID"
 								required="required" autofocus="autofocus">
 						</div>

@@ -2,6 +2,7 @@ package com.StudyDamoyeo.domain;
 
 
 
+import java.util.Date;
 import java.util.List;
 
 import lombok.Data;
@@ -19,9 +20,27 @@ public class MemberVO {
 	private String phone;
 	private String email;
 	private List<AuthVO> authList;
+	private Date regdate;
+	private Date udate;
 	
 	
 	
+	public Date getRegdate() {
+		return regdate;
+	}
+
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
+	}
+
+	public Date getUdate() {
+		return udate;
+	}
+
+	public void setUdate(Date udate) {
+		this.udate = udate;
+	}
+
 	public String getEmail() {
 		return email;
 	}

@@ -19,11 +19,11 @@
 			<div class="modal-body">
 				<div class="form">
 					<form class="login-form" method="post" action="/login">
-						<input type="text" id="userloginId" name="id" required="required"
+						<input type="text" id="userloginId" name="username" required="required"
 							placeholder="username" /> <input id="userloginPw" name="pw"
 							type="password" placeholder="password" required="required" />
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
-						<button>로그인</button>
+						<button >로그인</button>
 						<p class="message">
 							계정이 존재하지않나요? <a href="#"
 								data-dismiss="modal" data-toggle="modal"

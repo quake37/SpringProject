@@ -21,7 +21,7 @@
 					<div class="box-body">
 						<div class="form-group">
 							<label for="userid">아이디 </label>  <label id="comIdCheck" style="color: #f54f29; display: none;" >체크</label> <label id="comIdCheck2" hidden="true" ></label> 
-							<input type="text" name="id" class="form-control" id="RegisterComId"
+							<input type="text" name="userId" class="form-control" id="RegisterComId"
 								placeholder="ID" required="required" autofocus="autofocus"> 
 						</div>
 						<div class="form-group">

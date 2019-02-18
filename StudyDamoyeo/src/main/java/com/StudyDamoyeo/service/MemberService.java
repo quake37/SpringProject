@@ -20,8 +20,8 @@ public class MemberService {
 		mapper.insert(vo);
 	}
 	
-	public MemberVO read(String id) {
-		return mapper.read(id);
+	public MemberVO read(String userid) {
+		return mapper.read(userid);
 	}
 	
 	public void update(MemberVO vo) {

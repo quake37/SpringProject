@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,11 +27,14 @@ public class MemberController {
 
 	@Autowired
 	private MemberService service;
-
+	@Autowired  
+	private PasswordEncoder pwencoder;
 	@PostMapping("/insertUser")
 	private String insertUser(MemberVO vo, Model model) {
 		vo.setMemberType("0");
 		vo.setProfile_Img("null");
+		String pw=pwencoder.encode(vo.getPw());
+		vo.setPw(pw);
 		System.out.println(vo.toString());
 		service.insert(vo);
 		AuthVO auth = new AuthVO();

@@ -11,20 +11,24 @@
 	</select>
 	
 	<insert id="insert">
-		insert into member (mno,userid, pw, nickname, phone, email, memberType, profile_Img)
-		values(member_mno_seq.nextval, #{userid}, #{pw}, #{nickname}, #{phone}, #{email}, #{memberType}, #{profile_Img})
+		insert into member (mno,userId, pw, nickname, phone, email, memberType, profile_Img)
+		values(member_mno_seq.nextval, #{userId}, #{pw}, #{nickname}, #{phone}, #{email}, #{memberType}, #{profile_Img})
 	</insert>
 	
 	<insert id="insertAuth">
 		insert into authority values(#{userid},#{auth} )
 	</insert>
 	<resultMap type="com.StudyDamoyeo.domain.MemberVO" id="memberMap">
-		<id property="userid" column="userid" />
-		<result property="userid" column="userid" />
+		<id property="userId" column="userId" />
+		<result property="userId" column="userId" />
 		<result property="pw" column="pw" />
 		<result property="nickname" column="nickname" />
-		<result property="regDate" column="regdate" />
-		<result property="uDate" column="udate" />
+		<result property="phone" column="phone"/>
+		<result property="email" column="email"/>
+		<result property="profile_Img" column="profile_Img"/>
+		<result property="memberType" column="memberType"/>
+		<result property="regdate" column="regdate" />
+		<result property="udate" column="udate" />
 		<collection property="authList" resultMap="authMap">
 		</collection>
 	</resultMap>
@@ -36,24 +40,22 @@
 
 	<select id="read" resultMap="memberMap">
 		SELECT
-		mem.*
+		mem.*, auth.AUTH
 		FROM
-		member mem LEFT OUTER JOIN authority auth on mem.userid = auth.userid
-		WHERE mem.userid = #{userid}
+		member mem LEFT OUTER JOIN authority auth on mem.userId = auth.userId
+		WHERE mem.userId = #{userId}
 	</select>
 	<delete id="delete">
-		delete member where id = #{id}
+		delete member where userid = #{userid}
 	</delete>
 	<update id="update">
 		update member set pw=#{pw}, nickname =#{nickname},phone =#{phone}, email = #{email}, profile_Img =#{profile_Img},
-		udate = sysdate where id =#{id}
+		udate = sysdate where userid =#{userid}
 	</update>
-	<select id="login" resultType="int">
-		select * from member where id = #{id} and pw=#{pw}
-	</select>
+	
 	<select id="checkid"  parameterType="String" resultType="int">
 		  SELECT COUNT(*) FROM member
       WHERE
-          id = #{userid}
+          userid = #{userid}
 	</select>
 </mapper>
