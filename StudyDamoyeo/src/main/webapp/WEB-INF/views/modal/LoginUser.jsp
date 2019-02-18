@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/resources/main/assets/css/login.css"
 	type="text/css" />
 
-</style>
+
 <div class="modal fade" id="UserModalLogin" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">

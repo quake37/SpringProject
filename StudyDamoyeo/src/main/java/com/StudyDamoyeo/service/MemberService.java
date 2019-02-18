@@ -36,5 +36,10 @@ public class MemberService {
 	public int login(MemberVO vo) {
 		return mapper.login(vo);
 	}
+
+	public int idcheck(String userid) {
+		
+		return mapper.checkid(userid);
+	}
 	
 }

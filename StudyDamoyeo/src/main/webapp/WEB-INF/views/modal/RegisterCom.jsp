@@ -19,22 +19,22 @@
 				<form method="post" action="/member/insertCom">
 					<div class="box-body">
 						<div class="form-group">
-							<label for="userid">아이디</label> <label id="comIdCheck" style="color: red;" hidden="true" >체크</label> 
+							<label for="userid">아이디 </label>  <label id="comIdCheck" style="color: #f54f29; display: none;" >체크</label> <label id="comIdCheck2" hidden="true" ></label> 
 							<input type="text" name="id" class="form-control" id="RegisterComId"
-								placeholder="ID" required="required" autofocus="autofocus">
+								placeholder="ID" required="required" autofocus="autofocus"> 
 						</div>
 						<div class="form-group">
-							<label for="username">이름(닉네임)</label> <label id="comNickNameCheck" hidden="true">체크</label><input
+							<label for="username">이름(닉네임)</label> <label id="comNickNameCheck"  style="color: #f54f29; display: none;">체크</label><input
 								type="text" name="nickname" class="form-control"
 								placeholder="Name" required="required">
 						</div>
 						<div class="form-group">
-							<label for="inputPassword">비밀번호</label><label id="comPwCheck" hidden="true">체크</label> <input type="password"
+							<label for="inputPassword">비밀번호</label><label id="comPwCheck" style="color: #f54f29; display: none;">체크</label> <input type="password"
 								name="pw" class="form-control" placeholder="Password"
 								required="required">
 						</div>
 						<div class="form-group">
-							<label for="inputEmail">휴대전화 (-없이)</label> <label id="comPhoneCheck" hidden="true">체크</label><input type="text"
+							<label for="inputEmail">휴대전화 (-없이)</label> <label id="comPhoneCheck"  style="color: #f54f29; display: none;">체크</label><input type="text"
 								name="phone" class="form-control" placeholder="Phone"
 								required="required">
 						</div>
