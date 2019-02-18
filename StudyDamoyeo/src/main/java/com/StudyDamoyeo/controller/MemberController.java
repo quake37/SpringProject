@@ -62,6 +62,7 @@ public class MemberController {
 	public Map<Object, Object> idcheck(@RequestBody String userid) {
 		int count = 0;
 		Map<Object, Object> map = new HashMap<Object, Object>();
+		System.out.println(map.toString());
 		count = service.idcheck(userid);
 		map.put("cnt", count);
 		System.out.println(count);
