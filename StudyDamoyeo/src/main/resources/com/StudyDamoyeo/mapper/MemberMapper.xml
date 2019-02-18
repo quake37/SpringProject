@@ -42,18 +42,18 @@
 		WHERE mem.userid = #{userid}
 	</select>
 	<delete id="delete">
-		delete member where id = #{id}
+		delete member where userid = #{userid}
 	</delete>
 	<update id="update">
 		update member set pw=#{pw}, nickname =#{nickname},phone =#{phone}, email = #{email}, profile_Img =#{profile_Img},
-		udate = sysdate where id =#{id}
+		udate = sysdate where userid =#{id}
 	</update>
 	<select id="login" resultType="int">
-		select * from member where id = #{id} and pw=#{pw}
+		select * from member where userid = #{id} and pw=#{pw}
 	</select>
 	<select id="checkid"  parameterType="String" resultType="int">
 		  SELECT COUNT(*) FROM member
       WHERE
-          id = #{userid}
+         userid = #{userid}
 	</select>
 </mapper>
