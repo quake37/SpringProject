@@ -32,3 +32,4 @@ create table authority(
 
 alter table authority add constraint authority_fk foreign key(userid) references member(id) on delete cascade; 
 alter table member rename column id to userid;
+ALTER TABLE MEMBER  MODIFY (PW VARCHAR2(60 BYTE) );
