@@ -16,6 +16,7 @@ public class MemberVO {
 	private String profile_Img;
 	private String phone;
 	private String email;
+	private String authority;
 	
 	public String getId() {
 		return id;
@@ -61,6 +62,14 @@ public class MemberVO {
 	}
 	public void setMemberType(String memberType) {
 		this.memberType = memberType;
+	}
+
+	public String getAuthority() {
+		return authority;
+	}
+
+	public void setAuthority(String authority) {
+		this.authority = authority;
 	}
 
 	@Override

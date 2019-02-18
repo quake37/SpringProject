@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <link rel="stylesheet" href="/resources/main/assets/css/login.css"
 	type="text/css" />
 
@@ -18,10 +18,11 @@
 			</div>
 			<div class="modal-body">
 				<div class="form">
-					<form class="login-form">
+					<form class="login-form" method="post" action="/login">
 						<input type="text" id="userloginId" name="id" required="required"
 							placeholder="username" /> <input id="userloginPw" name="pw"
 							type="password" placeholder="password" required="required" />
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
 						<button>로그인</button>
 						<p class="message">
 							계정이 존재하지않나요? <a href="#"

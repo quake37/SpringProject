@@ -11,8 +11,8 @@
 	</select>
 	
 	<insert id="insert">
-		insert into member (mno,id, pw, nickname, phone, email, memberType, profile_Img )
-		values(member_mno_seq.nextval, #{id}, #{pw}, #{nickname}, #{phone}, #{email}, #{memberType}, #{profile_Img})
+		insert into member (mno,id, pw, nickname, phone, email, memberType, profile_Img, authority)
+		values(member_mno_seq.nextval, #{id}, #{pw}, #{nickname}, #{phone}, #{email}, #{memberType}, #{profile_Img}, #{authority})
 	</insert>
 	<select id="read" resultType="com.StudyDamoyeo.domain.MemberVO">
 		select * from member where id =#{id}

@@ -4,66 +4,38 @@
 	xmlns:security="http://www.springframework.org/schema/security"
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-
-	<security:http>
-		<security:form-login />
-	</security:http>
-	<security:authentication-manager></security:authentication-manager>
-	<!-- <bean id="customAccessDenied"
+	<bean id="customAccessDenied"
 		class="com.StudyDamoyeo.security.CustomAccessDeniedHandler"></bean>
 	<bean id="customLoginSuccess"
 		class="com.StudyDamoyeo.security.CustomLoginSuccessHandler"></bean>
 	<bean id="bcryptPasswordEncoder"
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
-	<security:http auto-config="true" use-expressions="true">
-		<security:form-login login-page="/modal/loginUser" />
-		<security:form-login login-page="/modal/loginCom" />
-		<security:intercept-url pattern="/"
-			access="permitAll" />
-		<security:intercept-url pattern="/user"
-			access="hasRole('ROLE_USER')" />
-		<security:intercept-url pattern="/com"
+	<security:http>
+		<security:form-login login-page="/loginUser"
+			authentication-success-handler-ref="customLoginSuccess" />
+		<security:form-login login-page="/loginCom"
+			authentication-success-handler-ref="customLoginSuccess" />
+		<security:intercept-url
+			pattern="/member/user/*" access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/member/com/*"
 			access="hasRole('ROLE_COM')" />
 		<security:intercept-url pattern="/admin"
 			access="hasRole('ROLE_ADMIN')" />
 		<security:access-denied-handler
 			ref="customAccessDenied" />
-		<security:logout logout-url="/logout" invalidate-session="true"/>
 	</security:http>
-	<security:authentication-manager>
-		<security:authentication-provider>
-			<security:jdbc-user-service data-source-ref="datasource"/>
-			<security:password-encoder ref="bcryptPasswordEncoder"/>
+	<security:authentication-manager
+		alias="authenticationManager">
+		<security:authentication-provider
+			ref="customAuthenticationProvider">
+		</security:authentication-provider>
+		<security:authentication-provider
+			user-service-ref="customeUserDetailsService">
+			<security:password-encoder
+				ref="bcryptPasswordEncoder"></security:password-encoder>
 		</security:authentication-provider>
 	</security:authentication-manager>
-	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
-
-		<property name="driverClassName"
-			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
-		<property name="jdbcUrl"
-			value="jdbc:log4jdbc:oracle:thin:@localhost:1521:XE"></property>
-		<property name="username" value="study"></property>
-		<property name="password" value="study"></property>
-
-	</bean>
-
-	HikariCP configuration
-	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"
-		destroy-method="close">
-		<constructor-arg ref="hikariConfig" />
-	</bean>
-
-	<bean id="sqlSessionFactory"
-		class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"></property>
-	</bean>
-
-	<bean id="transactionManager"
-		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource"></property>
-	</bean>
-	 -->
 	
+
 
 </beans>

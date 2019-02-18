@@ -12,23 +12,24 @@ import lombok.extern.java.Log;
 public class CommonController {
 
 	@GetMapping("/loginUser")
-	public void loginUser(String error, String logout, Model model) {
+	public String loginUser(String error, String logout, Model model) {
 		if(error!=null) {
 			model.addAttribute("error", "로그인 에러 아이디 및 비밀번호를 확인해주세요");
 		}
 		if(logout != null) {
 			model.addAttribute("logout", "로그아웃!");
 		}
-		
+		return "/user/mainUser";
 	}
 	@GetMapping("/loginCom")
-	public void loginCom(String error, String logout, Model model) {
+	public String loginCom(String error, String logout, Model model) {
 		if(error!=null) {
 			model.addAttribute("error", "로그인 에러 아이디 및 비밀번호를 확인해주세요");
 		}
 		if(logout != null) {
 			model.addAttribute("logout", "로그아웃!");
 		}
+		return "/com/mainCom";
 		
 	}
 	@GetMapping("/logout")

@@ -34,6 +34,7 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 			response.sendRedirect("/com/mainCom");
 			return;
 		}
+		response.sendRedirect("/");
 	}
 	
 }
