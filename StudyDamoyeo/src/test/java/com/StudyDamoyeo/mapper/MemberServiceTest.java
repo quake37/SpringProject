@@ -23,7 +23,7 @@ public class MemberServiceTest {
 	
 	public void testInsert() {
 		MemberVO vo = new MemberVO();
-		vo.setId("444");
+		vo.setUserId("444");
 		vo.setMemberType("0");
 		vo.setNickname("test");
 		vo.setProfile_Img("default");
@@ -41,7 +41,7 @@ public class MemberServiceTest {
 	@Ignore
 	public void testUpdate() {
 		MemberVO vo = new MemberVO();
-		vo.setId("test");
+		vo.setUserId("test");
 		vo.setMemberType("0");
 		vo.setNickname("test");
 		vo.setProfile_Img("profile");
