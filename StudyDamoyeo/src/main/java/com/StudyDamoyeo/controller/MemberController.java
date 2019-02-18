@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.StudyDamoyeo.domain.AuthVO;
 import com.StudyDamoyeo.domain.MemberVO;
 import com.StudyDamoyeo.service.MemberService;
 
@@ -30,9 +31,12 @@ public class MemberController {
 	private String insertUser(MemberVO vo, Model model) {
 		vo.setMemberType("0");
 		vo.setProfile_Img("null");
-		vo.setAuthority("ROLE_USER");
 		System.out.println(vo.toString());
 		service.insert(vo);
+		AuthVO auth = new AuthVO();
+		auth.setUserid(vo.getUserId());
+		auth.setAuth("ROLE_USER");
+		service.insertAuth(auth);
 		model.addAttribute("member", vo);
 		return "index";
 
@@ -42,8 +46,11 @@ public class MemberController {
 	private String insertCom(MemberVO vo, Model model) {
 		vo.setMemberType("1");
 		vo.setProfile_Img("null");
-		vo.setAuthority("ROLE_COM");
 		service.insert(vo);
+		AuthVO auth = new AuthVO();
+		auth.setUserid(vo.getUserId());
+		auth.setAuth("ROLE_COM");
+		service.insertAuth(auth);
 		model.addAttribute("member", vo);
 		return "index";
 

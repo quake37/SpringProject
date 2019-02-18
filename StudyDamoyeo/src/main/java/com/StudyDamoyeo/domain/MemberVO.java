@@ -11,19 +11,16 @@ import lombok.ToString;
 @ToString
 public class MemberVO {
 
-	private String id;
+	private String userId;
 	private String pw;
 	private String nickname;
 	private String memberType;
 	private String profile_Img;
 	private String phone;
 	private String email;
-	private String authority;
 	private List<AuthVO> authList;
 	
-	public String getId() {
-		return id;
-	}
+	
 	
 	public String getEmail() {
 		return email;
@@ -45,9 +42,7 @@ public class MemberVO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public void setId(String id) {
-		this.id = id;
-	}
+
 	public String getPw() {
 		return pw;
 	}
@@ -67,13 +62,15 @@ public class MemberVO {
 		this.memberType = memberType;
 	}
 
-	public String getAuthority() {
-		return authority;
+	
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setAuthority(String authority) {
-		this.authority = authority;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
+
 	public List<AuthVO> getAuthList() {
 		return authList;
 	}
@@ -82,7 +79,7 @@ public class MemberVO {
 	}
 	@Override
 	public String toString() {
-		return "MemberVO [id=" + id + ", pw=" + pw + ", nickname=" + nickname + ", memberType=" + memberType
+		return "MemberVO [id=" + userId + ", pw=" + pw + ", nickname=" + nickname + ", memberType=" + memberType
 				+ ", profile_Img=" + profile_Img + ", phone=" + phone + ", email=" + email + "]";
 	}
 	

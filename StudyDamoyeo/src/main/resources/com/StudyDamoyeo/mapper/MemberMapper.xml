@@ -11,18 +11,20 @@
 	</select>
 	
 	<insert id="insert">
-		insert into member (mno,id, pw, nickname, phone, email, memberType, profile_Img, authority)
-		values(member_mno_seq.nextval, #{id}, #{pw}, #{nickname}, #{phone}, #{email}, #{memberType}, #{profile_Img}, #{authority})
+		insert into member (mno,userid, pw, nickname, phone, email, memberType, profile_Img)
+		values(member_mno_seq.nextval, #{userid}, #{pw}, #{nickname}, #{phone}, #{email}, #{memberType}, #{profile_Img})
 	</insert>
 	
-	
+	<insert id="insertAuth">
+		insert into authority values(#{userid},#{auth} )
+	</insert>
 	<resultMap type="com.StudyDamoyeo.domain.MemberVO" id="memberMap">
-		<id property="userid" column="id" />
-		<result property="userid" column="id" />
-		<result property="userpw" column="pw" />
-		<result property="userName" column="nickname" />
+		<id property="userid" column="userid" />
+		<result property="userid" column="userid" />
+		<result property="pw" column="pw" />
+		<result property="nickname" column="nickname" />
 		<result property="regDate" column="regdate" />
-		<result property="updateDate" column="udate" />
+		<result property="uDate" column="udate" />
 		<collection property="authList" resultMap="authMap">
 		</collection>
 	</resultMap>
@@ -34,10 +36,10 @@
 
 	<select id="read" resultMap="memberMap">
 		SELECT
-		mem.id, pw, nickname, enabled, regdate, udate, auth
+		mem.userid, pw, nickname,  regdate, udate
 		FROM
-		member mem LEFT OUTER JOIN member_auth auth on mem.id = auth.userid
-		WHERE mem.id = #{userid}
+		member mem LEFT OUTER JOIN authority auth on mem.userid = auth.userid
+		WHERE mem.userid = #{userid}
 	</select>
 	<delete id="delete">
 		delete member where id = #{id}

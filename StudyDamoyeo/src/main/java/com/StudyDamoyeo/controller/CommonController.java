@@ -14,13 +14,14 @@ import lombok.extern.log4j.Log4j;
 public class CommonController {
 
 	@GetMapping("/accessError")
-	public void accessDenied(Authentication auth, Model model) {
+	public	String accessDenied(Authentication auth, Model model) {
 
 		model.addAttribute("msg", "Access Denied");
+		return "error/accessError";
 	}
 
 	@GetMapping("/customLogin")
-	public void loginInput(String error, String logout, Model model) {
+	public String loginInput(String error, String logout, Model model) {
 
 		if (error != null) {
 			model.addAttribute("error", "Login Error Check Your Account");
@@ -29,6 +30,7 @@ public class CommonController {
 		if (logout != null) {
 			model.addAttribute("logout", "Logout!!");
 		}
+		return "user/Mainuser";
 	}
 
 	@GetMapping("/customLogout")

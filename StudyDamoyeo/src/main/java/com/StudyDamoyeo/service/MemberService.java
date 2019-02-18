@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.StudyDamoyeo.domain.AuthVO;
 import com.StudyDamoyeo.domain.MemberVO;
 import com.StudyDamoyeo.mapper.MemberMapper;
 
@@ -41,5 +42,7 @@ public class MemberService {
 		
 		return mapper.checkid(userid);
 	}
-	
+	public void insertAuth(AuthVO vo) {
+		mapper.insertAuth(vo);
+	}
 }
