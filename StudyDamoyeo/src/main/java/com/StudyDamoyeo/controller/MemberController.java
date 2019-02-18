@@ -33,7 +33,7 @@ public class MemberController {
 		System.out.println(vo.toString());
 		service.insert(vo);
 		AuthVO auth = new AuthVO();
-		auth.setUserid(vo.getId());
+		auth.setUserid(vo.getUserId());
 		auth.setAuth("ROLE_USER");
 		service.insertAuth(auth);
 		model.addAttribute("member", vo);
@@ -47,7 +47,7 @@ public class MemberController {
 		vo.setProfile_Img("null");
 		service.insert(vo);
 		AuthVO auth = new AuthVO();
-		auth.setUserid(vo.getId());
+		auth.setUserid(vo.getUserId());
 		auth.setAuth("ROLE_COM");
 		service.insertAuth(auth);
 		model.addAttribute("member", vo);
