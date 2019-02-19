@@ -12,7 +12,8 @@
 	<bean id="customAccessDenied"
 		class="com.StudyDamoyeo.security.CustomAccessDeniedHandler"></bean>
 
-	<!-- <bean id="customLoginSuccess" class="org.zerock.security.CustomLoginSuccessHandler"></bean> -->
+	<bean id="customLoginSuccess"
+		class="com.StudyDamoyeo.security.CustomLoginSuccessHandler"></bean>
 	<!-- <bean id="customPasswordEncoder" class="org.zerock.security.CustomNoOpPasswordEncoder"></bean> -->
 
 	<bean id="bcryptPasswordEncoder"
@@ -22,32 +23,27 @@
 		class="com.StudyDamoyeo.service.CustomUserDetailsService"></bean>
 
 
-	<security:http >
+	<security:http>
 
 		<security:intercept-url pattern="/"
 			access="permitAll" />
-		
-		<security:intercept-url
-			pattern="/user/*" access="ROLE_USER" />
-			<security:intercept-url
-			pattern="/com/*" access="ROLE_COM" />
+
+		<security:intercept-url pattern="/user/*"
+			access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/com/*"
+			access="hasRole('ROLE_COM')" />
 		<security:intercept-url pattern="/admin/*"
-			access="ROLE_ADMIN" />
+			access="hasRole('ROLE_ADMIN')" />
 
-		<!-- <security:access-denied-handler
-			ref="customAccessDenied" /> -->
-
-	
-
-	<security:form-login login-page="/customLogin" /> 
-
+		<security:access-denied-handler ref="customAccessDenied" />
+		<security:form-login login-page="/customLogin" 
+		default-target-url="/loginSuccess"/>
+		<!-- <security:form-login login-page="/customLogin"
+			authentication-success-handler-ref="customLoginSuccess" /> -->
 		<!-- <security:csrf disabled="true"/> -->
 
-		<security:logout logout-url="/customLogout"
-			invalidate-session="true" />
-
-		<!-- <security:remember-me
-			data-source-ref="dataSource" token-validity-seconds="604800" /> -->
+		<!-- <security:remember-me data-source-ref="dataSource" token-validity-seconds="604800" 
+			/> -->
 
 		<security:logout logout-url="/customLogout"
 			invalidate-session="true" delete-cookies="remember-me,JSESSION_ID" />
@@ -60,22 +56,21 @@
 
 	<security:authentication-manager>
 
-		<!-- <security:authentication-provider
-			user-service-ref="customUserDetailsService"> -->
-		<security:authentication-provider>
-			<security:user-service>
-				<security:user name="user" authorities="ROLE_USER" password="user"/>
-			</security:user-service>
+		<security:authentication-provider
+			user-service-ref="customUserDetailsService">
+
 			<security:password-encoder
 				ref="bcryptPasswordEncoder" />
-
 		</security:authentication-provider>
 
 	</security:authentication-manager>
-<context:annotation-config>
-	<context:component-scan base-package="com.StudyDamoyeo.service"></context:component-scan>
-	<context:component-scan base-package="com.StudyDamoyeo.security"></context:component-scan>
-	<context:component-scan base-package="com.StudyDamoyeo.domain"></context:component-scan>
-</context:annotation-config>
+	<context:annotation-config>
+		<context:component-scan
+			base-package="com.StudyDamoyeo.service"></context:component-scan>
+		<context:component-scan
+			base-package="com.StudyDamoyeo.security"></context:component-scan>
+		<context:component-scan
+			base-package="com.StudyDamoyeo.domain"></context:component-scan>
+	</context:annotation-config>
 </beans>
 

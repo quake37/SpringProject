@@ -19,7 +19,7 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 			org.springframework.security.access.AccessDeniedException accessDeniedException)
 			throws IOException, ServletException {
 		
-
+		System.out.println(accessDeniedException.getMessage());
 		response.sendRedirect("/accessError");
 
 	}

@@ -20,7 +20,7 @@
 				<div class="form">
 					<form class="login-form" method="post" action="/login">
 						<input type="text" id="userloginId" name="username" required="required"
-							placeholder="username" /> <input id="userloginPw" name="pw"
+							placeholder="username" /> <input id="userloginPw" name="password"
 							type="password" placeholder="password" required="required" />
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
 						<button >로그인</button>
