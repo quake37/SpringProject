@@ -1,16 +1,14 @@
 package com.StudyDamoyeo.controller;
 
-import java.io.PrintWriter;
+
 
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import lombok.extern.java.Log;
-import lombok.extern.log4j.Log4j;
 
 @Controller
 @Log
