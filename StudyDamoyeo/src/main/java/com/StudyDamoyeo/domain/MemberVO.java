@@ -19,14 +19,11 @@ public class MemberVO {
 	private String profile_img;
 	private String phone;
 	private String email;
-<<<<<<< HEAD
+
 	private List<AuthVO> authList;
 	private Date regdate;
 	private Date udate;
-=======
-	private List<AuthVO> authlist;
->>>>>>> branch 'master' of https://github.com/quake37/SpringProject.git
-	
+
 	
 	
 	public Date getRegdate() {
@@ -95,10 +92,10 @@ public class MemberVO {
 	}
 
 	public List<AuthVO> getAuthList() {
-		return authlist;
+		return authList;
 	}
 	public void setAuthList(List<AuthVO> authList) {
-		this.authlist = authList;
+		this.authList = authList;
 	}
 	@Override
 	public String toString() {
