@@ -23,8 +23,8 @@ public class CommonController {
 		return "error/accessError";
 	}
 
-	@GetMapping("/customLogin")
-	public void loginInput(String error, String logout, Model model, @RequestParam String type) {
+	@GetMapping("/loginuser")
+	public void loginInput(String error, String logout, Model model) {
 		if (error != null) {
 			System.out.println("error");
 			model.addAttribute("error", "Login Error Check Your Account");
@@ -32,12 +32,9 @@ public class CommonController {
 		if (logout != null) {
 			model.addAttribute("logout", "Logout!!");
 		}
-		if(type.equals("user"))
-			model.addAttribute("type", "user");
-		else if(type.equals("com"))
-			model.addAttribute("type", "com");
+	
 	}
-	@GetMapping("/loginSuccess")
+	@GetMapping("/user/loginSuccess")
 	public String loginSuccess() {
 		return "/user/mainUser";
 	}

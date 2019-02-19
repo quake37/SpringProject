@@ -10,7 +10,6 @@
 </head>
 <body>
 <h3><sec:authentication property="principal"/></h3>
-<h3><sec:authentication property="principal" var="userName"/></h3>
-<h3><sec:authentication property="principal" var="member.userId"/></h3>
+
 </body>
 </html>
