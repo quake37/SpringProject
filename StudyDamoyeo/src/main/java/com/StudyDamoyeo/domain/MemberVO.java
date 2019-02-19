@@ -12,16 +12,20 @@ import lombok.ToString;
 @ToString
 public class MemberVO {
 
-	private String userId;
+	private String userid;
 	private String pw;
 	private String nickname;
-	private String memberType;
-	private String profile_Img;
+	private String membertype;
+	private String profile_img;
 	private String phone;
 	private String email;
+<<<<<<< HEAD
 	private List<AuthVO> authList;
 	private Date regdate;
 	private Date udate;
+=======
+	private List<AuthVO> authlist;
+>>>>>>> branch 'master' of https://github.com/quake37/SpringProject.git
 	
 	
 	
@@ -50,10 +54,10 @@ public class MemberVO {
 	}
 
 	public String getProfile_Img() {
-		return profile_Img;
+		return profile_img;
 	}
-	public void setProfile_Img(String profile_Img) {
-		this.profile_Img = profile_Img;
+	public void setProfile_Img(String profile_img) {
+		this.profile_img = profile_img;
 	}
 	public String getPhone() {
 		return phone;
@@ -75,31 +79,31 @@ public class MemberVO {
 		this.nickname = nickname;
 	}
 	public String getMemberType() {
-		return memberType;
+		return membertype;
 	}
-	public void setMemberType(String memberType) {
-		this.memberType = memberType;
+	public void setMemberType(String membertype) {
+		this.membertype = membertype;
 	}
 
 	
 	public String getUserId() {
-		return userId;
+		return userid;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserId(String userid) {
+		this.userid = userid;
 	}
 
 	public List<AuthVO> getAuthList() {
-		return authList;
+		return authlist;
 	}
 	public void setAuthList(List<AuthVO> authList) {
-		this.authList = authList;
+		this.authlist = authList;
 	}
 	@Override
 	public String toString() {
-		return "MemberVO [id=" + userId + ", pw=" + pw + ", nickname=" + nickname + ", memberType=" + memberType
-				+ ", profile_Img=" + profile_Img + ", phone=" + phone + ", email=" + email + "]";
+		return "MemberVO [id=" + userid + ", pw=" + pw + ", nickname=" + nickname + ", memberType=" + membertype
+				+ ", profile_Img=" + profile_img + ", phone=" + phone + ", email=" + email + "]";
 	}
 	
 	
