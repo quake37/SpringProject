@@ -22,26 +22,24 @@
 		class="com.StudyDamoyeo.service.CustomUserDetailsService"></bean>
 
 
-	<security:http>
+	<security:http auto-config="true">
 
 		<security:intercept-url pattern="/"
 			access="permitAll" />
 		
 		<security:intercept-url
-			pattern="/user/*" access="hasRole('ROLE_USER')" />
+			pattern="/user/*" access="ROLE_USER" />
 			<security:intercept-url
-			pattern="/com/*" access="hasRole('ROLE_COM')" />
-
+			pattern="/com/*" access="ROLE_COM" />
 		<security:intercept-url pattern="/admin/*"
-			access="hasRole('ROLE_ADMIN')" />
+			access="ROLE_ADMIN" />
 
 		<!-- <security:access-denied-handler
 			ref="customAccessDenied" /> -->
 
-		<!-- <security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess" 
-			/> -->
+	
 
-		<security:form-login login-page="/customLogin" />
+	<security:form-login login-page="/customLogin" /> 
 
 		<!-- <security:csrf disabled="true"/> -->
 
@@ -62,9 +60,12 @@
 
 	<security:authentication-manager>
 
-		<security:authentication-provider
-			user-service-ref="customUserDetailsService">
-
+		<!-- <security:authentication-provider
+			user-service-ref="customUserDetailsService"> -->
+		<security:authentication-provider>
+			<security:user-service>
+				<security:user name="user" authorities="ROLE_USER" password="user"/>
+			</security:user-service>
 			<security:password-encoder
 				ref="bcryptPasswordEncoder" />
 
