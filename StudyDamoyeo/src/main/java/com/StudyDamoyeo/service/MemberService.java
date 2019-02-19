@@ -49,4 +49,7 @@ public class MemberService {
 		// TODO Auto-generated method stub
 		return mapper.checknickname(nickname);
 	}
+	public String checkAuth(String userId) {
+		return mapper.checkAuth(userId);
+	}
 }

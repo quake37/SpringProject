@@ -18,7 +18,7 @@
 			</div>
 			<div class="modal-body">
 				<div class="form">
-					<form class="login-form" method="post" action="/loginUser">
+					<form class="login-form" method="post" action="/login">
 						<input type="text" id="userloginId" name="username" required="required"
 							placeholder="username" /> <input id="userloginPw" name="password"
 							type="password" placeholder="password" required="required" />

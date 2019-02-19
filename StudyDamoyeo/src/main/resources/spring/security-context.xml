@@ -23,57 +23,21 @@
 		class="com.StudyDamoyeo.service.CustomUserDetailsService"></bean>
 
 
-	<security:http>
+	<security:http >
 		<security:intercept-url pattern="/"
 			access="permitAll" />
 		<security:intercept-url pattern="/user/*"
 			access="hasRole('ROLE_USER')" />
-		<security:access-denied-handler
-			ref="customAccessDenied" />
-		<security:form-login login-page="/loginUser"
-			login-processing-url="/loginUser" default-target-url="/loginSuccessUser"/>
-		<security:logout logout-url="/customLogout"
-			invalidate-session="true" delete-cookies="remember-me,JSESSION_ID" />
-	</security:http>
-	
-<!-- 	<security:http>
-		
-		<security:intercept-url pattern="/com/*"
+			<security:intercept-url pattern="/com/*"
 			access="hasRole('ROLE_COM')" />
 		<security:access-denied-handler
 			ref="customAccessDenied" />
-		<security:form-login login-page="/customLoginCom"
-			login-processing-url="/loginCom" default-target-url="/loginSucessCom"/>
+		
+		<security:form-login login-page="/customlogin"
+			default-target-url="/loginSuccess" />
 		<security:logout logout-url="/customLogout"
 			invalidate-session="true" delete-cookies="remember-me,JSESSION_ID" />
-	</security:http>  -->
-<!-- 	<security:http pattern="/user/**" auto-config="true" disable-url-rewriting="true" use-expressions="true">
-    <security:intercept-url pattern="/user/*" access="hasRole('ROLE_USER')" />
-	<security:intercept-url pattern="/"
-			access="permitAll" />
-    <security:logout logout-success-url="/user/logout"
-        logout-url="/user/logout"
-        invalidate-session="true" />
-
-    <security:form-login login-page="/loginuser" 
-        default-target-url="/user/loginSuccess"
-        login-processing-url="/loginuser"></security:form-login>
-</security:http>
-
-
-<security:http pattern="/com/**" auto-config="true" disable-url-rewriting="true" use-expressions="true">
-    <security:intercept-url pattern="/com/*" access="hasRole('ROLE_COM')" />
-	<security:intercept-url pattern="/"
-			access="permitAll" />
-    <security:logout logout-success-url="/com/logout" 
-        logout-url="/com/logout"
-        invalidate-session="true" />
-
-    <security:form-login login-page="/com/login" 
-        default-target-url="/com/loginSuccess"
-        login-processing-url="/com/login"/>
-</security:http> -->
-
+	</security:http>
 
 	<security:authentication-manager>
 		<security:authentication-provider

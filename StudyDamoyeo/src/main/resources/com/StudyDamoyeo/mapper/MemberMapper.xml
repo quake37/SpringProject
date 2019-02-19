@@ -67,6 +67,9 @@
 		  SELECT COUNT(*) FROM member WHERE nickname = #{nickname}
 
 	</select>
+	<select id="checkAuth" resultType="String">
+		select auth from authority where userId = #{userId}
+	</select>
 	
 	
 </mapper>

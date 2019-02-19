@@ -35,7 +35,6 @@ public class MemberController {
 		vo.setProfile_Img("null");
 		String pw=pwencoder.encode(vo.getPw());
 		vo.setPw(pw);
-		System.out.println(vo.toString());
 		service.insert(vo);
 		AuthVO auth = new AuthVO();
 		auth.setUserid(vo.getUserId());
@@ -50,6 +49,8 @@ public class MemberController {
 	private String insertCom(MemberVO vo, Model model) {
 		vo.setMemberType("1");
 		vo.setProfile_Img("null");
+		String pw=pwencoder.encode(vo.getPw());
+		vo.setPw(pw);
 		service.insert(vo);
 		AuthVO auth = new AuthVO();
 		auth.setUserid(vo.getUserId());

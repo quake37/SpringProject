@@ -18,10 +18,10 @@
 			</div>
 			<div class="modal-body">
 				<div class="form">
-					<form class="login-form" method="post" action="/loginCom">
-						<input type="text" id="comloginId" name="userid" required="required"
+					<form class="login-form" method="post" action="/login">
+						<input type="text" id="comloginId" name="username" required="required"
 							placeholder="username" /> <input type="password" id="comloginPw"
-							name="pw" placeholder="password" required="required" />
+							name="password" placeholder="password" required="required" />
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
 						<button type="submit">로그인</button>
 						<p class="message">

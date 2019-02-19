@@ -23,7 +23,7 @@ public class MemberMapperTests {
   @Test
   public void testRead() {
     
-    MemberVO vo = mapper.read("en");
+    MemberVO vo = mapper.read("comcom");
     System.out.println(vo.toString());
     
     

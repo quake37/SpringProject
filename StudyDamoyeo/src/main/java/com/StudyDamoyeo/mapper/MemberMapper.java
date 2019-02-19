@@ -27,4 +27,6 @@ public interface MemberMapper {
 
 	public int checknickname(String nickname);
 	
+	public String checkAuth(String userId);
+	
 }
