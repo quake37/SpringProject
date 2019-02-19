@@ -36,7 +36,7 @@ https://color.adobe.com/ko/Ocean-Sunset-color-theme-46355/
 
 <
 메인 커버 /개인회원 - 기업회원
-https://github.com/ColorlibHQ/gentelella
+https://github.com/puikinsh/notika
 1. 기업회원
 회원가입
 -> 등록 사용자 간단 프로필 업체명 , 위치, 가격, 설명, 이미지
