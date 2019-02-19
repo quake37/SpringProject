@@ -23,7 +23,7 @@ public class CommonController {
 		return "error/accessError";
 	}
 
-	@GetMapping("/loginuser")
+	@GetMapping("/loginUser")
 	public void loginInput(String error, String logout, Model model) {
 		if (error != null) {
 			System.out.println("error");
@@ -34,7 +34,7 @@ public class CommonController {
 		}
 	
 	}
-	@GetMapping("/user/loginSuccess")
+	@GetMapping("/loginSuccessUser")
 	public String loginSuccess() {
 		return "/user/mainUser";
 	}
