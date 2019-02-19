@@ -22,12 +22,12 @@ public class CommonController {
 
 	@GetMapping("/customLogin")
 	public String loginInput(String error, String logout, Model model) {
-
+		
 		if (error != null) {
 			model.addAttribute("error", "Login Error Check Your Account");
 			return "error/error";
 		}
-
+		
 		if (logout != null) {
 			model.addAttribute("logout", "Logout!!");
 		}

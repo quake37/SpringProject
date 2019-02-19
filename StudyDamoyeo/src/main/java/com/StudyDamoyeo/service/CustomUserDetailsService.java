@@ -23,7 +23,8 @@ public class CustomUserDetailsService implements UserDetailsService {
 
 		// userName means userid
 		MemberVO vo = memberMapper.read(userName);
-		System.out.println(vo.toString());
+		
+		System.out.println(new com.StudyDamoyeo.domain.CustomUser(vo));
 		return vo == null ? null : new com.StudyDamoyeo.domain.CustomUser(vo);
 	} 
 
