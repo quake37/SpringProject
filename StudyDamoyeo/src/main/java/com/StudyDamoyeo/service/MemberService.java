@@ -44,4 +44,9 @@ public class MemberService {
 	public void insertAuth(AuthVO vo) {
 		mapper.insertAuth(vo);
 	}
+
+	public int nicknamecheck(String nickname) {
+		// TODO Auto-generated method stub
+		return mapper.checknickname(nickname);
+	}
 }

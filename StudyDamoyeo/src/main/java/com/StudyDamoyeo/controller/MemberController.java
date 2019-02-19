@@ -65,8 +65,22 @@ public class MemberController {
 	@ResponseBody
 	public Map<Object, Object> idcheck(@RequestBody String userid) {
 		int count = 0;
+		System.out.println(userid);
 		Map<Object, Object> map = new HashMap<Object, Object>();
 		count = service.idcheck(userid);
+		System.out.println(count);
+		map.put("cnt", count);
+		
+		return map;
+	}
+	@PostMapping("/nicknamecheck")
+	@ResponseBody
+	public Map<Object, Object> nicknamecheck(@RequestBody String nickname) {
+		int count = 0;
+		System.out.println(nickname);
+		Map<Object, Object> map = new HashMap<Object, Object>();
+		count = service.nicknamecheck(nickname);
+		System.out.println(count);
 		map.put("cnt", count);
 		
 		return map;

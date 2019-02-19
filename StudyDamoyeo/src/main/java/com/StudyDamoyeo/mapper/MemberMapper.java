@@ -24,5 +24,7 @@ public interface MemberMapper {
 	public int checkid(String userid);
 	
 	public void insertAuth(AuthVO vo);
+
+	public int checknickname(String nickname);
 	
 }

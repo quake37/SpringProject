@@ -62,4 +62,11 @@
 		  SELECT COUNT(*) FROM member WHERE userid = #{userid}
 
 	</select>
+	
+	<select id="checknickname" resultType="int">
+		  SELECT COUNT(*) FROM member WHERE nickname = #{nickname}
+
+	</select>
+	
+	
 </mapper>

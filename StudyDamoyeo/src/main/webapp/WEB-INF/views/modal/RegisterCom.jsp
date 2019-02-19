@@ -20,46 +20,54 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form method="post" action="/member/insertCom">
+				<form method="post" action="/member/insertCom" onsubmit="return false;">
 					<div class="box-body">
+					
 						<div class="form-group">
-
 						
-
 							<label for="userid">아이디 </label>				
-							<label class="spin" id="RegisterComSpin" style="display: none;"></label>
+							<label class="spin" id="RegisterComIdSpin" style="display: none;"></label>
 							<label id="comIdCheck" style="display: none;"></label>
-							 <label id="comIdCheck2" hidden="true"></label> 
-								<input type="text" name="userId" class="form-control" id="RegisterComId"
+							<input type="text" name="userId" class="form-control" id="RegisterComId"
 								placeholder="ID" required="required" autofocus="autofocus">
 
 						</div>
+						
 						<div class="form-group">
+						
 							<label for="username">이름(닉네임)</label> 
-							<label id="comNickNameCheck" style="color: #f54f29; display: none;">체크</label>
+							<label class="spin" id="RegisterComNameSpin" style="display: none;"></label>
+							<label id="comNickNameCheck" style="display: none;"></label>
 							<input type="text" id="RegisterComName" name="nickname"
 								class="form-control" placeholder="Name" required="required">
 						</div>
+						
 						<div class="form-group">
+						
 							<label for="inputPassword">비밀번호</label>
 							<label id="comPwCheck" style="color: #f54f29; display: none;">체크</label> 
 							<input type="password" name="pw" class="form-control"
 								placeholder="Password" required="required">
 						</div>
+						
 						<div class="form-group">
+						
 							<label for="inputEmail">휴대전화 (-없이)</label> 
 							<label id="comPhoneCheck" style="color: #f54f29; display: none;">체크</label>
 							<input type="text" name="phone" class="form-control"
 								placeholder="Phone" required="required">
 						</div>
+						
 						<div class="form-group">
+						
 							<label for="inputEmail">이메일 주소</label> 
 							<input type="email" name="email" class="form-control" placeholder="Email address"
 								required="required">
 						</div>
+						
 					</div>
 					<div class="box-footer">
-						<button class="btn btn-primary" type="submit" style="color: #fff; background-color: #FF974F; border-color: #FFFFFF;">회원가입</button>
+						<button class="btn btn-primary" type="submit" onclick="DosignUp();" style="color: #fff; background-color: #FF974F; border-color: #FFFFFF;">회원가입</button>
 					</div>
 				</form>
 			</div>
