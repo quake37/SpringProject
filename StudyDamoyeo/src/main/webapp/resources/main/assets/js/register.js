@@ -49,13 +49,13 @@ function checkUserName(nickname) {
 			            	if (data.cnt > 0) {
 			            		$("#RegisterComNameSpin").hide(500);
 			                	$("#comNickNameCheck").css({"color":"#f54f29"});
-			                	$("#comNickNameCheck").text("이미 사용중인 아이디입니다.");
+			                	$("#comNickNameCheck").text("이미 사용중인 닉네임입니다.");
 			                	$("#comNickNameCheck").show(500);
 			                	check2=false;
 			                } else {
 			                	$("#RegisterComNameSpin").hide(500);
 			                	$("#comNickNameCheck").css({"color":"#9c9b7a"});
-			                	$("#comNickNameCheck").text("사용가능한 아이디입니다.");
+			                	$("#comNickNameCheck").text("사용가능한 닉네임입니다.");
 			                	$("#comNickNameCheck").show(500);
 			                	check2=true;
 			                }  	
@@ -134,6 +134,15 @@ function DosignUp() {
 		$("#RegisterComId").focus();
 		alert("아이디를 확인해주세요.");
 		return false;
+	}
+	else if(!check2){
+		$("#RegisterComName").focus();
+		alert("아이디를 확인해주세요.");
+		return false;
+	}
+	else{
+		$("#RegisterCom").submit();
+		alert("축하합니다. 가입되었습니다.")
 	}
 	
 }

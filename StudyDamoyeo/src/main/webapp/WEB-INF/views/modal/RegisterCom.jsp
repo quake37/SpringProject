@@ -20,7 +20,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form method="post" action="/member/insertCom" onsubmit="return false;">
+				<form method="post" action="/member/insertCom" id="RegisterCom">
 					<div class="box-body">
 					
 						<div class="form-group">
@@ -67,7 +67,7 @@
 						
 					</div>
 					<div class="box-footer">
-						<button class="btn btn-primary" type="submit" onclick="DosignUp();" style="color: #fff; background-color: #FF974F; border-color: #FFFFFF;">회원가입</button>
+						<button class="btn btn-primary" type="button" onclick="DosignUp();" style="color: #fff; background-color: #FF974F; border-color: #FFFFFF;">회원가입</button>
 					</div>
 				</form>
 			</div>
