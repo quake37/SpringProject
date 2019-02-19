@@ -22,7 +22,7 @@
 		class="com.StudyDamoyeo.service.CustomUserDetailsService"></bean>
 
 
-	<security:http auto-config="true">
+	<security:http >
 
 		<security:intercept-url pattern="/"
 			access="permitAll" />
@@ -46,8 +46,8 @@
 		<security:logout logout-url="/customLogout"
 			invalidate-session="true" />
 
-		<security:remember-me
-			data-source-ref="dataSource" token-validity-seconds="604800" />
+		<!-- <security:remember-me
+			data-source-ref="dataSource" token-validity-seconds="604800" /> -->
 
 		<security:logout logout-url="/customLogout"
 			invalidate-session="true" delete-cookies="remember-me,JSESSION_ID" />
