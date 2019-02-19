@@ -3718,7 +3718,7 @@
 	}
 
 	#header {
-		background: rgba(0, 0, 0, 0.975);
+		background: #405952;
 		color: #a6a6a6;
 		cursor: default;
 		height: 3.25em;
@@ -4293,7 +4293,7 @@
 
 	#footer {
 		padding: 4rem 0 2rem 0 ;
-		background: #000;
+		background: #405952;
 		text-align: center;
 	}
 
