@@ -42,6 +42,11 @@
 										src="/resources/com/dist/img/user.svg"
 										alt="User profile picture">
 								</c:if>
+								<c:if test="${member.profile_Img != 'null' }">
+									<img class="profile-user-img img-fluid img-circle"
+										src="${member.profile_Img }"
+										alt="User profile picture">
+								</c:if>
 							</div>
 
 							<h3 class="profile-username text-center">${member.userId }</h3>
@@ -81,14 +86,14 @@
 
 							<strong>E-Mail</strong>
 
-							<p class="text-muted"> ${member.email }</p>
+							<p class="text-muted">${member.email }</p>
 
 							<hr>
 
 							<strong> 회원 가입일 </strong>
 
 							<p class="text-muted">
-								
+
 								<fmt:formatDate pattern="yyyy년 MM월 dd일 "
 									value="${member.regdate }" />
 							</p>
@@ -97,8 +102,8 @@
 
 							<strong> 이메일 인증</strong>
 							<c:if test="${member.verified =='N' }">
-								<p class="text-muted">이메일 인증을 해야 다른 기능을 이용하실 수 있습니다.
-									설정에서 이메일 인증을 해주세요.</p>
+								<p class="text-muted">이메일 인증을 해야 다른 기능을 이용하실 수 있습니다. 설정에서
+									이메일 인증을 해주세요.</p>
 							</c:if>
 							<c:if test="${member.verified =='Y' }">
 								<p class="text-muted">이메일 인증완료된 회원입니다. 부가 기능이 이용가능합니다.</p>

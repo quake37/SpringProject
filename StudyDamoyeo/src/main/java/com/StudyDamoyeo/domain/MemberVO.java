@@ -42,13 +42,7 @@ public class MemberVO {
 		this.membertype = membertype;
 	}
 
-	public String getProfile_img() {
-		return profile_img;
-	}
 
-	public void setProfile_img(String profile_img) {
-		this.profile_img = profile_img;
-	}
 
 	public String getVerified() {
 		return verified;

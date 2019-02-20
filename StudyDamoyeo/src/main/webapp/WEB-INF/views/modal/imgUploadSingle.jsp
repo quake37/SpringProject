@@ -70,6 +70,7 @@
 									name="profile_Img" onchange="showFile();"> <label
 									class="custom-file-label" for="exampleInputFile" id="fileLabel">첨부할
 									이미지를 선택해주세요</label> 
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
 							</div>
 
 						</div>

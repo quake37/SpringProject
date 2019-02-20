@@ -1,6 +1,7 @@
 package com.StudyDamoyeo.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,9 +41,7 @@ public class ProfileController {
 	
 
 	@PostMapping(value = "/imgUpload",headers = ("content-type=multipart/*"))
-	@ResponseBody
-	public String uploadProfileImg(MultipartFile uploadFile, Principal principal) {
-		System.out.println("file : "+ uploadFile.toString());
+	public String uploadProfileImg(MultipartFile profile_Img, Principal principal) {
 		String uploadFolder = "C:\\upload";
 		String uploadFolderPath = principal.getName();
 		// make folder --------
@@ -52,7 +51,7 @@ public class ProfileController {
 			uploadPath.mkdirs();
 		}
 		AttachFileDTO attachDTO = new AttachFileDTO();
-		String uploadFileName = uploadFile.getOriginalFilename();
+		String uploadFileName = profile_Img.getOriginalFilename();
 		uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("\\") + 1);
 		attachDTO.setFileName(uploadFileName);
 
@@ -61,8 +60,13 @@ public class ProfileController {
 
 		File saveFile = new File(uploadPath, uploadFileName);
 		
-		MemberVO vo = new MemberVO();
-		vo.setProfile_Img(saveFile.toString());
+		MemberVO vo = service.read(uploadFolderPath);
+		vo.setProfile_Img(saveFile.getAbsolutePath());
+		try {
+			profile_Img.transferTo(saveFile);
+		} catch (IllegalStateException | IOException e) {
+			e.printStackTrace();
+		}
 		service.update(vo);
 		attachDTO.setUuid(uuid.toString());
 		attachDTO.setUploadPath(uploadFolderPath);
