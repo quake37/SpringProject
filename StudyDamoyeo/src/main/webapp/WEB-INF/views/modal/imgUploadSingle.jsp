@@ -59,14 +59,15 @@
 
 			</div>
 			<div class="modal-body">
-				<form role="form">
+				<form role="form" enctype="multipart/form-data" method="post"
+					action="/profile/imgUpload">
 
 					<div class="form-group">
 						<label for="exampleInputFile">프로필 이미지 업로드</label>
 						<div class="input-group">
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="inputFile"
-									onchange="showFile();"> <label
+									name="profile_Img" onchange="showFile();"> <label
 									class="custom-file-label" for="exampleInputFile" id="fileLabel">첨부할
 									이미지를 선택해주세요</label> 
 							</div>
@@ -77,7 +78,7 @@
 					<!-- /.card-body -->
 
 					<div class="card-footer">
-						<button type="button" class="btn btn-primary" onclick="upload();">등록</button>
+						<button class="btn btn-primary">등록</button>
 					</div>
 				</form>
 

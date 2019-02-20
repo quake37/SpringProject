@@ -29,17 +29,13 @@
 	</beans:bean>
 
 	<context:component-scan
-		base-package="com.StudyDamoyeo.controller" /> 
+		base-package="com.StudyDamoyeo.controller" />
 	<context:component-scan
-		base-package="com.StudyDamoyeo.controller.com" /> 
-		
+		base-package="com.StudyDamoyeo.controller.com" />
+	<security:global-method-security
+			pre-post-annotations="enabled" secured-annotations="enabled" />
 	<beans:bean id="multipartResolver"
 		class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
-
-	</beans:bean>		
-
-	<security:global-method-security
-		pre-post-annotations="enabled" secured-annotations="enabled" />
-
-
+		
+	</beans:bean>
 </beans:beans>

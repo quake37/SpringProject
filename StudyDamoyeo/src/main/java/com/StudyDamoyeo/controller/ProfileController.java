@@ -1,17 +1,12 @@
 package com.StudyDamoyeo.controller;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,13 +39,11 @@ public class ProfileController {
 
 	
 
-	@PostMapping(value = "/imgUpload", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@PostMapping(value = "/imgUpload",headers = ("content-type=multipart/*"))
 	@ResponseBody
-	public ResponseEntity<AttachFileDTO> uploadAjaxPost(MultipartFile uploadFile, Principal principal) {
-
-		List<AttachFileDTO> list = new ArrayList<>();
+	public String uploadProfileImg(MultipartFile uploadFile, Principal principal) {
+		System.out.println("file : "+ uploadFile.toString());
 		String uploadFolder = "C:\\upload";
-
 		String uploadFolderPath = principal.getName();
 		// make folder --------
 		File uploadPath = new File(uploadFolder, uploadFolderPath);
@@ -67,12 +60,13 @@ public class ProfileController {
 		uploadFileName = uuid.toString() + "_" + uploadFileName;
 
 		File saveFile = new File(uploadPath, uploadFileName);
+		
 		MemberVO vo = new MemberVO();
 		vo.setProfile_Img(saveFile.toString());
 		service.update(vo);
 		attachDTO.setUuid(uuid.toString());
 		attachDTO.setUploadPath(uploadFolderPath);
 
-		return new ResponseEntity<>(attachDTO, HttpStatus.OK);
+		return "/com/profileCom";
 	}
 }
