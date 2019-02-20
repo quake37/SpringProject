@@ -107,7 +107,7 @@
                 <hr>
 
                 <strong><i class="fa fa-file-text-o mr-1"></i> 이메일 인증</strong>
-
+			
                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
               </div>
               <!-- /.card-body -->
