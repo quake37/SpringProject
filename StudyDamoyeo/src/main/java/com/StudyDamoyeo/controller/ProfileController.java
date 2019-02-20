@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.StudyDamoyeo.domain.MemberVO;
-import com.StudyDamoyeo.mapper.MemberMapper;
 import com.StudyDamoyeo.service.MemberService;
 
 @Controller

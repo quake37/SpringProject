@@ -27,7 +27,6 @@ public class RoomRegisterController {
 	@GetMapping("/register")
 	public String roomRegister(Principal principal,Model model ) {
 		String userId =principal.getName();
-		System.out.println("mmmmm");
 		/*
 		 * MemberVO vo = mapper.read(userId); model.addAttribute("member", vo);
 		 * if(vo.getAuthList().get(0).getAuth().equals("ROLE_COM"))
