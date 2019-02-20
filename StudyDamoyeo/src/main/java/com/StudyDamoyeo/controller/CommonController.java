@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.StudyDamoyeo.mapper.MemberMapper;
+import com.StudyDamoyeo.service.MemberService;
 
 import lombok.extern.java.Log;
 
@@ -21,7 +22,7 @@ import lombok.extern.java.Log;
 public class CommonController {
 
 	@Autowired
-	MemberMapper mapper;
+	MemberService service;
 	@GetMapping("/accessError")
 	public String accessDenied(Authentication auth, Model model) {
 
@@ -42,7 +43,7 @@ public class CommonController {
 	@GetMapping("/loginSuccess")
 	public String loginSuccess(Principal principal) {
 		String user = principal.getName();
-		String auth = mapper.checkAuth(user);
+		String auth = service.checkAuth(user);
 		if(auth.equals("ROLE_USER"))
 			return "/user/mainUser";
 		else
