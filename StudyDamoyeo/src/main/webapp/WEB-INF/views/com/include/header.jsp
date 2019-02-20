@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
    
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>스터디다모여</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
      <!-- Font Awesome -->
   <link rel="stylesheet" href="/resources/com/plugins/font-awesome/css/font-awesome.min.css">
@@ -40,7 +42,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../index3.html" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -160,7 +162,7 @@
     <a href="index3.html" class="brand-link">
       <img src="/resources/com/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">스터디다모여</span>
     </a>
 
     <!-- Sidebar -->
@@ -171,7 +173,7 @@
           <img src="/resources/com/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="<c:url value="/profile/read"/>" class="d-block"><sec:authentication property="principal.username"/></a>
         </div>
       </div>
 

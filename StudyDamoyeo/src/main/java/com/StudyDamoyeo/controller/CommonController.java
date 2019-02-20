@@ -32,7 +32,6 @@ public class CommonController {
 	@GetMapping("/customlogin")
 	public void loginInput(String error, String logout, Model model) {
 		if (error != null) {
-			System.out.println("error");
 			model.addAttribute("error", "Login Error Check Your Account");
 		}
 		if (logout != null) {
