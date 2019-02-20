@@ -8,8 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.StudyDamoyeo.domain.MemberVO;
-import com.StudyDamoyeo.mapper.RoomMapper;
 import com.StudyDamoyeo.service.RoomService;
 
 import lombok.extern.log4j.Log4j;
