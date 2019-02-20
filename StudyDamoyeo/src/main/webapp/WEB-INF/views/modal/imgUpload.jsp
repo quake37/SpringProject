@@ -5,7 +5,7 @@
 	type="text/css" />
 
 
-<div class="modal fade" id="UserModalLogin" tabindex="-1" role="dialog"
+<div class="modal fade" id="imgModalUpload" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">

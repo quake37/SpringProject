@@ -2,29 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>AdminLTE 3 | User Profile</title>
-<!-- Tell the browser to be responsive to screen width -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Font Awesome -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<!-- Ionicons -->
-<link rel="stylesheet"
-	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-<!-- Theme style -->
-<link rel="stylesheet" href="/resources/com/dist/css/adminlte.min.css">
-<!-- Google Font: Source Sans Pro -->
-<link
-	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
-	rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-</head>
 <%@include file="include/header.jsp"%>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -79,7 +58,7 @@
                   -->
 							</ul>
 							<a href="#" class="btn btn-primary btn-block" data-toggle="modal"
-								data-target="#UserModalLogin"><b>프로필 이미지 등록</b></a>
+								data-target="#imgModalUpload"><b>프로필 이미지 등록</b></a>
 						</div>
 						<!-- /.card-body -->
 					</div>
@@ -92,35 +71,35 @@
 						</div>
 						<!-- /.card-header -->
 						<div class="card-body">
-							<strong><i class="fa fa-book mr-1"></i>휴대폰 번호</strong>
+							<strong>휴대폰 번호</strong>
 
-							<p class="text-muted">&nbsp; ${member.phone }</p>
-
-							<hr>
-
-							<strong><i class="fa fa-map-marker mr-1"></i>E-Mail</strong>
-
-							<p class="text-muted">&nbsp; ${member.email }</p>
+							<p class="text-muted">${member.phone }</p>
 
 							<hr>
 
-							<strong><i class="fa fa-pencil mr-1"></i>회원 가입일 </strong>
+							<strong>E-Mail</strong>
+
+							<p class="text-muted"> ${member.email }</p>
+
+							<hr>
+
+							<strong> 회원 가입일 </strong>
 
 							<p class="text-muted">
-								&nbsp;
+								
 								<fmt:formatDate pattern="yyyy년 MM월 dd일 "
 									value="${member.regdate }" />
 							</p>
 
 							<hr>
 
-							<strong><i class="fa fa-file-text-o mr-1"></i> 이메일 인증</strong>
+							<strong> 이메일 인증</strong>
 							<c:if test="${member.verified =='N' }">
-								<p class="text-muted">&nbsp;이메일 인증을 해야 다른 기능을 이용하실 수 있습니다.
+								<p class="text-muted">이메일 인증을 해야 다른 기능을 이용하실 수 있습니다.
 									설정에서 이메일 인증을 해주세요.</p>
 							</c:if>
 							<c:if test="${member.verified =='Y' }">
-								<p class="text-muted">&nbsp;이메일 인증완료된 회원입니다. 부가 기능이 이용가능합니다.</p>
+								<p class="text-muted">이메일 인증완료된 회원입니다. 부가 기능이 이용가능합니다.</p>
 							</c:if>
 						</div>
 						<!-- /.card-body -->
