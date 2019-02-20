@@ -2,7 +2,11 @@ package com.StudyDamoyeo.controller.com;
 
 import java.security.Principal;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.csrf.CsrfToken;
+import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,28 +20,22 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @RequestMapping("/room")
 public class RoomRegisterController {
-	
-	
+
 	@Autowired
 	RoomService service;
-	
-	
+
 	@GetMapping("/register")
-	public String roomRegister(Principal principal,Model model ) {
-		String userId =principal.getName();
-		/*
-		 * MemberVO vo = mapper.read(userId); model.addAttribute("member", vo);
-		 * if(vo.getAuthList().get(0).getAuth().equals("ROLE_COM"))
-		 */
-			return "/com/roomRegister";
+	public String roomRegister() {
 		
+		return "/com/roomRegister";
+
 	}
-	
+
 	@GetMapping("/location")
-	public String locationRegister(Principal principal,Model model ) {
+	public String locationRegister() {
 		
-			return "/com/locationRegister";
-		
+		return "/com/locationRegister";
+
 	}
-	
+
 }
