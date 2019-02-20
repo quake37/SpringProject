@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.StudyDamoyeo.domain.MemberVO;
 import com.StudyDamoyeo.mapper.RoomMapper;
+import com.StudyDamoyeo.service.RoomService;
 
 import lombok.extern.log4j.Log4j;
 
@@ -17,8 +18,10 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @RequestMapping("/room")
 public class RoomRegisterController {
-	@Autowired
 	
+	
+	@Autowired
+	RoomService service;
 	
 	
 	@GetMapping("/register")
