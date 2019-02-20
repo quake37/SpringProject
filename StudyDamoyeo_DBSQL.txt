@@ -13,8 +13,8 @@ create table member(
  email VARCHAR2(50) ,
  membertype CHAR(1) CONSTRAINT type_CK CHECK(membertype IN ('0','1')) NOT NULL,
  profile_img VARCHAR2(150),
- regdate DATE defalut sysdate,
- udate DATE defalut sysdate
+ regdate DATE default sysdate,
+ udate DATE default sysdate
 );
 
 create sequence member_mno_seq
@@ -48,7 +48,7 @@ create table room(
  imgname5 VARCHAR2(100),
  presentation2 VARCHAR2(200),
  presentation3 VARCHAR2(400),
- regdate DATE defalut sysdate,
+ regdate DATE default sysdate,
  udate DATE default sysdate
 );
 alter table room add constraint room_fk foreign key(userid) references member(userid) on delete cascade;
