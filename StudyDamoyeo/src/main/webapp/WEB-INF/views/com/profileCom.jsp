@@ -413,5 +413,5 @@
 	<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-<%@include file="../modal/imgUpload.jsp"%>
+<%@include file="../modal/imgUploadSingle.jsp"%>
 <%@include file="include/footer.jsp"%>
