@@ -1,4 +1,4 @@
-sqlplus "/as sysdba" - Á¢¼Ó
+sqlplus "/as sysdba" 
 
 create user study identified by study;
 grant connect, resource,dba to study;
