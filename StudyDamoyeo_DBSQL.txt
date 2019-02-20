@@ -49,6 +49,6 @@ create table room(
  presentation2 VARCHAR2(200),
  presentation3 VARCHAR2(400),
  regdate DATE defalut sysdate,
- udate DATE defalut sysdate
+ udate DATE default sysdate
 );
 alter table room add constraint room_fk foreign key(userid) references member(userid) on delete cascade;
