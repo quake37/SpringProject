@@ -33,4 +33,11 @@ public class RoomRegisterController {
 		
 	}
 	
+	@GetMapping("/location")
+	public String locationRegister(Principal principal,Model model ) {
+		
+			return "/com/locationRegister";
+		
+	}
+	
 }
