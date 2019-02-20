@@ -18,7 +18,7 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/room")
 public class RoomRegisterController {
 	@Autowired
-	RoomMapper mapper;
+	
 	
 	
 	@GetMapping("/register")
