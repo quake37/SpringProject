@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,8 +108,12 @@
                 <hr>
 
                 <strong><i class="fa fa-file-text-o mr-1"></i> 이메일 인증</strong>
-			
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+				<c:if test="${member.verified =='N' }">
+                	<p class="text-muted"> &nbsp;이메일 인증을 해야 다른 기능을 이용하실 수 있습니다. 설정에서 이메일 인증을 해주세요.</p>
+				</c:if>
+				<c:if test="${member.verified =='Y' }">
+					<p class="text-muted">&nbsp;이메일 인증완료된 회원입니다. 부가 기능이 이용가능합니다.</p>
+				</c:if>
               </div>
               <!-- /.card-body -->
             </div>

@@ -29,6 +29,7 @@
 		<result property="memberType" column="memberType"/>
 		<result property="regdate" column="regdate" />
 		<result property="udate" column="udate" />
+		<result property="verified" column="verified" />
 		<collection property="authList" resultMap="authMap">
 		</collection>
 	</resultMap>

@@ -23,9 +23,41 @@ public class MemberVO {
 	private List<AuthVO> authList;
 	private Date regdate;
 	private Date udate;
+	
+	private String verified;
 
-	
-	
+	public String getUserid() {
+		return userid;
+	}
+
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+
+	public String getMembertype() {
+		return membertype;
+	}
+
+	public void setMembertype(String membertype) {
+		this.membertype = membertype;
+	}
+
+	public String getProfile_img() {
+		return profile_img;
+	}
+
+	public void setProfile_img(String profile_img) {
+		this.profile_img = profile_img;
+	}
+
+	public String getVerified() {
+		return verified;
+	}
+
+	public void setVerified(String verified) {
+		this.verified = verified;
+	}
+
 	public Date getRegdate() {
 		return regdate;
 	}
@@ -100,7 +132,7 @@ public class MemberVO {
 	@Override
 	public String toString() {
 		return "MemberVO [id=" + userid + ", pw=" + pw + ", nickname=" + nickname + ", memberType=" + membertype
-				+ ", profile_Img=" + profile_img + ", phone=" + phone + ", email=" + email + "]";
+				+ ", profile_Img=" + profile_img + ", phone=" + phone + ", email=" + email + "verified="+verified+"]";
 	}
 	
 	
