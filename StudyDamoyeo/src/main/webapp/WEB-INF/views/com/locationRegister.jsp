@@ -34,6 +34,7 @@
 	String lnbrMnnm  = request.getParameter("lnbrMnnm");
 	String lnbrSlno  = request.getParameter("lnbrSlno");
 	String emdNo  = request.getParameter("emdNo");
+
 %>
 </head>
 <script language="javascript">
@@ -42,11 +43,11 @@
 
 function init(){
 	var url = location.href+"${_csrf.parameterName}=${_csrf.token}";
-	alert(url);
 	var confmKey = "U01TX0FVVEgyMDE5MDIyMDIwMTIwNzEwODUyODM=";
 	// resultType항목 추가(2016.10.06)
 	var resultType = "4"; // 도로명주소 검색결과 화면 출력유형, 1 : 도로명, 2 : 도로명+지번, 3 : 도로명+상세건물명, 4 : 도로명+지번+상세건물명
 	var inputYn= "<%=inputYn%>";
+
 	if(inputYn != "Y"){
 		document.form.confmKey.value = confmKey;
 		document.form.returnUrl.value = url;
@@ -56,11 +57,13 @@ function init(){
 		document.form.submit();
 	}else{
 		/** API 서비스 제공항목 확대 (2017.02) **/
+		alert("<%=roadAddrPart1%>");
 		opener.jusoCallBack("<%=roadFullAddr%>","<%=roadAddrPart1%>","<%=addrDetail%>", "<%=roadAddrPart2%>","<%=engAddr%>"
 			, "<%=jibunAddr%>","<%=zipNo%>", "<%=admCd%>", "<%=rnMgtSn%>", "<%=bdMgtSn%>", "<%=detBdNmList%>"
 			, "<%=bdNm%>", "<%=bdKdcd%>", "<%=siNm%>", "<%=sggNm%>", "<%=emdNm%>", "<%=liNm%>", "<%=rn%>", "<%=udrtYn%>"
 			, "<%=buldMnnm%>", "<%=buldSlno%>", "<%=mtYn%>", "<%=lnbrMnnm%>", "<%=lnbrSlno%>", "<%=emdNo%>" );
 		window.close();
+		
 	}
 }
 </script>
