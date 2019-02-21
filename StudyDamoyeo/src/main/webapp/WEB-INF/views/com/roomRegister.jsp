@@ -96,10 +96,12 @@
                     <label>소개글 3</label>
                     <textarea class="form-control" rows="4" placeholder="간단한 지점 소개글을 작성해주세요.(가격, 시설 등)"></textarea>
                   </div>
-                <input type="button"  value="주소검색" onclick="goPopup();">
-                
-                <input type="text" id="roadAddrPart1" style="width:85%"></td>
-                
+                   <input type="hidden" id="confmKey" name="confmKey" value=""  >
+					<input type="text" id="zipNo" name="zipNo" readonly style="width:100px">
+					<input type="button"  value="주소검색" onclick="goPopup();">
+                <label>도로명주소</label>
+                <input type="text" id="roadAddrPart1" style="width:85%">
+                <label>상세주소</label>
                 <input type="text" id="addrDetail" style="width:40%" value="">
                 <input type="text" id="roadAddrPart2"  style="width:40%" value="">
                 </div>
