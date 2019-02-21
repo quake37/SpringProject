@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import javax.servlet.ServletContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +28,8 @@ public class ProfileController {
 
 	@Autowired
 	MemberService service;
+	@Autowired
+	ServletContext application;
 
 	@GetMapping("/read")
 	public String profileRead(Principal principal, Model model) {
@@ -42,7 +46,7 @@ public class ProfileController {
 
 	@PostMapping(value = "/imgUpload",headers = ("content-type=multipart/*"))
 	public String uploadProfileImg(MultipartFile profile_Img, Principal principal) {
-		String uploadFolder = "C:\\upload";
+		String uploadFolder = application.getRealPath("/resources/upload");
 		String uploadFolderPath = principal.getName();
 		// make folder --------
 		File uploadPath = new File(uploadFolder, uploadFolderPath);
@@ -53,7 +57,6 @@ public class ProfileController {
 		AttachFileDTO attachDTO = new AttachFileDTO();
 		String uploadFileName = profile_Img.getOriginalFilename();
 		uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("\\") + 1);
-		attachDTO.setFileName(uploadFileName);
 
 		UUID uuid = UUID.randomUUID();
 		uploadFileName = uuid.toString() + "_" + uploadFileName;

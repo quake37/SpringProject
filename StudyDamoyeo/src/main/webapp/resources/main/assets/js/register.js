@@ -80,6 +80,7 @@ function UsercheckUserId(userid) {
 		            beforeSend : function(xhr)
 		            {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
 		            	xhr.setRequestHeader(header, token);
+		            	
 		            },
 		            success : function(data) {
 		            	if (data.cnt > 0) {
@@ -181,6 +182,7 @@ function ComcheckUserName(nickname) {
 			            beforeSend : function(xhr)
 			            {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
 			            	xhr.setRequestHeader(header, token);
+			            	alert(token);
 			            },
 			            success : function(data) {
 			            	if (data.cnt > 0) {
@@ -241,6 +243,7 @@ function ComcheckUserId(userid) {
 		            beforeSend : function(xhr)
 		            {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
 		            	xhr.setRequestHeader(header, token);
+		            	alert(token);
 		            },
 		            success : function(data) {
 		            	if (data.cnt > 0) {
