@@ -96,14 +96,13 @@
                     <label>소개글 3</label>
                     <textarea class="form-control" rows="4" placeholder="간단한 지점 소개글을 작성해주세요.(가격, 시설 등)"></textarea>
                   </div>
-                   <input type="hidden" id="confmKey" name="confmKey" value=""  >
-					<input type="text" id="zipNo" name="zipNo" readonly style="width:100px">
+					<input type="text" id="No" style="width:100px" value="">
 					<input type="button"  value="주소검색" onclick="goPopup();">
                 <label>도로명주소</label>
-                <input type="text" id="roadAddrPart1" style="width:85%">
+                <input type="text" id="AddrPart1" style="width:85%" value="">
                 <label>상세주소</label>
-                <input type="text" id="addrDetail" style="width:40%" value="">
-                <input type="text" id="roadAddrPart2"  style="width:40%" value="">
+                <input type="text" id="Detail"  style="width:40%" value="">
+                <input type="text" id="AddrPart2" style="width:40%" value="">
                 </div>
                 <!-- /.card-body -->
 
@@ -171,13 +170,12 @@
 	    //var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
 	}
 	
-	function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn
-			, detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn, buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo){
-			// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
-			document.form.roadAddrPart1.value = roadAddrPart1;
-			document.form.roadAddrPart2.value = roadAddrPart2;
-			document.form.addrDetail.value = addrDetail;
-			document.form.zipNo.value = zipNo;
+	function jusoCallBack(AddrPart1,Detail,AddrPart2,No){
+	
+			$('#No').val(No);
+			$('#AddrPart1').val(AddrPart1);
+			$('#Detail').val(Detail);
+			$('#AddrPart2').val(AddrPart2);
 	}
 </script>
 

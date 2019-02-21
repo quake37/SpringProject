@@ -22,23 +22,23 @@ public class RoomRegisterController {
 	RoomService service;
 
 	@GetMapping("/register")
-	public String roomRegister(Principal principal) {
-		System.out.println(principal.getName());
+	public String roomRegister() {
+		
 
 		return "/com/roomRegister";
 
 	}
 
 	@PostMapping("/location")
-	public String locationRegister(Principal principal) {
-		System.out.println(principal.getName());
+	public String locationRegister() {
+		
 
 		return "/com/locationRegister";
 
 	}
 	@GetMapping("/location")
-	public String goRegister(Principal principal) {
-		System.out.println(principal.getName());
+	public String goRegister() {
+		
 
 		return "/com/locationRegister";
 
