@@ -25,15 +25,15 @@ public class RoomRegisterController {
 	RoomService service;
 
 	@GetMapping("/register")
-	public String roomRegister() {
-		
+	public String roomRegister(Principal principal) {
+		System.out.println(principal.getName());
 		return "/com/roomRegister";
 
 	}
 
 	@GetMapping("/location")
-	public String locationRegister() {
-		
+	public String locationRegister(Principal principal) {
+		System.out.println(principal.getName());
 		return "/com/locationRegister";
 
 	}
