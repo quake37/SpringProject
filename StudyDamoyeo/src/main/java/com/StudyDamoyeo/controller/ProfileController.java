@@ -47,15 +47,6 @@ public class ProfileController {
 	@PostMapping(value = "/imgUpload",headers = ("content-type=multipart/*"))
 	public String uploadProfileImg(MultipartFile profile_Img, Principal principal) {
 		
-		/*
-		 * String path=application.getRealPath("/resources/upload"); String
-		 * img=dto.getUpload_f().getOriginalFilename(); File file = new File(path, img);
-		 * String id = (String)Session.getAttribute("userid"); dto.setId(id); try{
-		 * dto.getUpload_f().transferTo(file); }catch(Exception ex){
-		 * System.out.println(ex); } dto.setImg_file_name(img); dao.dbinsert(dto);
-		 */
-		
-		
 		String uploadFolder = application.getRealPath("/resources/upload");
 		String uploadFolderPath = principal.getName();
 		// make folder --------
@@ -82,7 +73,7 @@ public class ProfileController {
 		}
 		service.update(vo);
 
-		return "/com/profileCom";
+		return "redirect:/profile/read";
 	}
 	@PostMapping("/update")
 	public String profileUpdate(MemberVO vo, Principal principal) {
