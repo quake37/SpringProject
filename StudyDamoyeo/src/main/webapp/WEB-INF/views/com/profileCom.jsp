@@ -44,7 +44,7 @@
 								</c:if>
 								<c:if test="${member.profile_Img != 'null' }">
 									<img class="profile-user-img img-fluid img-circle"
-										src="${member.profile_Img }"
+										src="${pageContext.request.contextPath}/resources/upload/${member.profile_Img }"
 										alt="User profile picture">
 								</c:if>
 							</div>
@@ -123,7 +123,7 @@
 								<li class="nav-item"><a class="nav-link" href="#timeline"
 									data-toggle="tab">Timeline</a></li>
 								<li class="nav-item"><a class="nav-link" href="#settings"
-									data-toggle="tab">Settings</a></li>
+									data-toggle="tab">설정</a></li>
 							</ul>
 						</div>
 						<!-- /.card-header -->
@@ -346,48 +346,42 @@
 								<!-- /.tab-pane -->
 
 								<div class="tab-pane" id="settings">
-									<form class="form-horizontal">
+									<form class="form-horizontal" action="/profile/update" method="post">
 										<div class="form-group">
-											<label for="inputName" class="col-sm-2 control-label">Name</label>
+											<label for="inputName" class="col-sm-2 control-label">비밀번호</label>
 
 											<div class="col-sm-10">
-												<input type="email" class="form-control" id="inputName"
-													placeholder="Name">
+												<input type="password" class="form-control" id="inputPw" name="pw">
 											</div>
 										</div>
 										<div class="form-group">
-											<label for="inputEmail" class="col-sm-2 control-label">Email</label>
+											<label for="inputEmail" class="col-sm-2 control-label">닉네임</label>
 
 											<div class="col-sm-10">
-												<input type="email" class="form-control" id="inputEmail"
-													placeholder="Email">
+												<input type="text" class="form-control" id="inputNickname" name="nickname"
+													placeholder="${member.nickname }">
 											</div>
 										</div>
 										<div class="form-group">
-											<label for="inputName2" class="col-sm-2 control-label">Name</label>
+											<label for="inputName2" class="col-sm-2 control-label">휴대폰 번호</label>
 
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="inputName2"
-													placeholder="Name">
+												<input type="text" class="form-control" id="inputPhone" name="phone"
+													placeholder="${member.phone }">
 											</div>
 										</div>
+										
 										<div class="form-group">
-											<label for="inputExperience" class="col-sm-2 control-label">Experience</label>
+											<label for="inputSkills" class="col-sm-2 control-label">E-Mail</label>
 
 											<div class="col-sm-10">
-												<textarea class="form-control" id="inputExperience"
-													placeholder="Experience"></textarea>
+												<input type="email" class="form-control" id="inputEmail" name="email"
+													placeholder="${member.email }">
 											</div>
+											<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
+											<input type="hidden" name="userId" value="${member.userId }">
 										</div>
-										<div class="form-group">
-											<label for="inputSkills" class="col-sm-2 control-label">Skills</label>
-
-											<div class="col-sm-10">
-												<input type="text" class="form-control" id="inputSkills"
-													placeholder="Skills">
-											</div>
-										</div>
-										<div class="form-group">
+										<!-- <div class="form-group">
 											<div class="col-sm-offset-2 col-sm-10">
 												<div class="checkbox">
 													<label> <input type="checkbox"> I agree to
@@ -395,10 +389,10 @@
 													</label>
 												</div>
 											</div>
-										</div>
+										</div> -->
 										<div class="form-group">
 											<div class="col-sm-offset-2 col-sm-10">
-												<button type="submit" class="btn btn-danger">Submit</button>
+												<button type="submit" class="btn btn-danger">수정</button>
 											</div>
 										</div>
 									</form>
