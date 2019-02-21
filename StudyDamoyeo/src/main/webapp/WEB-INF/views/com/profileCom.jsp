@@ -44,7 +44,7 @@
 								</c:if>
 								<c:if test="${member.profile_Img != 'null' }">
 									<img class="profile-user-img img-fluid img-circle"
-										src="${member.profile_Img }" 
+										src="${member.profile_Img }"
 										alt="User profile picture">
 								</c:if>
 							</div>
