@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.StudyDamoyeo.service.RoomService;
@@ -28,8 +29,15 @@ public class RoomRegisterController {
 
 	}
 
-	@GetMapping("/location")
+	@PostMapping("/location")
 	public String locationRegister(Principal principal) {
+		System.out.println(principal.getName());
+
+		return "/com/locationRegister";
+
+	}
+	@GetMapping("/location")
+	public String goRegister(Principal principal) {
 		System.out.println(principal.getName());
 
 		return "/com/locationRegister";
