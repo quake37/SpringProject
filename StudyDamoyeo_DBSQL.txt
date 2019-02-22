@@ -52,5 +52,8 @@ create table room(
  udate DATE default sysdate
 );
 alter table room add constraint room_fk foreign key(userid) references member(userid) on delete cascade;
-ALTER TABLE MEMBER  
-MODIFY (PROFILE_IMG VARCHAR2(300 BYTE) );
+ALTER TABLE MEMBER MODIFY (PROFILE_IMG VARCHAR2(300 BYTE) );
+
+create sequence room_rno_seq
+ start with 1
+ increment by 1;
