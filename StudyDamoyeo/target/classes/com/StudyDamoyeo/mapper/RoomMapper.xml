@@ -6,7 +6,7 @@
 <mapper namespace="com.StudyDamoyeo.mapper.RoomMapper">
 
 	<select id="read" resultType="com.StudyDamoyeo.domain.RoomVO">
-		SELECT * From room WHERE userid = #{userid}
+		SELECT * From room WHERE userId = #{userId}
 	</select>
 	
 	<insert id="insert">

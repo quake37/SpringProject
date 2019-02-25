@@ -44,7 +44,7 @@ public class RoomController {
 	public String insertRoom(RoomVO vo, Model model,MultipartFile img1,MultipartFile img2,
 			MultipartFile img3,MultipartFile img4,MultipartFile img5, Principal principal) {
 		
-	    vo.setUserid(principal.getName());
+	    vo.setUserId(principal.getName());
 		String uploadFolder = application.getRealPath("/resources/upload");
 		String uploadFolderPath = principal.getName();
 		
