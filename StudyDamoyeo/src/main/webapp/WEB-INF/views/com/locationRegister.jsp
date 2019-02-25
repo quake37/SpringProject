@@ -14,6 +14,7 @@
 	String addrDetail = request.getParameter("addrDetail"); 
 %>
 </head>
+
 <script language="javascript">
 // opener관련 오류가 발생하는 경우 아래 주석을 해지하고, 사용자의 도메인정보를 입력합니다. ("주소입력화면 소스"도 동일하게 적용시켜야 합니다.)
 //document.domain = "abc.go.kr";
@@ -51,5 +52,7 @@ function init(){
 		 -->
 		<!-- 해당시스템의 인코딩타입이 EUC-KR일경우에만 추가 END-->
 	</form>
+	
+	
 </body>
 </html>

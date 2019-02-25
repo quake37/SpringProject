@@ -16,12 +16,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>지점 소개등록 양식</h1>
+            <h1>지점 등록 양식</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">지점 소개등록 양식</li>
+              <li class="breadcrumb-item active">지점 등록 양식</li>
             </ol>
           </div>
         </div>
@@ -32,77 +32,99 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
+        
+        	 <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-secondary">
+              <div class="card-header">
+                <h3 class="card-title">지점 등록 예시</h3>
+              </div>
+              <img class="img-fluid mb-3" src="/resources/main/images/roomExample.png" alt="" />
+             
+            </div>
+            <!-- /.card -->     
+          </div>
           <!-- left column -->
           <div class="col-md-12">
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">지점 소개 등록</h3>
+                <h3 class="card-title">지점 등록란</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form role="form">
                 <div class="card-body">
+                 <div class="form-group">
+                    <label for="roomname">지점 이름</label>
+                    <input type="text" class="form-control col-sm-4" id="roomname" name="roomname" placeholder="지점명을 입력해주세요.">
+                  </div>
+                
                   <div class="form-group">
                     <label for="InputFile1">스터디룸 사진(풍경)</label>
                     
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" multiple="multiple" class="custom-file-input" id="inputFile1" onchange="showFile();">
+                        <input type="file" class="custom-file-input" id="inputFile1" name="imgname1" onchange="showFile(1);">
                         <label class="custom-file-label" for="exampleInputFile" id="fileLabel1">사진1</label>
 
                       </div>
                    		&nbsp;
                       <div class="custom-file">
-						<input type="file" multiple="multiple" class="custom-file-input" id="inputFile2" onchange="showFile();">
+						<input type="file" class="custom-file-input" id="inputFile2" name="imgname2" onchange="showFile(2);">
                         <label class="custom-file-label" for="exampleInputFile" id="fileLabel2">사진2</label>
                       </div>
                    
                    		 &nbsp;
                       <div class="custom-file">
-                        <input type="file" multiple="multiple" class="custom-file-input" id="inputFile3" onchange="showFile();">
+                        <input type="file" class="custom-file-input" id="inputFile3" name="imgname3" onchange="showFile(3);">
                         <label class="custom-file-label" for="exampleInputFile" id="fileLabel3">사진3</label>
-      
                       </div>
                    
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="presentaion1">소개글 1</label>
-                    <input type="password" class="form-control" id="presentation1" placeholder="위 사진들의 소개글을 입력해주세요.">
+                    <input type="text" class="form-control" id="presentation1" name="presentation1" placeholder="위 사진들의 소개글을 입력해주세요.">
                   </div>
                   <div class="form-group">
                     <label for="InputFile1">기타시설 사진</label>
-                    
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" multiple="multiple" class="custom-file-input" id="inputFile4" onchange="showFile();">
-                        <label class="custom-file-label" for="exampleInputFile" id="fileLabel4">사진4</label>
-
-                      </div>
-                   		&nbsp;
-                      <div class="custom-file">
-						<input type="file" multiple="multiple" class="custom-file-input" id="inputFile5" onchange="showFile();">
-                        <label class="custom-file-label" for="exampleInputFile" id="fileLabel5">사진5</label>
-                      </div>
-                    </div>
+                    	<div class="input-group">
+                      		<div class="custom-file">
+                       			 <input type="file" class="custom-file-input" id="inputFile4" name="imgname4" onchange="showFile(4);">
+                       			 <label class="custom-file-label" for="exampleInputFile" id="fileLabel4">사진4</label>
+                     		 </div>
+                   			&nbsp;
+                      		<div class="custom-file">
+								<input type="file" class="custom-file-input" id="inputFile5" name="imgname5" onchange="showFile(5);">
+                       		 <label class="custom-file-label" for="exampleInputFile" id="fileLabel5">사진5</label>
+                    	  </div>
+                   		 </div>
                   </div>
                    <div class="form-group">
                     <label for="presentaion2">소개글 2</label>
-                    <input type="password" class="form-control" id="presentation2" placeholder="위 사진의 소개글을 입력해주세요.">
+                    <input type="text" class="form-control" id="presentation2" name="presentation2" placeholder="위 사진의 소개글을 입력해주세요.">
                   </div>
                       <!-- textarea -->
                   <div class="form-group">
                     <label>소개글 3</label>
-                    <textarea class="form-control" rows="4" placeholder="간단한 지점 소개글을 작성해주세요.(가격, 시설 등)"></textarea>
+                    <textarea class="form-control" id="presentation3" name="presentation3" rows="4" placeholder="간단한 지점 소개글을 작성해주세요.(가격, 시설 등)"></textarea>
                   </div>
-					<input type="text" id="No" style="width:100px" value="">
-					<input type="button"  value="주소검색" onclick="goPopup();">
-                <label>도로명주소</label>
-                <input type="text" id="AddrPart1" style="width:85%" value="">
-                <label>상세주소</label>
-                <input type="text" id="Detail"  style="width:40%" value="">
-                <input type="text" id="AddrPart2" style="width:40%" value="">
+               	  <div class="form-group">
+               		 	<label for="loacation1">도로명 주소</label><br>
+                 	 <div class="input-group">
+						<input class="form-control col-sm-2" type="text" id="No" name="location1" style="width:30%" value="">
+						<input class="btn btn-primary" type="button"  value="주소검색" onclick="goPopup();">
+               	 	 </div>
+              	  </div>
+              		 <div class="form-group">
+                	 <label for="loacation2">상세 주소</label><br>
+                		<input  class="form-control col-sm-4"type="text" id="AddrPart1"  name="location2"  style="width:85%" value="">
+                		 <div class="input-group">
+                			<input  class="form-control col-sm-6"type="text" id="Detail"  name="location3"   style="width:30%" value="">
+                			<input  class="form-control col-sm-6"type="text" id="AddrPart2"  name="location4"  style="width:30%" value="">
+                		</div>
+                	</div>
                 </div>
                 <!-- /.card-body -->
 
@@ -110,6 +132,7 @@
                   <button type="submit" class="btn btn-primary">Submit</button>
                   
                 </div>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
               </form>
             </div>
             <!-- /.card -->     
@@ -135,10 +158,23 @@
 		}
 		return true;
 	}
-	function showFile() {
-		var inputFile = $('#inputFile1').val();
-
-		$('#fileLabel1').html(inputFile);
+	function showFile(num) {
+		if(num==1){
+			var inputFile = $('#inputFile1').val();
+			$('#fileLabel1').html(inputFile);
+		}else if(num==2){
+			var inputFile = $('#inputFile2').val();
+			$('#fileLabel2').html(inputFile);
+		}else if(num==3){
+			var inputFile = $('#inputFile3').val();
+			$('#fileLabel3').html(inputFile);
+		}else if(num==4){
+			var inputFile = $('#inputFile4').val();
+			$('#fileLabel4').html(inputFile);
+		}else if(num==5){
+			var inputFile = $('#inputFile5').val();
+			$('#fileLabel5').html(inputFile);
+		}
 	}
 
 	function upload() {
@@ -178,5 +214,23 @@
 			$('#AddrPart2').val(AddrPart2);
 	}
 </script>
+
+<style type="text/css">
+ /* 바탕 배경 이미지 */
+.pop-address-search .pop-address-search-inner { background-image: url(http://www.0000.com/img/backImg.png);}
+/* 회사 로고 이미지 */
+.pop-address-search .pop-address-search-inner .logo { background: url(http://www.0000.com/img/logo.png) no-repeat; background-position:center; }
+
+/* 바탕 배경색상 */
+.pop-address-search .pop-address-search-inner { background-color:#ECECEC; }
+/* 검색창 색상 */
+.pop-address-search .pop-address-search-inner .wrap input { background-color:#FFFFFF; }
+/* 검색버튼 색상 */
+.pop-address-search .pop-address-search-inner .wrap { background-color:#FFFFFF; }
+/* 본문 배경색(홀수) */
+.pop-address-search .pop-address-search-inner .result table.data-col tbody tr:nth-child(odd) td {background:#FFFFFF}
+/* 본문 배경색(짝수) */
+.pop-address-search .pop-address-search-inner .result table.data-col tbody tr:nth-child(even) td {background:#ffd393}
+</style>
 
 <%@include file="include/footer.jsp"%>
