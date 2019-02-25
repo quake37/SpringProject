@@ -66,19 +66,19 @@
                     
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="inputFile1" name="imgname1" onchange="showFile(1);">
+                        <input type="file" class="custom-file-input" id="inputFile1" name="img1" onchange="showFile(1);">
                         <label class="custom-file-label" for="exampleInputFile" id="fileLabel1">사진1</label>
 
                       </div>
                    		&nbsp;
                       <div class="custom-file">
-						<input type="file" class="custom-file-input" id="inputFile2" name="imgname2" onchange="showFile(2);">
+						<input type="file" class="custom-file-input" id="inputFile2" name="img2" onchange="showFile(2);">
                         <label class="custom-file-label" for="exampleInputFile" id="fileLabel2">사진2</label>
                       </div>
                    
                    		 &nbsp;
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="inputFile3" name="imgname3" onchange="showFile(3);">
+                        <input type="file" class="custom-file-input" id="inputFile3" name="img3" onchange="showFile(3);">
                         <label class="custom-file-label" for="exampleInputFile" id="fileLabel3">사진3</label>
                       </div>
                    
@@ -92,12 +92,12 @@
                     <label for="InputFile1">기타시설 사진</label>
                     	<div class="input-group">
                       		<div class="custom-file">
-                       			 <input type="file" class="custom-file-input" id="inputFile4" name="imgname4" onchange="showFile(4);">
+                       			 <input type="file" class="custom-file-input" id="inputFile4" name="img4" onchange="showFile(4);">
                        			 <label class="custom-file-label" for="exampleInputFile" id="fileLabel4">사진4</label>
                      		 </div>
                    			&nbsp;
                       		<div class="custom-file">
-								<input type="file" class="custom-file-input" id="inputFile5" name="imgname5" onchange="showFile(5);">
+								<input type="file" class="custom-file-input" id="inputFile5" name="img5" onchange="showFile(5);">
                        		 <label class="custom-file-label" for="exampleInputFile" id="fileLabel5">사진5</label>
                     	  </div>
                    		 </div>

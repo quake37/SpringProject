@@ -40,9 +40,9 @@ public class RoomController {
 	@GetMapping("/location")
 	public String goRegister() {return "/com/locationRegister";}
 	
-	@PostMapping("/insertRoom")
-	public String insertRoom(RoomVO vo, Model model,MultipartFile imgname1,MultipartFile imgname2,
-			MultipartFile imgname3,MultipartFile imgname4,MultipartFile imgname5, Principal principal) {
+	@PostMapping(value = "/insertRoom",headers = ("content-type=multipart/*"))
+	public String insertRoom(RoomVO vo, Model model,MultipartFile img1,MultipartFile img2,
+			MultipartFile img3,MultipartFile img4,MultipartFile img5, Principal principal) {
 		
 	    vo.setUserid(principal.getName());
 		String uploadFolder = application.getRealPath("/resources/upload");
@@ -53,37 +53,32 @@ public class RoomController {
 		if (uploadPath.exists() == false) {
 			uploadPath.mkdirs();
 		}
+		MultipartFile[] imgname = {img1,img2,img3,img4,img5};
+		String[] uploadFileNames =  new String[5];
 		
-		System.out.println(imgname1.toString());
-//		MultipartFile[] imgname = {imgname1,imgname2,imgname3,imgname4,imgname5};
-//		String[] uploadFileNames =  new String[5];
-//		
-//		for(int i=0;i<imgname.length;i++) {
-//			System.out.println(imgname[i].toString());
-//		}
+
+		for(int i=0;i<imgname.length;i++) {
+			String uploadFileName = imgname[i].getOriginalFilename();
+			uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("\\") + 1);
+			
+			UUID uuid = UUID.randomUUID();
+			uploadFileName = uuid.toString() + "_" + uploadFileName;
+			uploadFileNames[i] = uploadFileName;
+			File saveFile = new File(uploadPath, uploadFileName);
+			System.out.println("path"+saveFile.getAbsolutePath());
+			try {
+				imgname[i].transferTo(saveFile);
+			} catch (IllegalStateException | IOException e) {
+				e.printStackTrace();
+			}
+		}
+		vo.setImgname1(uploadFolderPath+"/"+uploadFileNames[0]);
+		vo.setImgname2(uploadFolderPath+"/"+uploadFileNames[1]);
+		vo.setImgname3(uploadFolderPath+"/"+uploadFileNames[2]);
+		vo.setImgname4(uploadFolderPath+"/"+uploadFileNames[3]);
+		vo.setImgname5(uploadFolderPath+"/"+uploadFileNames[4]);
 		
-//		for(int i=0;i<imgname.length;i++) {
-//			String uploadFileName = imgname[i].getOriginalFilename();
-//			uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("\\") + 1);
-//			
-//			UUID uuid = UUID.randomUUID();
-//			uploadFileName = uuid.toString() + "_" + uploadFileName;
-//			uploadFileNames[i] = uploadFileName;
-//			File saveFile = new File(uploadPath, uploadFileName);
-//			System.out.println("path"+saveFile.getAbsolutePath());
-//			try {
-//				imgname[i].transferTo(saveFile);
-//			} catch (IllegalStateException | IOException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//		vo.setImgname1(uploadFolderPath+"/"+uploadFileNames[0]);
-//		vo.setImgname2(uploadFolderPath+"/"+uploadFileNames[1]);
-//		vo.setImgname3(uploadFolderPath+"/"+uploadFileNames[2]);
-//		vo.setImgname4(uploadFolderPath+"/"+uploadFileNames[3]);
-//		vo.setImgname5(uploadFolderPath+"/"+uploadFileNames[4]);
-//		
-//		service.insert(vo);
+		service.insert(vo);
 		
 		return  "redirect:/room/register";
 		
