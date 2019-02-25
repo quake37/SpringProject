@@ -16,7 +16,7 @@
 		 #{presentation1}, #{presentation2}, #{presentation3})
 	</insert>
 	
-	<select id="readrooms" resultType="String">
+	<select id="readrooms" resultType="map">
 		select roomname from room where userid =  #{userid};
 	</select>
 	

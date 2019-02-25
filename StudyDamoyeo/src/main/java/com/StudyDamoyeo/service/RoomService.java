@@ -1,5 +1,8 @@
 package com.StudyDamoyeo.service;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,9 +31,9 @@ public class RoomService {
 		return mapper.read(roomname);
 	}
 
-	public String[] readrooms(String userId) {
+	public List<Map<Object, Object>> readrooms(String userid) {
 		// TODO Auto-generated method stub
-		return mapper.readrooms(userId);
+		return mapper.readrooms(userid);
 	}
 	
 	

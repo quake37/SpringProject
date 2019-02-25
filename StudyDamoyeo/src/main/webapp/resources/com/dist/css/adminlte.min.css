@@ -5508,7 +5508,8 @@ button.close, button.mailbox-attachment-close {
 }
 
 .carousel {
-	position: relative
+	position: relative;
+	width: 90%;
 }
 
 .carousel-inner {

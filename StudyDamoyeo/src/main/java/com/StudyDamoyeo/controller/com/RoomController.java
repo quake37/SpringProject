@@ -3,6 +3,9 @@ package com.StudyDamoyeo.controller.com;
 import java.io.File;
 import java.io.IOException;
 import java.security.Principal;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.ServletContext;
@@ -13,7 +16,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -78,18 +83,22 @@ public class RoomController {
 		vo.setImgname5(uploadFolderPath+"/"+uploadFileNames[4]);
 		
 		service.insert(vo);
-		
+		model.addAttribute("room", vo);
 		return  "/room/readRoom";
 		
 	}
 	
-	@GetMapping("/readRooms")
-	public String[] roomReads(Principal principal, Model model) {
-		String userId = principal.getName();
-		String[] names = service.readrooms(userId);
-		model.addAttribute("roomnames", names);	
+	@GetMapping("/readRoom")
+	public String roomRead() {
+		return "/com/readRoom";
+	}
+	
+	@PostMapping("/readRooms")
+	@ResponseBody
+	public List<Map<Object,Object>> roomReads(Principal principal) {
+		System.out.println(principal.getName());
+		List<Map<Object,Object>> names = service.readrooms(principal.getName());
+		System.out.println(names);
 		return names;
 	}
-	@GetMapping("/readRoom")
-	public String roomRead() {return "/com/readRoom";}
 }

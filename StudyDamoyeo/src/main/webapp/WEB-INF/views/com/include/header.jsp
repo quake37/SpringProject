@@ -209,34 +209,25 @@
               </p>
             </a>
           </li>
-           <li class="nav-item">
-            <a href="<c:url value="/reservation/list"/>" class="nav-link">
-              <i class="nav-icon fa fa-pie-chart"></i>
-              <p>
-                예약현황
-                <i class="right fa fa-angle-left"></i>
-              </p>
-            </a>
-          </li>
           <li class="nav-item has-treeview">
-            <a href="<c:url value="/reservation/list"/>" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fa fa-table"></i>
               <p>
-                Tables
+              	  현황
                 <i class="fa fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
+                <a href="<c:url value="/reservation/list"/>" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Simple Tables</p>
+                  <p>예약 현황</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/tables/data.html" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Data Tables</p>
+                  <p>내 지점</p>
                 </a>
               </li>
             </ul>
