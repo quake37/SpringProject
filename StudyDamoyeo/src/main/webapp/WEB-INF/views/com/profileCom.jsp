@@ -5,6 +5,116 @@
 
 
 <%@include file="include/header.jsp"%>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<link rel="stylesheet" href="/resources/main/assets/css/loading.css"
+	type="text/css" />
+<meta id="_csrf" name="_csrf" content="${_csrf.token}" />
+<!-- default header name is X-CSRF-TOKEN -->
+<meta id="_csrf_header" name="_csrf_header"
+	content="${_csrf.headerName}" />
+<script type="text/javascript">
+$(document).ready(function() {
+
+  if(${result}=="success")
+	alert('이메일을 전송했습니다.')
+
+});
+var token = $("meta[name='_csrf']").attr("content");
+var header = $("meta[name='_csrf_header']").attr("content");
+var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
+var timeout;
+var checkcom =false;
+
+	
+function nicknameCheck() {
+	var nickname = $('#inputNickname').val();
+	if(!regExp.test(nickname)){
+		regExp.test(nickname);
+		$("#comNickNameCheck").hide(500);
+		$("#updateComNameSpin").show(500);
+		if(timeout) {
+		       clearTimeout(timeout);
+		    }
+		timeout = setTimeout(function() {
+		    	
+		    	 $.ajax({
+			            async: true,
+			            type : 'POST',
+			            data : nickname,
+			            url : "/profile/nicknameCheck",
+			            dataType : "json",
+			            contentType: "application/json",
+			            beforeSend : function(xhr)
+			            {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
+			            	xhr.setRequestHeader(header, token);
+			            },
+			            success : function(data) {
+			            	if (data.cnt > 0) {
+			            		$("#updateComNameSpin").hide(500);
+			                	$("#comNickNameCheck").css({"color":"#f54f29"});
+			                	$("#comNickNameCheck").text("이미 사용중인 닉네임입니다.");
+			                	$("#inputNickname").focus();
+			                	$("#comNickNameCheck").show(500);
+			                	checkcom=false;
+			                } else {
+			                	$("#updateComNameSpin").hide(500);
+			                	$("#comNickNameCheck").css({"color":"#9c9b7a"});
+			                	$("#comNickNameCheck").text("사용가능한 닉네임입니다.");
+			                	$("#comNickNameCheck").show(500);
+			                	checkcom=true;
+			                
+			                }  	
+			            },
+			            error : function(request,status,error) {	                
+			            	  alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+
+			            }
+				  });
+		    }, 2000);
+	}else{
+		regExp.test(nickname);
+		$("#comNickNameCheck").css({"color":"#f54f29"});
+		$("#comNickNameCheck").text("특수문자가 포함되어있습니다.");
+		$("#comNickNameCheck").show(500);
+		checkcom=false;
+	}
+}
+	
+	function profileUpdate() {
+		var nickname = $('#inputNickname').val();
+		var phone = $('#inputPhone').val();
+		var email = $('#inputEmail').val();
+		var userId=$('#userId').val();
+		if(nickname==""||nickname==null||phone==""||phone==null||email==""||email==null){
+			alert(nickname+' '+phone+' '+email +' '+userId);
+			return;
+		}
+		
+			 $.ajax({
+		            async: true,
+		            type : 'POST',
+		            data : JSON.stringify({nickname: nickname, phone : phone, email : email, userId : userId }),
+		            url : "/profile/update",
+		            dataType : "json",
+		            contentType: "application/json",
+		            beforeSend : function(xhr)
+		            {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
+		            	xhr.setRequestHeader(header, token);
+		            },
+		            success : function(data) {
+		            	
+		            }
+		           
+			  });
+			 location.reload();
+		}
+		
+	
+	
+	
+	
+	
+</script>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -50,7 +160,7 @@
 
 							<h3 class="profile-username text-center">${member.userId }</h3>
 
-							<p class="text-muted text-center">${member.nickname }</p>
+							<p class="text-muted text-center" id="navNick">${member.nickname }</p>
 
 							<ul class="list-group list-group-unbordered mb-3">
 								<li class="list-group-item"><b>회원구분</b> <a
@@ -103,6 +213,7 @@
 							<c:if test="${member.verified =='N' }">
 								<p class="text-muted">이메일 인증을 해야 다른 기능을 이용하실 수 있습니다. 설정에서
 									이메일 인증을 해주세요.</p>
+								<a href="<c:url value="/profile/emailAuth"/>" class="btn btn-primary btn-block">인증</a>
 							</c:if>
 							<c:if test="${member.verified =='Y' }">
 								<p class="text-muted">이메일 인증완료된 회원입니다. 부가 기능이 이용가능합니다.</p>
@@ -345,40 +456,38 @@
 								<!-- /.tab-pane -->
 
 								<div class="tab-pane" id="settings">
-									<form class="form-horizontal" action="/profile/update" method="post">
+									<form class="form-horizontal" action="/profile/update"
+										method="post">
 										<div class="form-group">
-											<label for="inputName" class="col-sm-2 control-label">비밀번호</label>
-
+											<label for="inputEmail">닉네임</label> <label class="spin"
+												id="updateComNameSpin" style="display: none;"></label> <label
+												id="comNickNameCheck" style="display: none;"></label>
 											<div class="col-sm-10">
-												<input type="password" class="form-control" id="inputPw" name="pw">
+												<input type="text" class="form-control" id="inputNickname"
+													name="nickname" value="${member.nickname }"
+													required="required" onchange="nicknameCheck();">
 											</div>
 										</div>
 										<div class="form-group">
-											<label for="inputEmail" class="col-sm-2 control-label">닉네임</label>
+											<label for="inputName2" class="col-sm-2 control-label">휴대폰
+												번호</label>
 
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="inputNickname" name="nickname"
-													placeholder="${member.nickname }">
+												<input type="text" class="form-control" id="inputPhone"
+													name="phone" value="${member.phone }" required="required">
 											</div>
 										</div>
-										<div class="form-group">
-											<label for="inputName2" class="col-sm-2 control-label">휴대폰 번호</label>
 
-											<div class="col-sm-10">
-												<input type="text" class="form-control" id="inputPhone" name="phone"
-													placeholder="${member.phone }">
-											</div>
-										</div>
-										
 										<div class="form-group">
 											<label for="inputSkills" class="col-sm-2 control-label">E-Mail</label>
 
 											<div class="col-sm-10">
-												<input type="email" class="form-control" id="inputEmail" name="email"
-													placeholder="${member.email }">
+												<input type="email" class="form-control" id="inputEmail"
+													name="email" value="${member.email }" required="required">
 											</div>
-											<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
-											<input type="hidden" name="userId" value="${member.userId }">
+											<input type="hidden" name="userId" value="${member.userId }"
+												id="userId"> <input type="hidden" id="updatePw"
+												value="${member.pw }">
 										</div>
 										<!-- <div class="form-group">
 											<div class="col-sm-offset-2 col-sm-10">
@@ -391,7 +500,8 @@
 										</div> -->
 										<div class="form-group">
 											<div class="col-sm-offset-2 col-sm-10">
-												<button type="submit" class="btn btn-danger">수정</button>
+												<button type="button" onclick="profileUpdate();"
+													class="btn btn-danger">수정</button>
 											</div>
 										</div>
 									</form>
