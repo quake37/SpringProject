@@ -209,8 +209,17 @@
               </p>
             </a>
           </li>
+           <li class="nav-item">
+            <a href="<c:url value="/reservation/list"/>" class="nav-link">
+              <i class="nav-icon fa fa-pie-chart"></i>
+              <p>
+                예약현황
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="<c:url value="/reservation/list"/>" class="nav-link">
               <i class="nav-icon fa fa-table"></i>
               <p>
                 Tables
