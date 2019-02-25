@@ -57,3 +57,7 @@ ALTER TABLE MEMBER MODIFY (PROFILE_IMG VARCHAR2(300 BYTE) );
 create sequence room_rno_seq
  start with 1
  increment by 1;
+ 
+ALTER TABLE MEMBER 
+ADD (EMAILKEY VARCHAR2(50) );
+
