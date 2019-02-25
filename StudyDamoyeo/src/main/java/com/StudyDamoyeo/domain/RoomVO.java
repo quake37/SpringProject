@@ -10,6 +10,10 @@ import lombok.ToString;
 public class RoomVO {
 	private String userid;
 	private String roomname;
+	private String location1;
+	private String location2;
+	private String location3;
+	private String location4;
 	private String location;
 	private int grade;
 	private String imgname1;
@@ -22,6 +26,15 @@ public class RoomVO {
 	private String presentation3;
 	private Date regdate;
 	private Date udate;
+	
+	
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	
 	public String getUserid() {
 		return userid;
 	}
@@ -33,12 +46,6 @@ public class RoomVO {
 	}
 	public void setRoomname(String roomname) {
 		this.roomname = roomname;
-	}
-	public String getLocation() {
-		return location;
-	}
-	public void setLocation(String location) {
-		this.location = location;
 	}
 	public int getGrade() {
 		return grade;
@@ -106,14 +113,39 @@ public class RoomVO {
 	public void setUdate(Date udate) {
 		this.udate = udate;
 	}
+	public String getLocation1() {
+		return location1;
+	}
+	public void setLocation1(String location1) {
+		this.location1 = location1;
+	}
+	public String getLocation2() {
+		return location2;
+	}
+	public void setLocation2(String location2) {
+		this.location2 = location2;
+	}
+	public String getLocation3() {
+		return location3;
+	}
+	public void setLocation3(String location3) {
+		this.location3 = location3;
+	}
+	public String getLocation4() {
+		return location4;
+	}
+	public void setLocation4(String location4) {
+		this.location4 = location4;
+	}
 	@Override
 	public String toString() {
-		return "RoomVO [userid=" + userid + ", roomname=" + roomname + ", location=" + location + ", grade=" + grade
+		return "RoomVO [userid=" + userid + ", roomname=" + roomname + ", location1=" + location1 + ", location2="
+				+ location2 + ", location3=" + location3 + ", location4=" + location4 + ", grade=" + grade
 				+ ", imgname1=" + imgname1 + ", imgname2=" + imgname2 + ", imgname3=" + imgname3 + ", imgname4="
 				+ imgname4 + ", imgname5=" + imgname5 + ", presentation1=" + presentation1 + ", presentation2="
 				+ presentation2 + ", presentation3=" + presentation3 + ", regdate=" + regdate + ", udate=" + udate
 				+ "]";
 	}
-	
+
 	
 }

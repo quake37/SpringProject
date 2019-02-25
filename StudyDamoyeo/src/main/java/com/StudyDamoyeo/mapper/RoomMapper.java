@@ -8,4 +8,6 @@ public interface RoomMapper {
 
 	public void update(RoomVO vo);
 
+	public RoomVO read(String userid);
+
 }

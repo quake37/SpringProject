@@ -53,7 +53,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form">
+              <form role="form" method="post" enctype="multipart/form-data"
+					action="/room/insertRoom">
                 <div class="card-body">
                  <div class="form-group">
                     <label for="roomname">지점 이름</label>
@@ -111,7 +112,7 @@
                     <textarea class="form-control" id="presentation3" name="presentation3" rows="4" placeholder="간단한 지점 소개글을 작성해주세요.(가격, 시설 등)"></textarea>
                   </div>
                	  <div class="form-group">
-               		 	<label for="loacation1">도로명 주소</label><br>
+               		 	<label for="loacation1">우편번호</label><br>
                  	 <div class="input-group">
 						<input class="form-control col-sm-2" type="text" id="No" name="location1" style="width:30%" value="">
 						<input class="btn btn-primary" type="button"  value="주소검색" onclick="goPopup();">
