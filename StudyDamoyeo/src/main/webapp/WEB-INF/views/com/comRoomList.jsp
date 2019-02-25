@@ -72,7 +72,7 @@
 						
 								<td><c:out value="${room.rno}" /></td>
 								<td><a href="<c:url value="/room/readRoom?roomname=${room.roomname}"/>" class="nav-link"><c:out value="${room.roomname}" /></a></td>
-								<td><c:out value="${room.location}" /></td>
+								<td><c:out value="${room.location1} ${room.location2} ${room.location3} ${room.location4}" /></td>
 								<td><c:out value="${room.grade}" /></td>
 								<td><c:out value="${room.regdate}" /></td>
 							

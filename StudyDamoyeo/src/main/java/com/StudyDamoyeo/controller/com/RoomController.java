@@ -50,12 +50,19 @@ public class RoomController {
 	@GetMapping("/readRoomList")
 	public String readRoomList(Criteria cri, Model model) {
 		
-		model.addAttribute("list", service.getList(cri));
-
+		List<RoomVO> vo = service.getList(cri);
+		for(RoomVO i : vo) {
+			String[] location=i.getLocation().split("#");
+			i.setLocation1(location[0]);
+			i.setLocation2(location[1]);
+			i.setLocation3(location[2]);
+			i.setLocation4(location[3]);
+		}
+		model.addAttribute("list", vo);
+		
 		int total = service.getTotal(cri);
 		model.addAttribute("pageMaker", new PageDTO(cri, total));
-		
-		
+
 		return "/com/comRoomList";
 		
 	}
@@ -99,7 +106,7 @@ public class RoomController {
 		
 		service.insert(vo);
 		model.addAttribute("room", vo);
-		return  "/room/readRoomList";
+		return "/room/readRoomList";
 		
 	}
 	
