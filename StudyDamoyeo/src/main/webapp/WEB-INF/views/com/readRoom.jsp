@@ -21,17 +21,12 @@
           <div class="col-sm-6">
             <div class="btn-group">
             		<h1>내 지점</h1> &nbsp; &nbsp; 
-                    <button type="button" class="btn btn-success">Action</button>
                     <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                      <span class="caret"></span>
+                      <span class="caret">지점 선택</span>
                       <span class="sr-only">Toggle Dropdown</span>
                     </button>
-                    <div class="dropdown-menu" role="menu">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Separated link</a>
+                    <div class="dropdown-menu" id="dropdown_menu" role="menu">
+                     
                     </div>
                   </div>
           </div>
@@ -57,7 +52,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title"> (지점명)</h3>
+                <h3 class="card-title">${room.roomname}</h3>
               </div>
               <!-- /.card-header -->
                <div class="card-body">
@@ -70,13 +65,41 @@
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="d-block w-100" src="http://placehold.it/900x500/39CCCC/ffffff&text=I+Love+Bootstrap" alt="First slide">
+                    	<c:if test="${room.imgname1 == 'null' }">
+							<img class="d-block w-100"
+								src="/resources/com/dist/img/user.svg"
+								alt="First slide">
+						</c:if>
+						<c:if test="${room.imgname1 != 'null' }">
+							<img class="d-block w-100"
+								src="${pageContext.request.contextPath}/resources/upload/${room.imgname1 }"
+								alt="First slide">
+						</c:if>
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="http://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="Second slide">
+                    	<c:if test="${room.imgname2 == 'null' }">
+							<img class="d-block w-100"
+								src="/resources/com/dist/img/user.svg"
+								alt="Second slide">
+						</c:if>
+						<c:if test="${room.imgname2 != 'null' }">
+							<img class="d-block w-100"
+								src="${pageContext.request.contextPath}/resources/upload/${room.imgname2 }"
+								alt="Second slide">
+						</c:if>
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="http://placehold.it/900x500/f39c12/ffffff&text=I+Love+Bootstrap" alt="Third slide">
+                     	 <c:if test="${room.imgname3 == 'null' }">
+							<img class="d-block w-100"
+								src="/resources/com/dist/img/user.svg"
+								alt="Third slide">
+						</c:if>
+						<c:if test="${room.imgname3 != 'null' }">
+							<img class="d-block w-100"
+								src="${pageContext.request.contextPath}/resources/upload/${room.imgname3 }"
+								alt="Third slide">
+						</c:if>
+
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -92,11 +115,7 @@
                 <div class="post">
                 
                     <p>
-                      Lorem ipsum represents a long-held tradition for designers,
-                      typographers and the like. Some people hate it and argue for
-                      its demise, but others ignore the hate as they create awesome
-                      tools to help create filler text for everyone from bacon lovers
-                      to Charlie Sheen fans.
+                      ${room.presentation1}
                     </p>
                 </div>
                 
@@ -107,10 +126,30 @@
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="d-block w-100" src="http://placehold.it/900x500/39CCCC/ffffff&text=I+Love+Bootstrap" alt="First slide">
+                      <c:if test="${room.imgname4 == 'null' }">
+							<img class="d-block w-100"
+								src="/resources/com/dist/img/user.svg"
+								alt="First slide">
+						</c:if>
+						<c:if test="${room.imgname4 != 'null' }">
+							<img class="d-block w-100"
+								src="${pageContext.request.contextPath}/resources/upload/${room.imgname4 }"
+								alt="First slide">
+						</c:if>
+
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="http://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="Second slide">
+                       <c:if test="${room.imgname5 == 'null' }">
+							<img class="d-block w-100"
+								src="/resources/com/dist/img/user.svg"
+								alt="Second slide">
+						</c:if>
+						<c:if test="${room.imgname5 != 'null' }">
+							<img class="d-block w-100"
+								src="${pageContext.request.contextPath}/resources/upload/${room.imgname5 }"
+								alt="Second slide">
+						</c:if>
+
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
@@ -127,11 +166,7 @@
                 <div class="post">
 
                     <p>
-                      Lorem ipsum represents a long-held tradition for designers,
-                      typographers and the like. Some people hate it and argue for
-                      its demise, but others ignore the hate as they create awesome
-                      tools to help create filler text for everyone from bacon lovers
-                      to Charlie Sheen fans.
+                      ${room.presentation2}
                     </p>
                 </div>
                  
@@ -144,11 +179,7 @@
                      		  <a href="#">Jonathan Burke Jr.</a>
                     	  </span>
 		                    <p>
-		                      Lorem ipsum represents a long-held tradition for designers,
-		                      typographers and the like. Some people hate it and argue for
-		                      its demise, but others ignore the hate as they create awesome
-		                      tools to help create filler text for everyone from bacon lovers
-		                      to Charlie Sheen fans.
+		                     ${room.presentation3}
 		                    </p>
 	                 	</div>
 	                 	<div class="col-6">
@@ -156,6 +187,7 @@
 	                 	 <span class="username">
                      		  <a href="#">Jonathan Burke Jr.</a>
                     	  </span>
+                    	   ${room.location}
 		                   <div id="map" style="width:100%;height:400px;"></div>
 		                </div>
                    	 </div>
@@ -191,9 +223,8 @@
 var token = $("meta[name='_csrf']").attr("content");
 var header = $("meta[name='_csrf_header']").attr("content");
 	$( document ).ready(function() {
-	  	alert('1');
-		var a = [];
-		 $.ajax({
+		var dropdowns = '';
+		$.ajax({
 	            async: true,
 	            type : 'POST',
 	            url : "/room/readRooms",
@@ -204,7 +235,11 @@ var header = $("meta[name='_csrf_header']").attr("content");
 	            	
 	            },
 	            success : function(data) {
-	            	alert(data);
+	            	 for (i in data) { 
+	            		 dropdowns+='<a class="dropdown-item" href="/room/readRoom?roomname='+data[i]+'">'+data[i]+'</a>'; 
+	            	 } 
+	            	
+	            	$("#dropdown_menu").html(dropdowns);
 	            },
 	            error : function(request,status,error) {	                
 	            	  alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);

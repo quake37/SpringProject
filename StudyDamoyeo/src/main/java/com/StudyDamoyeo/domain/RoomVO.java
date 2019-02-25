@@ -8,6 +8,7 @@ import lombok.ToString;
 @Data
 @ToString
 public class RoomVO {
+	private int rno;
 	private String userid;
 	private String roomname;
 	private String location1;
@@ -28,6 +29,13 @@ public class RoomVO {
 	private Date udate;
 	
 	
+	
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
 	public String getLocation() {
 		return location;
 	}
@@ -139,13 +147,12 @@ public class RoomVO {
 	}
 	@Override
 	public String toString() {
-		return "RoomVO [userid=" + userid + ", roomname=" + roomname + ", location1=" + location1 + ", location2="
-				+ location2 + ", location3=" + location3 + ", location4=" + location4 + ", grade=" + grade
-				+ ", imgname1=" + imgname1 + ", imgname2=" + imgname2 + ", imgname3=" + imgname3 + ", imgname4="
-				+ imgname4 + ", imgname5=" + imgname5 + ", presentation1=" + presentation1 + ", presentation2="
-				+ presentation2 + ", presentation3=" + presentation3 + ", regdate=" + regdate + ", udate=" + udate
-				+ "]";
+		return "RoomVO [rno=" + rno + ", userid=" + userid + ", roomname=" + roomname + ", location1=" + location1
+				+ ", location2=" + location2 + ", location3=" + location3 + ", location4=" + location4 + ", location="
+				+ location + ", grade=" + grade + ", imgname1=" + imgname1 + ", imgname2=" + imgname2 + ", imgname3="
+				+ imgname3 + ", imgname4=" + imgname4 + ", imgname5=" + imgname5 + ", presentation1=" + presentation1
+				+ ", presentation2=" + presentation2 + ", presentation3=" + presentation3 + ", regdate=" + regdate
+				+ ", udate=" + udate + "]";
 	}
-
 	
 }

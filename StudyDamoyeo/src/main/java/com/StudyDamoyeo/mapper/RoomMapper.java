@@ -3,6 +3,7 @@ package com.StudyDamoyeo.mapper;
 import java.util.List;
 import java.util.Map;
 
+import com.StudyDamoyeo.domain.Criteria;
 import com.StudyDamoyeo.domain.RoomVO;
 
 public interface RoomMapper {
@@ -13,6 +14,10 @@ public interface RoomMapper {
 
 	public RoomVO read(String roomname);
 
-	public List<Map<Object, Object>> readrooms(String userid);
+	public List<String> readrooms(String userid);
+
+	public List<RoomVO> getList(Criteria cri);
+
+	public int getTotal(Criteria cri);
 
 }

@@ -18,11 +18,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.StudyDamoyeo.domain.Criteria;
 import com.StudyDamoyeo.domain.MemberVO;
+import com.StudyDamoyeo.domain.PageDTO;
 import com.StudyDamoyeo.domain.RoomVO;
 import com.StudyDamoyeo.service.RoomService;
 
@@ -44,6 +47,18 @@ public class RoomController {
 	public String locationRegister() {return "/com/locationRegister";}
 	@GetMapping("/location")
 	public String goRegister() {return "/com/locationRegister";}
+	@GetMapping("/readRoomList")
+	public String readRoomList(Criteria cri, Model model) {
+		
+		model.addAttribute("list", service.getList(cri));
+
+		int total = service.getTotal(cri);
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
+		
+		
+		return "/com/comRoomList";
+		
+	}
 	
 	@PostMapping(value = "/insertRoom",headers = ("content-type=multipart/*"))
 	public String insertRoom(RoomVO vo, Model model,MultipartFile img1,MultipartFile img2,
@@ -84,20 +99,22 @@ public class RoomController {
 		
 		service.insert(vo);
 		model.addAttribute("room", vo);
-		return  "/room/readRoom";
+		return  "/room/readRoomList";
 		
 	}
 	
 	@GetMapping("/readRoom")
-	public String roomRead() {
+	public String roomRead(@RequestParam("roomname") String roomname,Model model) {
+		RoomVO vo = service.read(roomname);
+		model.addAttribute("room", vo);
 		return "/com/readRoom";
 	}
 	
 	@PostMapping("/readRooms")
 	@ResponseBody
-	public List<Map<Object,Object>> roomReads(Principal principal) {
+	public List<String> roomReads(Principal principal) {
 		System.out.println(principal.getName());
-		List<Map<Object,Object>> names = service.readrooms(principal.getName());
+		List<String> names = service.readrooms(principal.getName());
 		System.out.println(names);
 		return names;
 	}

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.StudyDamoyeo.domain.Criteria;
 import com.StudyDamoyeo.domain.RoomVO;
 import com.StudyDamoyeo.mapper.RoomMapper;
 
@@ -31,10 +32,19 @@ public class RoomService {
 		return mapper.read(roomname);
 	}
 
-	public List<Map<Object, Object>> readrooms(String userid) {
+	public List<String> readrooms(String userid) {
 		// TODO Auto-generated method stub
 		return mapper.readrooms(userid);
 	}
-	
+
+	public List<RoomVO> getList(Criteria cri) {
+		// TODO Auto-generated method stub
+		return mapper.getList(cri);
+	}
+
+	public int getTotal(Criteria cri) {
+		// TODO Auto-generated method stub
+		return mapper.getTotal(cri);
+	}
 	
 }

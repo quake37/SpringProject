@@ -225,7 +225,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="<c:url value="/room/readRoomList"/>" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>내 지점</p>
                 </a>

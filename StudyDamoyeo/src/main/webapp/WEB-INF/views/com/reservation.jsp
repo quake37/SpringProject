@@ -104,10 +104,7 @@
 			<!-- /.card-body -->
 		</div>
 		<!-- /.card -->
-</div>
-<!-- /.col -->
-</div>
-<!-- /.row -->
+
 </section>
 <!-- /.content -->
 </div>
