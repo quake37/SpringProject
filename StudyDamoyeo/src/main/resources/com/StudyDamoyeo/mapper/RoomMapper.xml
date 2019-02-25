@@ -17,7 +17,7 @@
 	</insert>
 	
 	<select id="readrooms" resultType="map">
-		select roomname from room where userid =  #{userid};
+		select roomname from room where userid =#{userid}
 	</select>
 	
 </mapper>
