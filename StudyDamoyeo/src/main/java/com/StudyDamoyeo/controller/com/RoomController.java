@@ -43,8 +43,7 @@ public class RoomController {
 	@PostMapping(value = "/insertRoom",headers = ("content-type=multipart/*"))
 	public String insertRoom(RoomVO vo, Model model,MultipartFile img1,MultipartFile img2,
 			MultipartFile img3,MultipartFile img4,MultipartFile img5, Principal principal) {
-		
-	    vo.setUserId(principal.getName());
+		vo.setUserid(principal.getName());
 		String uploadFolder = application.getRealPath("/resources/upload");
 		String uploadFolderPath = principal.getName();
 		

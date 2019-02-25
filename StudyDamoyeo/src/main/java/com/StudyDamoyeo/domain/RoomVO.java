@@ -8,7 +8,7 @@ import lombok.ToString;
 @Data
 @ToString
 public class RoomVO {
-	private String userId;
+	private String userid;
 	private String roomname;
 	private String location1;
 	private String location2;
@@ -35,11 +35,11 @@ public class RoomVO {
 		this.location = location;
 	}
 	
-	public String getUserId() {
-		return userId;
+	public String getUserid() {
+		return userid;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 	public String getRoomname() {
 		return roomname;
@@ -139,7 +139,7 @@ public class RoomVO {
 	}
 	@Override
 	public String toString() {
-		return "RoomVO [userid=" + userId + ", roomname=" + roomname + ", location1=" + location1 + ", location2="
+		return "RoomVO [userid=" + userid + ", roomname=" + roomname + ", location1=" + location1 + ", location2="
 				+ location2 + ", location3=" + location3 + ", location4=" + location4 + ", grade=" + grade
 				+ ", imgname1=" + imgname1 + ", imgname2=" + imgname2 + ", imgname3=" + imgname3 + ", imgname4="
 				+ imgname4 + ", imgname5=" + imgname5 + ", presentation1=" + presentation1 + ", presentation2="

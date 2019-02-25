@@ -6,13 +6,13 @@
 <mapper namespace="com.StudyDamoyeo.mapper.RoomMapper">
 
 	<select id="read" resultType="com.StudyDamoyeo.domain.RoomVO">
-		SELECT * From room WHERE userId = #{userId}
+		SELECT * From room WHERE userid = #{userid}
 	</select>
 	
 	<insert id="insert">
-		insert into room (rno,userId, roomname, location, imgname1,,imgname2,imgname3,imgname4,imgname5,
+		insert into room (rno,userid, roomname, location, imgname1,imgname2,imgname3,imgname4,imgname5,
 		 presentation1,presentation2,presentation3)
-		values(room_rno_seq.nextval, #{userId}, #{location},#{imgname1},#{imgname2},#{imgname3},#{imgname4},#{imgname5},
+		values(room_rno_seq.nextval, #{userid},#{roomname},#{location},#{imgname1},#{imgname2},#{imgname3},#{imgname4},#{imgname5},
 		 #{presentation1}, #{presentation2}, #{presentation3})
 	</insert>
 	
