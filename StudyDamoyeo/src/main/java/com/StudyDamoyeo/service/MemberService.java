@@ -75,6 +75,9 @@ public class MemberService {
 		sendMail.setTo(vo.getEmail());
 		sendMail.send();
 	}
+	public void updateVerified(String userId) {
+		
+	}
 	
 	
 }
