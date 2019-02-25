@@ -25,6 +25,16 @@ public class MemberVO {
 	private Date udate;
 	
 	private String verified;
+	private String emailKey;
+
+		
+	public String getEmailKey() {
+		return emailKey;
+	}
+
+	public void setEmailKey(String emailKey) {
+		this.emailKey = emailKey;
+	}
 
 	public String getUserid() {
 		return userid;

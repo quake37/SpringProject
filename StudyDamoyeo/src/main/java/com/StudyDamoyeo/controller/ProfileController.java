@@ -105,17 +105,21 @@ public class ProfileController {
 		model.addAttribute("member", vo);
 		return new ResponseEntity<>("success", HttpStatus.OK);
 	}
-	@RequestMapping(value = "/emailAuth", method = RequestMethod.POST)
-	public void emailAuth(MemberVO vo) throws Exception {
+	@RequestMapping(value = "/emailAuth", method = RequestMethod.GET)
+	public String emailAuth(Principal principal, Model model) throws Exception {
+		MemberVO vo = service.read(principal.getName());
 		service.emailAuth(vo);
+		model.addAttribute("member", vo);
+		model.addAttribute("result", "success");
+		return "/com/profileCom";
 	}
 	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
 	public String emailConfirm(@RequestParam String userId, Model model) throws Exception { // 이메일인증
-		service.create(user);
-		service.userAuth(user_email);
-		model.addAttribute("user_email", user_email);
-
-		return "/user/emailConfirm";
+		MemberVO vo = service.read(userId);
+		vo.setVerified("Y");
+		service.updateVerified(vo);
+		model.addAttribute("member", vo);
+		return "/com/profileCom";
 	}
 
 	

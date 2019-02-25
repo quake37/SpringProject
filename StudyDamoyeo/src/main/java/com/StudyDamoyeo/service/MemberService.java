@@ -66,17 +66,18 @@ public class MemberService {
 	}
 	public void emailAuth(MemberVO vo) throws MessagingException, UnsupportedEncodingException {
 		String key = new TempKey().getKey(50, false);
-		mapper.createAuthKey(vo.getUserId(), key);
+		vo.setEmailKey(key);
+		mapper.createAuthKey(vo);
 		MailHandler sendMail = new MailHandler(mailSender);
 		sendMail.setSubject("[스터디다모여 서비스 이메일 인증]");
 		sendMail.setText(
-				new StringBuffer().append("<h1>메일인증</h1>").append("<a href='http://localhost/profile/emailConfirm?userId=").append(vo.getUserId()).append("&key=").append(key).append("' target='_blenk'>이메일 인증 확인</a>").toString());
+				new StringBuffer().append("<h1>메일인증</h1>").append("<a href='http://localhost:8080/profile/emailConfirm?userId=").append(vo.getUserId()).append("&key=").append(key).append("' target='_blenk'>이메일 인증 확인</a>").toString());
 		sendMail.setFrom("hyj2u94@gmail.com", "스터디다모여 관리자");
 		sendMail.setTo(vo.getEmail());
 		sendMail.send();
 	}
-	public void updateVerified(String userId) {
-		
+	public void updateVerified(MemberVO vo) {
+		mapper.updateVerified(vo);
 	}
 	
 	

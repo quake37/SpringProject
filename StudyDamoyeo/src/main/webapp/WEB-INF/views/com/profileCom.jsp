@@ -13,6 +13,12 @@
 <meta id="_csrf_header" name="_csrf_header"
 	content="${_csrf.headerName}" />
 <script type="text/javascript">
+$(document).ready(function() {
+
+  if(${result}=="success")
+	alert('이메일을 전송했습니다.')
+
+});
 var token = $("meta[name='_csrf']").attr("content");
 var header = $("meta[name='_csrf_header']").attr("content");
 var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
@@ -207,7 +213,7 @@ function nicknameCheck() {
 							<c:if test="${member.verified =='N' }">
 								<p class="text-muted">이메일 인증을 해야 다른 기능을 이용하실 수 있습니다. 설정에서
 									이메일 인증을 해주세요.</p>
-								<button class="btn btn-primary btn-block">인증</button>
+								<a href="<c:url value="/profile/emailAuth"/>" class="btn btn-primary btn-block">인증</a>
 							</c:if>
 							<c:if test="${member.verified =='Y' }">
 								<p class="text-muted">이메일 인증완료된 회원입니다. 부가 기능이 이용가능합니다.</p>

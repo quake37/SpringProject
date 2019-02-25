@@ -31,7 +31,7 @@ public interface MemberMapper {
 	
 	public int updateEmailCheck(MemberVO vo);
 	
-	public void createAuthKey(String userId, String emailKey) ;
+	public void createAuthKey(MemberVO vo) ;
 	
-	public void updateVerified(String userId, String verified);
+	public void updateVerified(MemberVO vo);
 }
