@@ -5509,7 +5509,7 @@ button.close, button.mailbox-attachment-close {
 
 .carousel {
 	position: relative;
-	width: 90%;
+	width: 90%
 }
 
 .carousel-inner {
@@ -5957,7 +5957,8 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover
 }
 
 .d-block {
-	display: block !important
+	display: block !important;
+  	border-radius: 50px 20px
 }
 
 .d-table {
@@ -6880,7 +6881,8 @@ supports (position:sticky ){ .
 }
 
 .w-100 {
-	width: 100% !important
+	width: 100% !important;
+	height: 30% !important;
 }
 
 .w-auto {
