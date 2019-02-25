@@ -59,5 +59,5 @@ create sequence room_rno_seq
  increment by 1;
  
 ALTER TABLE MEMBER 
-ADD (EMAILKEY VARCHAR2(20) );
+ADD (EMAILKEY VARCHAR2(50) );
 
