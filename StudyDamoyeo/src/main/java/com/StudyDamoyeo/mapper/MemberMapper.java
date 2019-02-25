@@ -29,4 +29,9 @@ public interface MemberMapper {
 	
 	public String checkAuth(String userId);
 	
+	public int updateEmailCheck(MemberVO vo);
+	
+	public void createAuthKey(String userId, String emailKey) ;
+	
+	public void updateVerified(String userId, String verified);
 }
