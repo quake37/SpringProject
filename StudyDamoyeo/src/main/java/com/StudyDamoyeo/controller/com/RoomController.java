@@ -79,8 +79,17 @@ public class RoomController {
 		
 		service.insert(vo);
 		
-		return  "redirect:/room/register";
+		return  "/room/readRoom";
 		
 	}
-
+	
+	@GetMapping("/readRooms")
+	public String[] roomReads(Principal principal, Model model) {
+		String userId = principal.getName();
+		String[] names = service.readrooms(userId);
+		model.addAttribute("roomnames", names);	
+		return names;
+	}
+	@GetMapping("/readRoom")
+	public String roomRead() {return "/com/readRoom";}
 }

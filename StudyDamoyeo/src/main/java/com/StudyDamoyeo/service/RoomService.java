@@ -23,9 +23,14 @@ public class RoomService {
 		mapper.update(vo);
 	}
 
-	public RoomVO read(String userid) {
+	public RoomVO read(String roomname) {
 		// TODO Auto-generated method stub
-		return mapper.read(userid);
+		return mapper.read(roomname);
+	}
+
+	public String[] readrooms(String userId) {
+		// TODO Auto-generated method stub
+		return mapper.readrooms(userId);
 	}
 	
 	

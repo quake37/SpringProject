@@ -6,7 +6,7 @@
 <mapper namespace="com.StudyDamoyeo.mapper.RoomMapper">
 
 	<select id="read" resultType="com.StudyDamoyeo.domain.RoomVO">
-		SELECT * From room WHERE userid = #{userid}
+		SELECT * From room WHERE roomname = #{roomname}
 	</select>
 	
 	<insert id="insert">
@@ -15,5 +15,9 @@
 		values(room_rno_seq.nextval, #{userid},#{roomname},#{location},#{imgname1},#{imgname2},#{imgname3},#{imgname4},#{imgname5},
 		 #{presentation1}, #{presentation2}, #{presentation3})
 	</insert>
+	
+	<select id="readrooms" resultType="String">
+		select roomname from room where userid =  #{userid};
+	</select>
 	
 </mapper>
