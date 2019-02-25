@@ -76,7 +76,7 @@ public class ProfileController {
 		return "redirect:/profile/read";
 	}
 	@PostMapping("/update")
-	public String profileUpdate(MemberVO vo, Principal principal) {
+	public String profileUpdate(MemberVO vo) {
 		service.update(vo);
 		return "/com/profileCom";
 	}	

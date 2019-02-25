@@ -22,7 +22,7 @@
 
 		$('#fileLabel').html(inputFile);
 	}
-
+/* 
 	function upload() {
 		var inputFile = $('#inputFile');
 		var formData = new FormData();
@@ -41,7 +41,7 @@
 			success : function(result) {
 				alert('업로드가 완료되었습니다');
 			}
-		});
+		}); */
 	}
 </script>
 <div class="modal fade" id="imgModalUpload" tabindex="-1" role="dialog"
