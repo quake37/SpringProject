@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.StudyDamoyeo.mapper.ReservationMapper">
+
+<select id="getList" resultType="com.StudyDamoyeo.domain.ReservationVO">
+  <![CDATA[
+  select 
+    *
+  from 
+      (
+      select 
+        rownum rn, no, room, status, people, resdate
+      from reservation
+      where 
+  ]]>
+      
+  <![CDATA[    
+      rownum <= #{pageNum} * #{amount} 
+      )
+  where rn > (#{pageNum} -1) * #{amount}  
+  ]]>
+  </select>
+  
+  <select id="getTotal" resultType="int">
+  	select count(*) from reservation where  no > 0  
+  </select>
+  
+ </mapper>
