@@ -184,7 +184,7 @@
             <a href="<c:url value="/room/register"/>" class="nav-link">
               <i class="nav-icon fa fa-edit"></i>
               <p>
-                Forms
+                	지점 등록
                 <i class="fa fa-angle-left right"></i>
               </p>
             </a>

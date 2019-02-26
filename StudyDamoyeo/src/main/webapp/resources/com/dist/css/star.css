@@ -1,0 +1,49 @@
+.star-input>.input{
+	display: inline-block;
+	vertical-align: middle;
+	background: url('/resources/com/dist/img/grade_img.png') no-repeat;
+	
+}
+
+.star-input {
+	display: inline-block;
+	white-space: nowrap;
+	width: 150px;
+	height: 40px;
+	line-height: 30px;
+}
+
+.star-input>.input {
+	display: inline-block;
+	width: 150px;
+	background-size: 150px;
+	height: 28px;
+	white-space: nowrap;
+	overflow: hidden;
+	position: relative;
+}
+
+.star-input>.input>input {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+}
+
+.star-input>.input>label {
+	display: inline-block;
+	vertical-align: middle;
+	background: url('/resources/com/dist/img/grade_img.png') no-repeat;
+	background-size: 150px;
+	background-position: 0 bottom;
+	width: 0px;
+	height: 0;
+	padding: 28px 0 0 0;
+	overflow: hidden;
+	float: left;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+

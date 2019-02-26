@@ -16,12 +16,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>지점 등록 양식</h1>
+            <h1>지점 등록</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">지점 등록 양식</li>
+              <li class="breadcrumb-item active">지점 등록</li>
             </ol>
           </div>
         </div>
@@ -49,7 +49,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">지점 등록란</h3>
+                <h3 class="card-title">지점 등록 양식</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -58,7 +58,7 @@
                 <div class="card-body">
                  <div class="form-group">
                     <label for="roomname">지점 이름</label>
-                    <input type="text" class="form-control col-sm-4" id="roomname" name="roomname" placeholder="지점명을 입력해주세요.">
+                    <input type="text" class="form-control col-sm-4" id="roomname" name="roomname" placeholder="지점명(지역명)">
                   </div>
                 
                   <div class="form-group">

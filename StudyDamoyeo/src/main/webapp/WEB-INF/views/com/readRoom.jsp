@@ -45,10 +45,10 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <div class="row">
+        <div class="row mb-2">
 	
           <!-- left column -->
-          <div class="col-md-10">
+          <div class="col-md-9">
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
@@ -56,7 +56,14 @@
               </div>
               <!-- /.card-header -->
                <div class="card-body">
-               
+               <div class="post">
+                	<br>
+                	<span class="username">
+                     	<a href="#">스터디룸</a>
+                    </span>
+                    <p>
+                      ${room.presentation1}
+                    </p>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                   <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -112,16 +119,16 @@
                   </a>
                 </div>
                 
+                
+                </div>
                 <div class="post">
-                	<br>
-                	<span class="username">
-                     	<a href="#">스터디룸</a>
+					<br>
+					<span class="username">
+                     	<a href="#">기타시설</a>
                     </span>
                     <p>
-                      ${room.presentation1}
+                      ${room.presentation2}
                     </p>
-                </div>
-                
                  <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
                   <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
@@ -166,14 +173,7 @@
                 </div>
                 
                 
-                <div class="post">
-					<br>
-					<span class="username">
-                     	<a href="#">기타시설</a>
-                    </span>
-                    <p>
-                      ${room.presentation2}
-                    </p>
+              
                 </div>
                  
                 
@@ -217,6 +217,38 @@
             </div>
             <!-- /.card -->     
           </div>
+          <!--/.col (right) -->
+          
+               <!-- left column -->
+          <div class="col-md-3">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">설정란</h3>
+              </div>
+              <!-- /.card-header -->
+               <div class="card-body">
+             	<button type="button" class="btn btn-block btn-info btn-lg">수정</button>
+                <button type="button" class="btn btn-block btn-danger btn-lg">삭제</button>
+                
+              </div>
+            
+            </div>
+            
+             <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">채팅 목록란</h3>
+              </div>
+              <!-- /.card-header -->
+               <div class="card-body">
+             	
+                
+              </div>
+            
+            </div>
+            <!-- /.card -->     
+          </div>
+          
           <!--/.col (right) -->
         </div>
         <!-- /.row -->

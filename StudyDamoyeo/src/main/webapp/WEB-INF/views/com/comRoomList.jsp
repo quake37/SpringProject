@@ -7,7 +7,7 @@
    
 <%@include file="include/header.jsp"%>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
+<link rel="stylesheet" href="/resources/com/dist/css/star.css">
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
@@ -15,12 +15,12 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1>지점 목록</h1>
+					<h1>내 지점</h1>
 				</div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-						<li class="breadcrumb-item"><a href="#">지점</a></li>
-						<li class="breadcrumb-item active">지점 목록</li>
+						<li class="breadcrumb-item"><a href="#">현황</a></li>
+						<li class="breadcrumb-item active">내 지점</li>
 					</ol>
 				</div>
 			</div>
@@ -32,7 +32,7 @@
 	<section class="content">
 		<div class="card">
 			<div class="card-header">
-				<h3 class="card-title">Data Table With Full Features</h3>
+				<h3 class="card-title">지점 목록</h3>
 			</div>
 			<!-- /.card-header -->
 			<div class="card-body">
@@ -62,22 +62,23 @@
 							<th>지점명</th>
 							<th>지역</th>
 							<th>평점</th>
-							<th>날짜</th>
+							<th>등록 날짜</th>
 						</tr>
 					</thead>
 					<tbody>
 					<c:forEach items="${list}" var="room">
-						
+					
 						<tr>
 						
-								<td><c:out value="${room.rno}" /></td>
+								<td><span><c:out value="${room.rno}" /></span></td>
 								<td><a href="<c:url value="/room/readRoom?roomname=${room.roomname}"/>" class="nav-link"><c:out value="${room.roomname}" /></a></td>
-								<td><c:out value="${room.location1} ${room.location2} ${room.location3} ${room.location4}" /></td>
-								<td><c:out value="${room.grade}" /></td>
-								<td><c:out value="${room.regdate}" /></td>
+								<td><span><c:out value="${room.location2} ${room.location3} ${room.location4}" /></span></td>
+								<td class="star"><c:out value="${room.grade}" /></td> 
+								<td><fmt:formatDate pattern="yyyy년 MM월 dd일" value="${room.regdate }" /><br>
+									<fmt:formatDate pattern="hh시 mm분 ss초" value="${room.regdate }" />
+								</td>
 							
 						</tr>
-						<
 					</c:forEach>
 					</tbody>
 
@@ -112,4 +113,42 @@
 <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+<script>
+/*별점 : .star-input*/
+/*출처 : http://codepen.io/naradesign/pen/zxPbOw*/
+ 
+$('.star').each(function(){
+	var grade = $(this).text();
+	grade = Number(grade);
+	var style ='';
+	if(grade==1){
+		style='style="width:30px;z-index: 5;"';
+	}else if(grade==2){
+		style='style="width:60px;z-index: 4;"';
+	}
+	else if(grade==3){
+		style='style="width:90px;z-index: 3;"';
+	}
+	else if(grade==4){
+		style='style="width:120px;z-index: 2;"';
+	}
+	else if(grade==5){
+		style='style="width:150px;z-index: 1;"';
+	}
+	
+	var star = '<span class="star-input">'
+	+'<span class="input">'
+	+'<input type="radio" name="star-input">'
+	+'<label '+style+'></label>'
+	+'</span>'
+	+'<output for="star-input"><b>'+(grade)+'</b>점</output>'					
+	+'</span>';
+	
+	
+	$(this).html(star);
+	
+});
+ 
+
+</script>
 <%@include file="include/footer.jsp"%>
