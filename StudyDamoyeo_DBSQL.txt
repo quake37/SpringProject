@@ -82,3 +82,5 @@ alter table "STUDY"."RESERVATION" add constraint reservation_fk foreign key("ROO
 alter table room drop primary key cascade;
 
 alter table room modify(rno int primary key);
+
+alter table room modify(roomname varchar2(100) not null);
