@@ -79,3 +79,8 @@ CREATE TABLE RESERVATION
 CREATE SEQUENCE RESERVATION_SEQ INCREMENT BY 1 START WITH 1;
 alter table "STUDY"."RESERVATION" add constraint reservation_fk foreign key("ROOM") references "ROOM"("ROOMNAME");
 
+alter table room drop primary key cascade;
+
+alter table room modify(rno int primary key);
+
+alter table room modify(roomname varchar2(100) not null);
