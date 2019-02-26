@@ -52,16 +52,16 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">${room.roomname}</h3>
+                <h3 class="card-title" style="font-weight: bold;">${room.roomname}</h3>
               </div>
               <!-- /.card-header -->
                <div class="card-body">
                <div class="post">
                 	<br>
                 	<span class="username">
-                     	<a href="#">스터디룸</a>
+                     	<a href="#" style="font-size: 20px; font-weight: bold;">스터디룸</a>
                     </span>
-                    <p>
+                    <p style="padding: 5px;">
                       ${room.presentation1}
                     </p>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -124,9 +124,9 @@
                 <div class="post">
 					<br>
 					<span class="username">
-                     	<a href="#">기타시설</a>
+                     	<a href="#" style="font-size: 20px; font-weight: bold;">기타시설</a>
                     </span>
-                    <p>
+                    <p style="padding: 5px;">
                       ${room.presentation2}
                     </p>
                  <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
@@ -182,16 +182,16 @@
 	                    <div class="col-6">
 	                    
 	                      <span class="username">
-                     		  <a href="#">부가 설명</a>
+                     		  <a href="#" style="font-size: 20px; font-weight: bold;">부가 설명</a>
                     	  </span>
-		                    <p>
+		                    <p style="padding: 15px;">
 		                     ${room.presentation3}
 		                    </p>
 	                 	</div>
 	                 	<div class="col-6">
 	                 	
 	                 	 <span class="username">
-                     		  <a href="#">위치</a>
+                     		  <a href="#" style="font-size: 20px; font-weight: bold;">위치</a>
                     	  </span>
                     	   <p>${room.location2}<br>${room.location3}<br>${room.location4}</p>
 		                   <div id="map" style="width:100%;height:400px;"></div>
@@ -228,7 +228,7 @@
               </div>
               <!-- /.card-header -->
                <div class="card-body">
-             	<button type="button" class="btn btn-block btn-info btn-lg">수정</button>
+             	<button type="button" class="btn btn-block btn-info btn-lg" onclick = "location.href = '/room/updateRoom?roomname=${room.roomname}'">수정</button>
                 <button type="button" class="btn btn-block btn-danger btn-lg">삭제</button>
                 
               </div>

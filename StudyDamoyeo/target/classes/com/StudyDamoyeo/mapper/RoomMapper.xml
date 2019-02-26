@@ -41,4 +41,12 @@
   <select id="getTotal" resultType="int">
   	select count(*) from room where  rno > 0  
   </select>
+  
+  <update id="update">
+  	update room set roomname =#{roomname},location
+		=#{location}, imgname1 = #{imgname1},imgname2 = #{imgname2},imgname3 = #{imgname3},imgname4 = #{imgname4},
+		imgname5 = #{imgname5},presentation1 = #{presentation1},presentation2 = #{presentation2},presentation3 = #{presentation3},
+		udate = sysdate
+		where rno =#{rno}
+  </update>
 </mapper>

@@ -24,6 +24,7 @@ public class RoomService {
 	}
 	
 	public void update(RoomVO vo) {
+		vo.setLocation(vo.getLocation1()+"#"+vo.getLocation2()+"#"+vo.getLocation3()+"#"+vo.getLocation4());
 		mapper.update(vo);
 	}
 
