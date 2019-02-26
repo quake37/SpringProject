@@ -179,33 +179,13 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          
+           <li class="nav-header">목록</li>
            <li class="nav-item">
             <a href="<c:url value="/room/register"/>" class="nav-link">
               <i class="nav-icon fa fa-edit"></i>
               <p>
                 	지점 등록
                 <i class="fa fa-angle-left right"></i>
-              </p>
-            </a>
-          </li>
-          
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-dashboard"></i>
-              <p>
-                Dashboard
-                <i class="right fa fa-angle-left"></i>
-              </p>
-            </a>
-          </li>
-         
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-pie-chart"></i>
-              <p>
-                Charts
-                <i class="right fa fa-angle-left"></i>
               </p>
             </a>
           </li>
@@ -232,7 +212,27 @@
               </li>
             </ul>
           </li>
-          <li class="nav-header">EXAMPLES</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+                Dashboard
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-pie-chart"></i>
+              <p>
+                Charts
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+          
+          <li class="nav-header">그외</li>
           <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon fa fa-calendar"></i>
@@ -348,23 +348,23 @@
             </ul>
           </li>
          
-          <li class="nav-header">LABELS</li>
+          <li class="nav-header">부가 설명</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-circle-o text-danger"></i>
-              <p class="text">Important</p>
+              <p class="text">중요!</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-circle-o text-warning"></i>
-              <p>Warning</p>
+              <p>경고!</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-circle-o text-info"></i>
-              <p>Informational</p>
+              <p>정보</p>
             </a>
           </li>
         </ul>

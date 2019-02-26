@@ -72,36 +72,36 @@
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                    	<c:if test="${room.imgname1 == 'null' }">
+                    	<c:if test="${room.imgname1 == null }">
 							<img class="d-block w-100"
 								src="/resources/com/dist/img/user.svg"
 								alt="First slide">
 						</c:if>
-						<c:if test="${room.imgname1 != 'null' }">
+						<c:if test="${room.imgname1 != null }">
 							<img class="d-block w-100"
 								src="${pageContext.request.contextPath}/resources/upload/${room.imgname1 }"
 								alt="First slide">
 						</c:if>
                     </div>
                     <div class="carousel-item">
-                    	<c:if test="${room.imgname2 == 'null' }">
+                    	<c:if test="${room.imgname2 == null }">
 							<img class="d-block w-100"
 								src="/resources/com/dist/img/user.svg"
 								alt="Second slide">
 						</c:if>
-						<c:if test="${room.imgname2 != 'null' }">
+						<c:if test="${room.imgname2 != null }">
 							<img class="d-block w-100"
 								src="${pageContext.request.contextPath}/resources/upload/${room.imgname2 }"
 								alt="Second slide">
 						</c:if>
                     </div>
                     <div class="carousel-item">
-                     	 <c:if test="${room.imgname3 == 'null' }">
+                     	 <c:if test="${room.imgname3 == null }">
 							<img class="d-block w-100"
 								src="/resources/com/dist/img/user.svg"
 								alt="Third slide">
 						</c:if>
-						<c:if test="${room.imgname3 != 'null' }">
+						<c:if test="${room.imgname3 != null }">
 							<img class="d-block w-100"
 								src="${pageContext.request.contextPath}/resources/upload/${room.imgname3 }"
 								alt="Third slide">

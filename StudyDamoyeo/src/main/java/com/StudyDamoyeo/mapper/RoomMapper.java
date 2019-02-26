@@ -20,4 +20,6 @@ public interface RoomMapper {
 
 	public int getTotal(Criteria cri);
 
+	public List<RoomVO> getMainPageRoomList();
+
 }

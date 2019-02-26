@@ -81,12 +81,12 @@
                     <label for="InputFile1">기타시설 사진</label>
                     	<div class="input-group">
                       		<div class="custom-file">
-                       			 <input type="file" class="custom-file-input" id="inputFile4" name="img4" onchange="showFile(4);">
+                       			 <input type="file" class="custom-file-input" id="inputFile4" value="${room.imgname4 }" name="img4" onchange="showFile(4);">
                        			 <label class="custom-file-label" for="exampleInputFile" id="fileLabel4">사진4</label>
                      		 </div>
                    			&nbsp;
                       		<div class="custom-file">
-								<input type="file" class="custom-file-input" id="inputFile5" name="img5" onchange="showFile(5);">
+								<input type="file" class="custom-file-input" id="inputFile5" value="${room.imgname5 }" name="img5" onchange="showFile(5);">
                        		 <label class="custom-file-label" for="exampleInputFile" id="fileLabel5">사진5</label>
                     	  </div>
                    		 </div>
@@ -98,7 +98,7 @@
                       <!-- textarea -->
                   <div class="form-group">
                     <label>소개글 3</label>
-                    <textarea class="form-control" id="presentation3" value="${room.presentation3 }" name="presentation3" rows="4" placeholder="간단한 지점 소개글을 작성해주세요.(가격, 시설 등)"></textarea>
+                    <textarea class="form-control" id="presentation3" name="presentation3" rows="4" placeholder="간단한 지점 소개글을 작성해주세요.(가격, 시설 등)">${room.presentation3 }</textarea>
                   </div>
                	  <div class="form-group">
                		 	<label for="loacation1">우편번호</label><br>

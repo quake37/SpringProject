@@ -47,5 +47,13 @@ public class RoomService {
 		// TODO Auto-generated method stub
 		return mapper.getTotal(cri);
 	}
+
+	public List<RoomVO> getMainPageRoomList() {
+		return mapper.getMainPageRoomList();
+		
+		
+	}
+
+	
 	
 }
