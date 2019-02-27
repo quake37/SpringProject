@@ -180,8 +180,8 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
            <li class="nav-header">목록</li>
-           <li class="nav-item">
-            <a href="<c:url value="/room/register"/>" class="nav-link">
+           <li class="nav-item" id="1">
+            <a href="<c:url value="/room/register"/>" id="1-1" class="nav-link">
               <i class="nav-icon fa fa-edit"></i>
               <p>
                 	지점 등록
@@ -189,8 +189,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview" id="2">
+            <a href="#" class="nav-link" id="2-2">
               <i class="nav-icon fa fa-table"></i>
               <p>
               	  현황
@@ -199,13 +199,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<c:url value="/reservation/list"/>" class="nav-link">
+                <a href="<c:url value="/reservation/list"/>" class="nav-link" id="2-2-1">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>예약 현황</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<c:url value="/room/readRoomList"/>" class="nav-link">
+                <a href="<c:url value="/room/readRoomList"/>" class="nav-link"  id="2-2-2">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>내 지점</p>
                 </a>

@@ -23,7 +23,7 @@ body {
 }
 
 body {
-  background-image: url(../img/dash-bg-01.jpg);
+  background-image: url(../img/slide01.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -33,11 +33,11 @@ body {
 }
 
 .bg02 {
-	background-image: url(../img/dash-bg-02.jpg);
+	background-image: url(../img/slide02.jpg);
 }
 
 .bg03 {
-	background-image: url(../img/dash-bg-03.jpg);
+	background-image: url(../img/slide04.jpg);
 }
 
 a {
@@ -71,6 +71,7 @@ a:focus {
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 50px;
+  border-radius: 15px;
 }
 
 .tm-logout-icon {
@@ -91,6 +92,7 @@ a:focus {
 
 .tm-block {
   padding: 50px 45px;
+  border-radius: 15px;
 }
 
 .tm-block-title {
@@ -113,7 +115,8 @@ a:focus {
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show > .nav-link,
 .navbar-light .navbar-nav a:hover {
-  background-color: #e6e6e6;
+  background-color: #ffd393;
+  border-radius: 15px;
 }
 
 .nav-item {
@@ -179,7 +182,8 @@ ol {
 }
 
 .tm-list-group-alternate-color > li:nth-child(odd) {
-  background-color: #e6e6e6;
+  background-color: #ffd393;
+  border-radius: 15px;
 }
 
 .tm-list-group > li:before {
@@ -463,6 +467,7 @@ footer {
   }
   .tm-block {
     padding: 30px;
+    border-radius: 10px;
   }
 
   .tm-table-actions-row {

@@ -114,6 +114,11 @@
 </div>
 <!-- /.content-wrapper -->
 <script>
+	$('#2').addClass('menu-open');
+	$('#2-2').addClass('active');
+	$('#2-2-2').addClass('active');
+</script>
+<script>
 /*별점 : .star-input*/
 /*출처 : http://codepen.io/naradesign/pen/zxPbOw*/
  

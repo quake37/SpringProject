@@ -2359,6 +2359,7 @@
 
 			.image.fit img {
 				width: 100%;
+				border-radius: 15px;
 			}
 
 		.image.main {
@@ -2924,6 +2925,7 @@
 
 			.wrapper.style2 .box {
 				border-color: rgba(0, 0, 0, 0.15);
+				border-radius: 15px;
 			}
 
 			.wrapper.style2 input[type="submit"],
@@ -3540,6 +3542,7 @@
 		-webkit-align-items: stretch;
 		-ms-align-items: stretch;
 		align-items: stretch;
+		
 	}
 
 		.gallery > * {
@@ -3591,6 +3594,7 @@
 			.gallery .image.fit {
 				margin: 0;
 				position: relative;
+				border-radius: 15px;
 			}
 				.gallery .name h2 a{
 					position: absolute;

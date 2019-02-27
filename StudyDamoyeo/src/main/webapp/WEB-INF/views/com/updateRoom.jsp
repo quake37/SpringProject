@@ -8,7 +8,7 @@
 <%@include file="include/header.jsp"%>
 
 
-
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -136,6 +136,7 @@
   </div>
   <!-- /.content-wrapper -->
 <script>
+	$('#1-1').addClass('active');
 	function fileCheck(fileName, fileSize) {
 		if (fileSize >= 5242880) {
 			alert('파일 사이즈가 초과했습니다');

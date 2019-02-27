@@ -109,5 +109,9 @@
 <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
+<script>
+	$('#2').addClass('menu-open');
+	$('#2-2').addClass('active');
+	$('#2-2-1').addClass('active');
+</script>
 <%@include file="include/footer.jsp"%>
