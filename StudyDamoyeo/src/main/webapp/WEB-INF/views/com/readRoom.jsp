@@ -136,12 +136,12 @@
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <c:if test="${room.imgname4 == 'null' }">
+                      <c:if test="${room.imgname4 == null }">
 							<img class="d-block w-100"
 								src="/resources/com/dist/img/user.svg"
 								alt="First slide">
 						</c:if>
-						<c:if test="${room.imgname4 != 'null' }">
+						<c:if test="${room.imgname4 != null }">
 							<img class="d-block w-100"
 								src="${pageContext.request.contextPath}/resources/upload/${room.imgname4 }"
 								alt="First slide">
@@ -149,12 +149,12 @@
 
                     </div>
                     <div class="carousel-item">
-                       <c:if test="${room.imgname5 == 'null' }">
+                       <c:if test="${room.imgname5 == null }">
 							<img class="d-block w-100"
 								src="/resources/com/dist/img/user.svg"
 								alt="Second slide">
 						</c:if>
-						<c:if test="${room.imgname5 != 'null' }">
+						<c:if test="${room.imgname5 != null }">
 							<img class="d-block w-100"
 								src="${pageContext.request.contextPath}/resources/upload/${room.imgname5 }"
 								alt="Second slide">
