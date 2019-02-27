@@ -84,3 +84,23 @@ alter table room drop primary key cascade;
 alter table room modify(rno int primary key);
 
 alter table room modify(roomname varchar2(100) not null);
+
+---------------------------2019-02-27---------------------------------------------------------------------
+
+alter table reservation add(recru_no int);
+
+create table recruitment(
+ recru_no INT PRIMARY KEY,
+ userid VARCHAR2(30) NOT NULL,
+ location VARCHAR2(100) NOT NULL,
+ total_people INT,
+ state_people INT default 1,
+ title VARCHAR2(300) NOT NULL,
+ content VARCHAR2(2000) NOT NULL,
+ recruitment_type VARCHAR2(500),
+ recruitment_state int,
+ regdate DATE default sysdate,
+ udate DATE default sysdate
+);
+alter table recruitment add constraint recruitment_fk foreign key(userid) references member(userid) on delete cascade;
+alter table reservation add constraint reservation_fk foreign key(recru_no) references recruitment(recru_no) on delete cascade;
