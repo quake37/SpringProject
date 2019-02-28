@@ -29,7 +29,7 @@
 						aria-expanded="false"> 스터디 모집 </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="/recruitment/register">모집글 작성</a> <a
-								class="dropdown-item" href="#">모집글 보기</a> <a
+								class="dropdown-item" href="/recruitment/readRecruitmentList">모집글 보기</a> <a
 								class="dropdown-item" href="#">Yearly Report</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="products.html">Products</a>

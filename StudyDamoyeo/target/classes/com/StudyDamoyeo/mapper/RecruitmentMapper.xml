@@ -4,6 +4,33 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.StudyDamoyeo.mapper.RecruitmentMapper">
+<insert id="insert">
+		insert into recruitment (recru_no,userid, location, total_people, title,content,recruitment_type,expire_date)
+		values(recruitment_recru_no_seq.nextval, #{userid},#{location},#{total_people},#{title},#{content},#{recruitment_type},#{expire_date})
+</insert>
 
+<select id="getList" resultType="com.StudyDamoyeo.domain.RecruitmentVO">
+  <![CDATA[
+  select 
+    *
+  from 
+      (
+      select 
+        rownum rn, RECRU_NO, USERID, LOCATION, TOTAL_PEOPLE, STATE_PEOPLE,TITLE,CONTENT,RECRUITMENT_TYPE,RECRUITMENT_STATE,
+        REGDATE,EXPIRE_DATE
+      from recruitment
+      where 
+  ]]>
+      
+  <![CDATA[    
+      rownum <= #{pageNum} * #{amount} 
+      )
+  where rn > (#{pageNum} -1) * #{amount}  
+  ]]>
+  </select>
+  
+  <select id="getTotal" resultType="int">
+  	select count(*) from recruitment where  RECRU_NO > 0  
+  </select>
 	
 </mapper>
