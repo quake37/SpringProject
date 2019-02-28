@@ -106,3 +106,7 @@ alter table recruitment add constraint recruitment_fk foreign key(userid) refere
 alter table reservation add constraint reservation_fk foreign key(recru_no) references recruitment(recru_no) on delete cascade;
 
 alter table recruitment add(expire_date VARCHAR2(100));
+
+create sequence recruitment_recru_no_seq
+ start with 1
+ increment by 1;
