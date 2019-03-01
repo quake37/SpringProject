@@ -50,9 +50,9 @@
                                     <label for="recruitment_type" class="col-xl-3 col-lg-4 col-md-4 col-sm-5 col-form-label">모집분야</label>
                                     <select class="custom-select col-xl-11 col-lg-8 col-md-8 col-sm-7" id="recruitment_type" name="recruitment_type">
                                         <option selected>분야 선택</option>
-                                        <option value="1">외국어 스터디</option>
-                                        <option value="2">취업 스터디</option>
-                                        <option value="3">그외</option>
+                                        <option value="외국어 스터디">외국어 스터디</option>
+                                        <option value="취업 스터디">취업 스터디</option>
+                                        <option value="그외">그외</option>
                                     </select>
                                 </div>
                                 
