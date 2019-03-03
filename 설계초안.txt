@@ -144,11 +144,11 @@ DB초안
 	- regdate(생성날짜) date
 	- update(갱신날짜) date
 8 application
-	- 번호(pk) int
-	- 주제(not null) String 
-	- 참여자(작성자) String (fk닉네임 또는 아이디)
-	- 스터디장(모집게시판 작성자)(not null) String (fk닉네임 또는 아이디)
-	- 모집글 번호 int (fk, recruitment) 
+	- no 번호(pk) int
+	- recruit_no fk 모집글 번호
+	- 참여자  userID varchar
+	- recruiter 스터디장(모집게시판 작성자)(not null) String (fk닉네임 또는 아이디)
+	- 승인여부 result int (-1 거절 0 대기 1 승인)
 9. authority
 	-userid varchar2(fk member)
 	-auth varchar2
