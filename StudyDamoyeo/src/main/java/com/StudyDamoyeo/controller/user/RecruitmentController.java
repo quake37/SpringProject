@@ -59,9 +59,11 @@ public class RecruitmentController {
 	
 	@GetMapping("/readRecruitment")
 	public String roomRead(@RequestParam("recru_no") int recru_no,Model model) {
+		
+		System.out.println(recru_no);
 		RecruitmentVO vo = service.read(recru_no);
 		
 		model.addAttribute("recruitment", vo);
-		return "/com/readRoom";
+		return "/user/recruitmentDetail";
 	}
 }

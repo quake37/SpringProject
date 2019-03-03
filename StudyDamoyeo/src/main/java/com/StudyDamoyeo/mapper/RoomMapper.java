@@ -22,4 +22,6 @@ public interface RoomMapper {
 
 	public List<RoomVO> getMainPageRoomList();
 
+	public List<RoomVO> getList_all();
+
 }

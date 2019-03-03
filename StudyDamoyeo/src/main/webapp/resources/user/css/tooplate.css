@@ -142,6 +142,15 @@ a:focus {
 .tm-col-big {
   width: 39%;
 }
+.tm-col-big-4 {
+  width: 33%;
+}
+.tm-col-big-6 {
+  width: 50%;
+}
+.tm-col-big-12 {
+  width: 100%;
+}
 
 .tm-col-small {
   width: 21.95%;

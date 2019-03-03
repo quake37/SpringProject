@@ -18,7 +18,7 @@ public class RecruitmentService {
 
 	public RecruitmentVO read(int recru_no) {
 		// TODO Auto-generated method stub
-		return null;
+		return mapper.read(recru_no);
 	}
 
 	public void insert(RecruitmentVO vo) {

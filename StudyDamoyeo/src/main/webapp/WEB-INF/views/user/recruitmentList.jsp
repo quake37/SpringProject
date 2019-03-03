@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/resources/user/css/bootstrap.min.css">
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="/resources/user/css/tooplate.css">
-<title>Insert title here</title>
+<title>StudyDamoyeo</title>
 </head>
 <body id="reportsPage" class="bg02">
     <div class="" id="home">
@@ -49,7 +49,7 @@
                                 </thead>
                                 <tbody>
                                 <c:forEach items="${list}" var="recruitment">
-                                    <tr>
+                                    <tr class="tm-product-name">
                                         <th scope="row">
                                            ${recruitment.recru_no }
                                         </th>
@@ -103,6 +103,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
              <%@include file="include/footer.jsp"%>
         </div>
@@ -114,9 +115,13 @@
     <script>
         $(function () {
             $('.tm-product-name').on('click', function () {
-                window.location.href = "edit-product.html";
+            	var tr=$(this);
+            	var td=tr.children();   
+            	
+            	window.location.href = "/recruitment/readRecruitment?recru_no="+td.eq(0).text();;
             });
         })
+          $('#2-2').addClass('active');
     </script>
 </body>
 

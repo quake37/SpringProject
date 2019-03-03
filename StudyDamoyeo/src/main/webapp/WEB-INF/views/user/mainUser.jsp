@@ -16,7 +16,7 @@
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="/resources/user/css/tooplate.css">
     
-<title>Insert title here</title>
+<title>StudyDamoyeo</title>
 </head>
 <body id="reportsPage">
     <div class="" id="home">

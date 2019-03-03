@@ -32,5 +32,7 @@
   <select id="getTotal" resultType="int">
   	select count(*) from recruitment where  RECRU_NO > 0  
   </select>
-	
+    <select id="read" resultType="com.StudyDamoyeo.domain.RecruitmentVO">
+		SELECT * From recruitment WHERE recru_no = #{recru_no}
+	</select>
 </mapper>

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/resources/user/css/bootstrap.min.css">
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="/resources/user/css/tooplate.css">
-<title>Insert title here</title>
+<title>StudyDamoyeo</title>
 </head>
 <body class="bg03">
 <h3><sec:authentication property="principal"/></h3>

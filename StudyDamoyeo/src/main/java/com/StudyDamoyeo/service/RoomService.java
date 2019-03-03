@@ -54,6 +54,11 @@ public class RoomService {
 		
 	}
 
+	public List<RoomVO> getList_all() {
+		// TODO Auto-generated method stub
+		return mapper.getList_all();
+	}
+
 	
 	
 }

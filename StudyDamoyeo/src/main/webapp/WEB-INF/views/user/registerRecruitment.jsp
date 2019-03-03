@@ -16,7 +16,7 @@
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="/resources/user/css/tooplate.css">
     
-<title>Insert title here</title>
+<title>StudyDamoyeo</title>
 </head>
 <body class="bg02">
     <div class="container">
@@ -172,7 +172,7 @@
 
 
         	});
-        
+        $('#2-1').addClass('active');
         
     </script>
 </body>
