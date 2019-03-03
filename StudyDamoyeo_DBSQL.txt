@@ -111,4 +111,4 @@ create sequence recruitment_recru_no_seq
  start with 1
  increment by 1;
  
- alter table recruitment modify(recruitment_state varchar2(10) default '0');
+alter table recruitment modify(recruitment_state int default 0);
