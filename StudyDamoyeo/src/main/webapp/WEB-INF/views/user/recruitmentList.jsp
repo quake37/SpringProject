@@ -1,6 +1,7 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
  <%@ taglib uri ="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html>
@@ -37,13 +38,13 @@
                                 <thead>
                                     <tr class="tm-bg-gray">
                                         <th scope="col">&nbsp;</th>
-                                        <th scope="col">제목</th>
-                                        <th scope="col">모집구분</th>
-                                        <th scope="col">지역</th>
+                                        <th scope="col"class="text-center">제목</th>
+                                        <th scope="col"class="text-center">모집구분</th>
+                                        <th scope="col" class="text-center">지역</th>
                                         <th scope="col" class="text-center">현재인원</th>
                                         <th scope="col" class="text-center">모집상태</th>
-                                        <th scope="col">기간</th>
-                                        <th scope="col">등록날짜</th>
+                                        <th scope="col" class="text-center">기간</th>
+                                        <th scope="col"class="text-center">등록날짜</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,13 +53,27 @@
                                         <th scope="row">
                                            ${recruitment.recru_no }
                                         </th>
-                                        <td class="tm-product-name">${recruitment.title }</td>
-                                        <td>${recruitment.recruitment_type }</td>
-                                        <td>${recruitment.location }</td>
+                                        <td class="text-center">${recruitment.title }</td>
+                                        <td class="text-center">${recruitment.recruitment_type }</td>
+                                        <td class="text-center">${recruitment.location }</td>
                                         <td class="text-center">${recruitment.state_people }/${recruitment.total_people }</td>
-                                        <td class="text-center">${recruitment.recruitment_state }</td>
-                                        <td>${recruitment.expire_date }</td>
-                                        <td>${recruitment.regdate }</td>
+                                        <td class="text-center">                 
+                                       
+                                        <c:if test="${recruitment.recruitment_state == 0 }">
+											모집중
+										</c:if>
+										 <c:if test="${recruitment.recruitment_state == 1 }">
+											모집마감
+										</c:if>
+										 <c:if test="${recruitment.recruitment_state == 2 }">
+											추가 모집중
+										</c:if>
+                                       
+                                        </td>
+                                        <td class="text-center"><fmt:formatDate pattern="MM/dd/yyyy" value="${recruitment.regdate }" /> ~ ${recruitment.expire_date }</td>
+                                        <td class="text-center">
+                                        <fmt:formatDate pattern="yyyy년 MM월 dd일" value="${recruitment.regdate }" />
+										</td>
                                     </tr>
                                     </c:forEach>
                                 </tbody>

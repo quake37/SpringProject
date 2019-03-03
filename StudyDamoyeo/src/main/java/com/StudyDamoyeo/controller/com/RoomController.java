@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.StudyDamoyeo.domain.Criteria;
 import com.StudyDamoyeo.domain.MemberVO;
@@ -68,7 +69,7 @@ public class RoomController {
 	}
 	
 	@PostMapping(value = "/insertRoom",headers = ("content-type=multipart/*"))
-	public String insertRoom(RoomVO vo, Model model,MultipartFile img1,MultipartFile img2,
+	public String insertRoom(RoomVO vo,MultipartFile img1,MultipartFile img2,
 			MultipartFile img3,MultipartFile img4,MultipartFile img5, Principal principal) {
 		vo.setUserid(principal.getName());
 		String uploadFolder = application.getRealPath("/resources/upload");
@@ -105,8 +106,7 @@ public class RoomController {
 		vo.setImgname5(uploadFolderPath+"/"+uploadFileNames[4]);
 		
 		service.insert(vo);
-		model.addAttribute("room", vo);
-		return "/room/readRoomList";
+		return "redirect:/room/readRoomList";
 		
 	}
 	

@@ -40,7 +40,7 @@ public class RecruitmentController {
 		service.insert(vo);
 		
 		
-		return "/recruitment/readRecruitmentList";
+		return "redirect:/recruitment/readRecruitmentList";
 		
 	}
 	
