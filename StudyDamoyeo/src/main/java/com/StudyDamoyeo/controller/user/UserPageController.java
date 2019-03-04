@@ -28,7 +28,14 @@ public class UserPageController {
 	ApplicationService applicationService;
 	
 	@GetMapping("/mainpage")
-	public String mainpage() {return "/user/mainUser";}
+	public String mainpage(Model model) {
+		List<RecruitmentVO> recruitmentvo = recruitService.getMainList();
+		List<RoomVO> roomvo = roomservice.getMainPageRoomList();
+		model.addAttribute("recruitmentList", recruitmentvo);
+		model.addAttribute("roomList", roomvo);
+		return "/user/mainUser";
+		
+	}
 	@GetMapping("/myStatus")
 	public String myStatus(Principal principal, Model model) {
 		List<RecruitmentVO> recruitList =recruitService.getMyList(principal.getName());
@@ -52,9 +59,13 @@ public class UserPageController {
 	}
 	@GetMapping("/roomdetail")
 	public String roomdetail(@RequestParam("rno") int rno,Model model){
-		
+		System.out.println(rno);
 		RoomVO vo = roomservice.read_int(rno);
-		
+		String[] locationsplit = vo.getLocation().split("#");
+		vo.setLocation1(locationsplit[0]);
+		vo.setLocation2(locationsplit[1]);
+		vo.setLocation3(locationsplit[2]);
+		vo.setLocation4(locationsplit[3]);
 		model.addAttribute("room", vo);
 		return "/user/roomDetail";
 	}

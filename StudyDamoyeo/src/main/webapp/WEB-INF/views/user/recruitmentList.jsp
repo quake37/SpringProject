@@ -26,12 +26,10 @@
                     <div class="bg-white tm-block h-100">
                         <div class="row">
                             <div class="col-md-8 col-sm-12">
-                                <h2 class="tm-block-title d-inline-block">Products</h2>
+                                <h2 class="tm-block-title d-inline-block">모집글 목록</h2>
 
                             </div>
-                            <div class="col-md-4 col-sm-12 text-right">
-                                <a href="add-product.html" class="btn btn-small btn-primary">Add New Product</a>
-                            </div>
+                           
                         </div>
                         <div class="table-responsive">
                             <table class="table table-hover table-striped tm-table-striped-even mt-3">
@@ -44,7 +42,7 @@
                                         <th scope="col" class="text-center">현재인원</th>
                                         <th scope="col" class="text-center">모집상태</th>
                                         <th scope="col" class="text-center">기간</th>
-                                        <th scope="col"class="text-center">등록날짜</th>
+                                       
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -71,9 +69,7 @@
                                        
                                         </td>
                                         <td class="text-center"><fmt:formatDate pattern="MM/dd/yyyy" value="${recruitment.regdate }" /> ~ ${recruitment.expire_date }</td>
-                                        <td class="text-center">
-                                        <fmt:formatDate pattern="yyyy년 MM월 dd일" value="${recruitment.regdate }" />
-										</td>
+                                        
                                     </tr>
                                     </c:forEach>
                                 </tbody>

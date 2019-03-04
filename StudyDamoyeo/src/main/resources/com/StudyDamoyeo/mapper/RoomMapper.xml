@@ -16,7 +16,7 @@
 	</select>
 	
 	<select id="getMainPageRoomList" resultType="com.StudyDamoyeo.domain.RoomVO">
-	<![CDATA[	select roomname,imgname1 from room WHERE ROWNUM < 6 order by grade desc  ]]>
+	<![CDATA[	select * from room WHERE ROWNUM < 8 order by grade desc  ]]>
 	</select>
 	
 	<insert id="insert">

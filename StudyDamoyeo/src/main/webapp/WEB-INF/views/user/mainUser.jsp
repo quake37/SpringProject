@@ -48,35 +48,20 @@
                     <div class="bg-white tm-block h-100">
                         <div class="row">
                             <div class="col-8">
-                                <h2 class="tm-block-title d-inline-block">Top Product List</h2>
+                                <h2 class="tm-block-title d-inline-block">진행중인 모집글</h2>
 
                             </div>
                             <div class="col-4 text-right">
-                                <a href="products.html" class="tm-link-black">View All</a>
+                                <a href="/recruitment/readRecruitmentList" class="tm-link-black">더보기</a>
                             </div>
                         </div>
                         <ol class="tm-list-group tm-list-group-alternate-color tm-list-group-pad-big">
+                            <c:forEach items="${recruitmentList}" var="recruitment">
+                           
                             <li class="tm-list-group-item">
-                                Donec eget libero
+                             <a href="/recruitment/readRecruitment?recru_no=${recruitment.recru_no }" style="color: black;">${recruitment.title }</a> 
                             </li>
-                            <li class="tm-list-group-item">
-                                Nunc luctus suscipit elementum
-                            </li>
-                            <li class="tm-list-group-item">
-                                Maecenas eu justo maximus
-                            </li>
-                            <li class="tm-list-group-item">
-                                Pellentesque auctor urna nunc
-                            </li>
-                            <li class="tm-list-group-item">
-                                Sit amet aliquam lorem efficitur
-                            </li>
-                            <li class="tm-list-group-item">
-                                Pellentesque auctor urna nunc
-                            </li>
-                            <li class="tm-list-group-item">
-                                Sit amet aliquam lorem efficitur
-                            </li>
+                           </c:forEach>
                         </ol>
                     </div>
                 </div>
@@ -108,6 +93,27 @@
                             
                             <li class="tm-list-group-item">Meet Supervisor</li>
                             <li class="tm-list-group-item">Company trip</li>
+                        </ol>
+                    </div>
+                </div>
+                 <div class="tm-col tm-col-big">
+                    <div class="bg-white tm-block h-100">
+                        <div class="row">
+                            <div class="col-8">
+                                <h2 class="tm-block-title d-inline-block">등록된 스터디카페</h2>
+
+                            </div>
+                            <div class="col-4 text-right">
+                                <a href="/user/roomList" class="tm-link-black">더보기</a>
+                            </div>
+                        </div>
+                        <ol class="tm-list-group tm-list-group-alternate-color tm-list-group-pad-big">
+                            <c:forEach items="${roomList}" var="room">
+                           
+                            <li class="tm-list-group-item">
+                             <a href="/user/roomdetail?rno=${room.rno}" style="color: black;">${room.roomname }  ${room.rno}</a> 
+                            </li>
+                           </c:forEach>
                         </ol>
                     </div>
                 </div>
@@ -156,6 +162,8 @@
         })
         
         $('#1').addClass('active');
+        
+          
     </script>
 </body>
 </html>
