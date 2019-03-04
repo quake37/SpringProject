@@ -25,10 +25,10 @@
 <!-- https://getbootstrap.com/ -->
 <link rel="stylesheet" href="/resources/user/css/tooplate.css">
 <script type="text/javascript">
-	function cancle(input) {
+	function cancle() {
 		var token = $("meta[name='_csrf']").attr("content");
 		var header = $("meta[name='_csrf_header']").attr("content");
-		var no = input;
+		var no = $("#no").val();
 		$.ajax({
 			async : true,
 			type : 'POST',
@@ -134,9 +134,10 @@
 											<c:if test="${application.result==-1 }">
 												<td>거절</td>
 											</c:if>
-
-											<td><button class="btn btn"
-													onclick="cancle(${application.no});">취소</button></td>
+											<td hidden="true">
+											<input type="hidden" id="no" value="${application.no }"/></td>
+											<td><button class="btn btn" type="button"
+													onclick="cancle();">취소</button></td>
 										</tr>
 									</c:forEach>
 								</tr>
@@ -190,7 +191,8 @@
 	
    <script>
    $(function () {
-       $('.list').on('click', function () {
+       $('.list
+    		   ').on('click', function () {
        	var tr=$(this);
        	var td=tr.children();   
        	

@@ -12,7 +12,7 @@
 	select * from application where userId = #{userId}
 </select>
 <delete id="delete">
-	delete * from application where no = #{no}
+	delete  from application where no = #{no}
 </delete>
 
 </mapper>
