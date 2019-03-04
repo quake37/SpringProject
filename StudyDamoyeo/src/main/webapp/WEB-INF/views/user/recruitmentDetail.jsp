@@ -50,59 +50,8 @@
 <title>StudyDamoyeo</title>
 </head>
 <body class="bg03">
-<<<<<<< HEAD
-	<div class="container">
-=======
-    <div class="container">
-    
-           <%@include file="include/header.jsp"%>
-           
-        <!-- row -->
-       <div class="row content-row tm-mt-big">
-            <div class="col-11">
-                <div class="bg-white tm-block">
-                    <div class="row">
-                        <div class="col-12">
-                            <h2 class="tm-block-title">${recruitment.title }</h2>
-                        </div>
-                          <div class="col-md-12 col-sm-12 text-right">
-                                <a href="/recruitment/readRecruitmentList" class="btn btn-small btn-primary">뒤로</a>
-                          </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                           
-                                <div class="form-group">
-                                    <label for="name">모집자</label>
-                                    <input class="form-control validate" value="${nickname }" disabled="true">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">내용 </label>
-                                    <textarea class="form-control validate" disabled="true" rows="5">${recruitment.content }</textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">위치</label>
-                                    <input class="form-control validate col-3" disabled="true" value="${recruitment.location }" >
-                                </div>
-                                <div class="form-group">
-                                    <label for="password2">현재인원/모집인원</label>
-                                    <input class="form-control validate col-1" disabled="true" value="${recruitment.state_people }/${recruitment.total_people }">
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">연락처</label>
-                                    <input  class="form-control validate col-4" value="${email }" disabled="true">
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 col-sm-4">
-                                        <button class="btn btn-primary">참여요청하기
-                                        </button>
-                                    </div>
-                                    <div class="col-12 col-sm-8 tm-btn-right">
-                                        
-                                    </div>
-                                </div>
->>>>>>> branch 'master' of https://github.com/quake37/SpringProject.git
 
+	<div class="container">
 		<%@include file="include/header.jsp"%>
 
 		<!-- row -->
