@@ -29,8 +29,11 @@
               <c:forEach items="${list}" var="room">
                 <div class="tm-col tm-col-big-4">
                     <div class="bg-white tm-block h-100">
+                    <a href="/user/roomdetail?rno=${room.rno }">
                         <h2 class="tm-block-title">${room.roomname }</h2>
+                        
                       <img   class="img-fluid" src="${pageContext.request.contextPath}/resources/upload/${room.imgname1 }" alt="" />
+                    </a>
                     </div>
                 </div>
               </c:forEach>

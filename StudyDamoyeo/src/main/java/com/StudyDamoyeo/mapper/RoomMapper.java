@@ -24,4 +24,6 @@ public interface RoomMapper {
 
 	public List<RoomVO> getList_all();
 
+	public RoomVO read_int(int rno);
+
 }

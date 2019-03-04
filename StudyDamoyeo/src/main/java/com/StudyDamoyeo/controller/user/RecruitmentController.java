@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.StudyDamoyeo.domain.Criteria;
+import com.StudyDamoyeo.domain.MemberVO;
 import com.StudyDamoyeo.domain.PageDTO;
 import com.StudyDamoyeo.domain.RecruitmentVO;
 import com.StudyDamoyeo.domain.RoomVO;
+import com.StudyDamoyeo.service.MemberService;
 import com.StudyDamoyeo.service.RecruitmentService;
 
 
@@ -29,6 +31,8 @@ public class RecruitmentController {
 	RecruitmentService service;
 	@Autowired
 	ServletContext application;
+	@Autowired
+	MemberService memberservice;
 
 	@GetMapping("/register")
 	public String registerRecruitment() {return "/user/registerRecruitment";}
@@ -62,7 +66,8 @@ public class RecruitmentController {
 		
 		System.out.println(recru_no);
 		RecruitmentVO vo = service.read(recru_no);
-		
+		MemberVO membervo = memberservice.read(vo.getUserid());
+		model.addAttribute("member",membervo.getNickname());
 		model.addAttribute("recruitment", vo);
 		return "/user/recruitmentDetail";
 	}

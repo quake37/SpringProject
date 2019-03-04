@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.StudyDamoyeo.domain.RoomVO;
 import com.StudyDamoyeo.service.RoomService;
@@ -36,5 +37,13 @@ public class UserPageController {
 		}
 		model.addAttribute("list", vo);
 		return "/user/roomList";
+	}
+	@GetMapping("/roomdetail")
+	public String roomdetail(@RequestParam("rno") int rno,Model model){
+		
+		RoomVO vo = roomservice.read_int(rno);
+		
+		model.addAttribute("room", vo);
+		return "/user/roomDetail";
 	}
 }

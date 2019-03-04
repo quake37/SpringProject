@@ -11,6 +11,9 @@
 	<select id="read" resultType="com.StudyDamoyeo.domain.RoomVO">
 		SELECT * From room WHERE roomname = #{roomname}
 	</select>
+	<select id="read_int" resultType="com.StudyDamoyeo.domain.RoomVO">
+		SELECT * From room WHERE rno = #{rno}
+	</select>
 	
 	<select id="getMainPageRoomList" resultType="com.StudyDamoyeo.domain.RoomVO">
 	<![CDATA[	select roomname,imgname1 from room WHERE ROWNUM < 6 order by grade desc  ]]>

@@ -59,6 +59,11 @@ public class RoomService {
 		return mapper.getList_all();
 	}
 
+	public RoomVO read_int(int rno) {
+		// TODO Auto-generated method stub
+		return mapper.read_int(rno);
+	}
+
 	
 	
 }
