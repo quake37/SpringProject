@@ -111,7 +111,7 @@
                             <c:forEach items="${roomList}" var="room">
                            
                             <li class="tm-list-group-item">
-                             <a href="/user/roomdetail?rno=${room.rno }" style="color: black;">${room.roomname }</a> 
+                             <a href="/user/roomdetail?rno=${room.rno}" style="color: black;">${room.roomname }  ${room.rno}</a> 
                             </li>
                            </c:forEach>
                         </ol>
