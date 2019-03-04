@@ -54,9 +54,9 @@ public class ApplicationController {
 	
 	@ResponseBody
 	@PostMapping("/delete")
-	public ResponseEntity<String> delete(@RequestBody String no) {
+	public ResponseEntity<String> delete(@RequestBody int no) {
 		System.out.println(no);
-		applicationService.delete(Integer.parseInt(no));
+		applicationService.delete(no);
 		return new ResponseEntity<>("success", HttpStatus.OK);
 	}
 

@@ -25,10 +25,10 @@
 <!-- https://getbootstrap.com/ -->
 <link rel="stylesheet" href="/resources/user/css/tooplate.css">
 <script type="text/javascript">
-	function cancle(no) {
+	function cancle(input) {
 		var token = $("meta[name='_csrf']").attr("content");
 		var header = $("meta[name='_csrf_header']").attr("content");
-		alert(no);
+		var no = input;
 		$.ajax({
 			async : true,
 			type : 'POST',
