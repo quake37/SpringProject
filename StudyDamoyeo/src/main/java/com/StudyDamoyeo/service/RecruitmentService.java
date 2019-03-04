@@ -39,14 +39,13 @@ public class RecruitmentService {
 		// TODO Auto-generated method stub
 		return mapper.getTotal(cri);
 	}
-<<<<<<< HEAD
-	public void update(RecruitmentVO vo) {
-		 mapper.update(vo);
-=======
 
+	public void update(RecruitmentVO vo) {
+		  mapper.update(vo);
+	}
 	public List<RecruitmentVO> getMainList() {
 		// TODO Auto-generated method stub
 		return mapper.getMainList();
->>>>>>> branch 'master' of https://github.com/quake37/SpringProject.git
+
 	}
 }
