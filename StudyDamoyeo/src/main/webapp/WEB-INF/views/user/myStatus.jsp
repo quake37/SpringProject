@@ -81,7 +81,7 @@
 							</thead>
 							<tbody>
 								<c:forEach items="${recruitList}" var="recruit">
-									<tr class="tm-product-name">
+									<tr class="tm-product-name list">
 										<td hidden="true">${recruit.recru_no }</td>
 										<td>${recruit.location }</td>
 										<td>${recruit.title }</td>
@@ -190,7 +190,7 @@
 	
    <script>
    $(function () {
-       $('.tm-product-name').on('click', function () {
+       $('.list').on('click', function () {
        	var tr=$(this);
        	var td=tr.children();   
        	
