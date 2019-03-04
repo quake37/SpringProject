@@ -17,7 +17,6 @@ import com.StudyDamoyeo.domain.Criteria;
 import com.StudyDamoyeo.domain.MemberVO;
 import com.StudyDamoyeo.domain.PageDTO;
 import com.StudyDamoyeo.domain.RecruitmentVO;
-import com.StudyDamoyeo.domain.RoomVO;
 import com.StudyDamoyeo.service.MemberService;
 import com.StudyDamoyeo.service.RecruitmentService;
 
