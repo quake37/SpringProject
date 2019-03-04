@@ -9,4 +9,6 @@ public interface ApplicationMapper {
 	public void insert(ApplicationVO vo);
 	
 	public List<ApplicationVO> getList(String userId);
+	
+	public void delete(int no);
 }

@@ -22,4 +22,8 @@ public class ApplicationService {
 	public List<ApplicationVO> getList(String userId){
 		return mapper.getList(userId);
 	}
+	
+	public void delete(int no) {
+		mapper.delete(no);
+	}
 }

@@ -90,17 +90,17 @@
 									class="form-control validate col-4" value="${email }"
 									disabled="true">
 							</div>
+							<c:if test="${userId }!=${recruitment.userid }">
 							<div class="row">
 								<div class="col-12 col-sm-4">
-									<c:if test="${userId } == ${recruitment.userid }">
+									
 										<button class="btn btn-primary" onclick="request();"
 											type="button">참여요청하기</button>
-									</c:if>
+									
 								</div>
 								<div class="col-12 col-sm-8 tm-btn-right"></div>
 							</div>
-
-
+							</c:if>
 						</div>
 					</div>
 				</div>

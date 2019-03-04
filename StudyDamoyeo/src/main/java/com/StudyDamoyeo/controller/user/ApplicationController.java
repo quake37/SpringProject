@@ -44,13 +44,19 @@ public class ApplicationController {
 		ApplicationVO vo = new ApplicationVO();
 		vo.setRecruit_no(recruit_no);
 		RecruitmentVO rvo = recruitService.read(recruit_no);
-		rvo.setState_people(rvo.getState_people()+1);
-		recruitService.update(rvo);
 		String recruiter =rvo.getUserid();
 		vo.setRecruiter(recruiter);
 		vo.setUserId(principal.getName());
 		applicationService.insert(vo);
 			
+		return new ResponseEntity<>("success", HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@PostMapping("/delete")
+	public ResponseEntity<String> delete(@RequestBody String no) {
+		System.out.println(no);
+		applicationService.delete(Integer.parseInt(no));
 		return new ResponseEntity<>("success", HttpStatus.OK);
 	}
 
