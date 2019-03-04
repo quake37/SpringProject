@@ -48,7 +48,11 @@ public class UserPageController {
 	public String roomdetail(@RequestParam("rno") int rno,Model model){
 		
 		RoomVO vo = roomservice.read_int(rno);
-		
+		String[] locationsplit = vo.getLocation().split("#");
+		vo.setLocation1(locationsplit[0]);
+		vo.setLocation2(locationsplit[1]);
+		vo.setLocation3(locationsplit[2]);
+		vo.setLocation4(locationsplit[3]);
 		model.addAttribute("room", vo);
 		return "/user/roomDetail";
 	}
