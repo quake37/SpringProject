@@ -8,10 +8,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta id="_csrf" name="_csrf" content="${_csrf.token}" />
-<!-- default header name is X-CSRF-TOKEN -->
-<meta id="_csrf_header" name="_csrf_header"
-	content="${_csrf.headerName}" />
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
 <!-- https://fonts.google.com/specimen/Open+Sans -->
@@ -24,39 +20,20 @@
 <link rel="stylesheet" href="/resources/user/css/bootstrap.min.css">
 <!-- https://getbootstrap.com/ -->
 <link rel="stylesheet" href="/resources/user/css/tooplate.css">
-<script type="text/javascript">
-	function request() {
-		var recruit_no = $("#recruit_no").val();
-		var token = $("meta[name='_csrf']").attr("content");
-		var header = $("meta[name='_csrf_header']").attr("content");
-		$.ajax({
-			async : true,
-			type : 'POST',
-			data : recruit_no,
-			url : "/application/insert",
-			dataType : "json",
-			contentType : "application/json",
-			beforeSend : function(xhr) { /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
-				xhr.setRequestHeader(header, token);
-			},
-			success : function(data) {
-				alert("참여신청이 완료되었습니다.");
-			},
 
-		});
-		alert("참여신청이 완료되었습니다.");
-	}
-</script>
 <title>StudyDamoyeo</title>
 </head>
 <body class="bg03">
-
 	<div class="container">
+
 		<%@include file="include/header.jsp"%>
 
 		<!-- row -->
-		<div class="row content-row tm-mt-big">
-			<div class="col-12">
+		<div class="row tm-content-row tm-mt-big">
+
+
+
+			<div class="tm-col tm-col-big-8">
 				<div class="bg-white tm-block">
 					<div class="row">
 						<div class="col-12">
@@ -66,7 +43,11 @@
 					<div class="row">
 						<div class="col-12">
 							<input type="hidden" id="recruit_no" value="${recru_no }">
-
+							<div class="form-group">
+								<label for="name">모집자</label> <input id="recruiter"
+									class="form-control validate" value="${nickname }"
+									disabled="true">
+							</div>
 							<div class="form-group">
 								<label for="email">내용 </label>
 								<textarea class="form-control validate" disabled="true" rows="5">${recruitment.content }</textarea>
@@ -81,30 +62,59 @@
 									class="form-control validate col-1" disabled="true"
 									value="${recruitment.state_people }/${recruitment.total_people }">
 							</div>
-<<<<<<< HEAD
 							<div class="form-group">
 								<label for="phone">연락처</label> <input
 									class="form-control validate col-4" value="${email }"
 									disabled="true">
 							</div>
-							<c:if test="${userId }!=${recruitment.userid }">
 							<div class="row">
 								<div class="col-12 col-sm-4">
-									
+									<c:if test="${userId } == ${recruitment.userid }">
 										<button class="btn btn-primary" onclick="request();"
 											type="button">참여요청하기</button>
-									
+									</c:if>
 								</div>
 								<div class="col-12 col-sm-8 tm-btn-right"></div>
 							</div>
-							</c:if>
-=======
 
->>>>>>> branch 'master' of https://github.com/quake37/SpringProject.git
+
 						</div>
 					</div>
+
 				</div>
 			</div>
+			<div class="tm-col tm-col-big-4">
+				<div class="bg-white tm-block">
+					<div class="row">
+						<div class="col-md-8 col-sm-12">
+							<h2 class="tm-block-title d-inline-block">참여 요청중인 현황</h2>
+
+						</div>
+					</div>
+					<div class="table-responsive">
+						<table
+							class="table table-hover table-striped tm-table-striped-even mt-3">
+							<thead>
+
+
+							</thead>
+							<tbody>
+
+
+
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+
+
+
 		</div>
 
 		<%@include file="include/footer.jsp"%>
@@ -117,6 +127,8 @@
 	<!-- https://jqueryui.com/download/ -->
 	<script src="/resources/user/js/bootstrap.min.js"></script>
 	<!-- https://getbootstrap.com/ -->
-
+	<script>
+		$('#3').addClass('active');
+	</script>
 </body>
 </html>

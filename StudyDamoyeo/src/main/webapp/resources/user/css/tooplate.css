@@ -148,6 +148,9 @@ a:focus {
 .tm-col-big-6 {
   width: 50%;
 }
+.tm-col-big-8 {
+  width: 67%;
+}
 .tm-col-big-12 {
   width: 100%;
 }
