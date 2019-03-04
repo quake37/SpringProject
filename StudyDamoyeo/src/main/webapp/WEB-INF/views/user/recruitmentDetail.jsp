@@ -96,7 +96,7 @@
 								</div>
 								<div class="col-12 col-sm-8 tm-btn-right"></div>
 							</div>
-							</c:if>
+							</c:if>	
 						</div>
 					</div>
 				</div>
