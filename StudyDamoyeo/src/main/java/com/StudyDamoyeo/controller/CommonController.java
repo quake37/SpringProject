@@ -45,7 +45,7 @@ public class CommonController {
 		String user = principal.getName();
 		String auth = service.checkAuth(user);
 		if(auth.equals("ROLE_USER"))
-			return "/user/mainUser";
+			return "redirect:/user/mainpage";
 		else
 			return "/com/mainCom";
 	}
