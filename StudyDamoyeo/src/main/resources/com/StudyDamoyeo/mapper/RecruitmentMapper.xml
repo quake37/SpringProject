@@ -29,12 +29,17 @@
   ]]>
   </select>
   
-<select id="getMyList" resultType="com.StudyDamoyeo.domain.RecruitmentVO">
+  <select id="getMyList" resultType="com.StudyDamoyeo.domain.RecruitmentVO">
   
  	select * from recruitment where userId = #{userId}
 
   </select>
+
+  <select id="getMainList" resultType="com.StudyDamoyeo.domain.RecruitmentVO">
   
+ 	<![CDATA[	select * from recruitment WHERE ROWNUM < 8 order by regdate desc  ]]>
+
+  </select>
   <select id="getTotal" resultType="int">
   	select count(*) from recruitment where  RECRU_NO > 0  
   </select>

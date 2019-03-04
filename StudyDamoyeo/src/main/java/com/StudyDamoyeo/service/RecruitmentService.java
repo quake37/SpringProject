@@ -39,4 +39,9 @@ public class RecruitmentService {
 		// TODO Auto-generated method stub
 		return mapper.getTotal(cri);
 	}
+
+	public List<RecruitmentVO> getMainList() {
+		// TODO Auto-generated method stub
+		return mapper.getMainList();
+	}
 }

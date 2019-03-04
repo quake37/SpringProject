@@ -31,6 +31,9 @@
                         <div class="col-12">
                             <h2 class="tm-block-title">${recruitment.title }</h2>
                         </div>
+                          <div class="col-md-12 col-sm-12 text-right">
+                                <a href="/recruitment/readRecruitmentList" class="btn btn-small btn-primary">뒤로</a>
+                          </div>
                     </div>
                     <div class="row">
                         <div class="col-12">

@@ -17,4 +17,6 @@ public interface RecruitmentMapper {
 	
 	public List<RecruitmentVO> getMyList(String userId);
 
+	public List<RecruitmentVO> getMainList();
+
 }
