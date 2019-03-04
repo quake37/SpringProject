@@ -172,7 +172,7 @@
 
 
         	});
-        $('#2-1').addClass('active');
+      
         
     </script>
 </body>
