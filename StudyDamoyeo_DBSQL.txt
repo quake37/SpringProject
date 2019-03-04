@@ -104,3 +104,30 @@ create table recruitment(
 );
 alter table recruitment add constraint recruitment_fk foreign key(userid) references member(userid) on delete cascade;
 alter table reservation add constraint reservation_fk foreign key(recru_no) references recruitment(recru_no) on delete cascade;
+
+alter table recruitment add(expire_date VARCHAR2(100));
+
+create sequence recruitment_recru_no_seq
+ start with 1
+ increment by 1;
+ 
+alter table recruitment modify(recruitment_state int default 0);
+=============2019-03-04==================
+
+CREATE TABLE APPLICATION 
+(
+  NO NUMBER NOT NULL 
+, COLUMN1 NUMBER NOT NULL 
+, USERID VARCHAR2(30) NOT NULL 
+, RECRUITER VARCHAR2(30) 
+, RESULT NUMBER DEFAULT 0 
+, CONSTRAINT APPLICATION_PK PRIMARY KEY 
+  (
+    NO 
+  )
+  ENABLE 
+);
+
+CREATE SEQUENCE APPLICATION_SEQ INCREMENT BY 1 START WITH 1;
+ALTER TABLE APPLICATION RENAME COLUMN COLUMN1 TO RECRUIT_NO;
+alter table "STUDY"."APPLICATION" add constraint appliction_fk foreign key("RECRUIT_NO") references "RECRUITMENT"("RECRU_NO");

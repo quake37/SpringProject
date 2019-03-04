@@ -26,6 +26,9 @@
 	<select id="readrooms" resultType="String">
 		select roomname from room where userid =#{userid}
 	</select>
+	<select id="getList_all" resultType="com.StudyDamoyeo.domain.RoomVO">
+  	<![CDATA[	select * from room ]]>
+  </select>
 	<select id="getList" resultType="com.StudyDamoyeo.domain.RoomVO">
   <![CDATA[
   select 
