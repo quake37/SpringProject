@@ -29,6 +29,12 @@
   ]]>
   </select>
   
+<select id="getMyList" resultType="com.StudyDamoyeo.domain.RecruitmentVO">
+  
+ 	select * from recruitment where userId = #{userId}
+
+  </select>
+  
   <select id="getTotal" resultType="int">
   	select count(*) from recruitment where  RECRU_NO > 0  
   </select>

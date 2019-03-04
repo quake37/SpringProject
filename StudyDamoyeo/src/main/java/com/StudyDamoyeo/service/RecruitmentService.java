@@ -30,6 +30,10 @@ public class RecruitmentService {
 		// TODO Auto-generated method stub
 		return mapper.getList(cri);
 	}
+	
+	public List<RecruitmentVO> getMyList(String userId){
+		return mapper.getMyList(userId);
+	}
 
 	public int getTotal(Criteria cri) {
 		// TODO Auto-generated method stub

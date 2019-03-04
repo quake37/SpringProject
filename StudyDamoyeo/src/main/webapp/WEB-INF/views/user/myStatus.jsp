@@ -39,14 +39,21 @@
                         <div class="table-responsive">
                             <table class="table table-hover table-striped tm-table-striped-even mt-3">
                                 <thead>
-                                 
+                                <tr>
+                                 <th>지역</th>
+                                 <th>제목</th>
+                                 <th>모집상태</th>
+                                 </tr>
                                 </thead>
                                 <tbody>
-                               
+                               <c:forEach items="${list}" var="recruit">
                                     <tr class="tm-product-name">
-                                      
+                                      <td>${recruit.location }</td>
+                                      <td>${recruit.title }</td>
+                                      <c:if test="${recruit.recruitment_state==0 }"><td>모집중</td></c:if>
+                                      <c:if test="${recruit.recruitment_state==1 }"><td>모집완료</td></c:if>
                                     </tr>
-                                   
+                                 </c:forEach>
                                 </tbody>
                             </table>
                         </div>
