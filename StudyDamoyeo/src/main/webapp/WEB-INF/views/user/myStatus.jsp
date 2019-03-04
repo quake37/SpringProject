@@ -59,7 +59,7 @@
 
 
 
-			<div class="tm-col tm-col-big-8">
+			<div class="tm-col tm-col-big-7">
 				<div class="bg-white tm-block">
 					<div class="row">
 						<div class="col-md-8 col-sm-12">
@@ -72,25 +72,25 @@
 							class="table table-hover table-striped tm-table-striped-even mt-3">
 							<thead>
 								<tr>
-									<th>지역</th>
-									<th>제목</th>
-									<th>모집상태</th>
-									<th>참여요청</th>
+									<th class="text-center">지역</th>
+									<th class="text-center">제목</th>
+									<th class="text-center">모집상태</th>
+									<th class="text-center">참여요청</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach items="${recruitList}" var="recruit">
 									<tr class="tm-product-name list">
 										<td hidden="true">${recruit.recru_no }</td>
-										<td>${recruit.location }</td>
-										<td>${recruit.title }</td>
+										<td class="text-center">${recruit.location }</td>
+										<td class="text-center">${recruit.title }</td>
 										<c:if test="${recruit.recruitment_state==0 }">
-											<td>모집중</td>
+											<td class="text-center">모집중</td>
 										</c:if>
 										<c:if test="${recruit.recruitment_state==1 }">
-											<td>모집완료</td>
+											<td class="text-center">모집완료</td>
 										</c:if>
-										<td>0</td>
+										<td class="text-center">0</td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -100,7 +100,7 @@
 
 				</div>
 			</div>
-			<div class="tm-col tm-col-big-4">
+			<div class="tm-col tm-col-big-5">
 				<div class="bg-white tm-block">
 					<div class="row">
 						<div class="col-md-8 col-sm-12">
@@ -113,9 +113,9 @@
 							class="table table-hover table-striped tm-table-striped-even mt-3">
 							<thead>
 								<tr>
-									<th>모집자</th>
-									<th>승인여부</th>
-									<th>요청취소</th>
+									<th class="text-center">모집자</th>
+									<th class="text-center">승인여부</th>
+									<th class="text-center">요청취소</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -123,19 +123,19 @@
 								<tr class="tm-product-name">
 									<c:forEach items="${applicationList}" var="application">
 										<tr class="tm-product-name">
-											<td>${application.recruiter }</td>
+											<td class="text-center">${application.recruiter }</td>
 											<c:if test="${application.result==0 }">
-												<td>대기중</td>
+												<td class="text-center">대기중</td>
 											</c:if>
 											<c:if test="${application.result==1 }">
-												<td>승인</td>
+												<td class="text-center">승인</td>
 											</c:if>
 											<c:if test="${application.result==-1 }">
-												<td>거절</td>
+												<td class="text-center">거절</td>
 											</c:if>
 											<td hidden="true">
 											<input type="hidden" id="no" value="${application.no }"/></td>
-											<td><button class="btn btn" type="button"
+											<td class="text-center"><button class="btn btn-primary" type="button"
 													onclick="cancle();">취소</button></td>
 										</tr>
 									</c:forEach>
