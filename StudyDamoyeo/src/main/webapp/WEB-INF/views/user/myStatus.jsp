@@ -59,7 +59,7 @@
 
 
 
-			<div class="tm-col tm-col-big-6">
+			<div class="tm-col tm-col-big-8">
 				<div class="bg-white tm-block">
 					<div class="row">
 						<div class="col-md-8 col-sm-12">
@@ -100,7 +100,7 @@
 
 				</div>
 			</div>
-			<div class="tm-col tm-col-big-6">
+			<div class="tm-col tm-col-big-4">
 				<div class="bg-white tm-block">
 					<div class="row">
 						<div class="col-md-8 col-sm-12">
