@@ -68,7 +68,7 @@
 				<div class="bg-white tm-block">
 					<div class="row">
 						<div class="col-md-8 col-sm-12">
-							<h2 class="tm-block-title d-inline-block">참여 요청중인 현황</h2>
+							<h2 class="tm-block-title d-inline-block">스터디 신청자 명단</h2>
 
 						</div>
 					</div>
