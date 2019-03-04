@@ -37,7 +37,7 @@
                            
                                 <div class="form-group">
                                     <label for="name">모집자</label>
-                                    <input class="form-control validate" value="${member }" disabled="true">
+                                    <input class="form-control validate" value="${nickname }" disabled="true">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">내용 </label>
@@ -45,24 +45,23 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="password">위치</label>
-                                    <input class="form-control validate col-4" value="${recruitment.location }" >
+                                    <input class="form-control validate col-3" disabled="true" value="${recruitment.location }" >
                                 </div>
                                 <div class="form-group">
                                     <label for="password2">현재인원/모집인원</label>
-                                    <input class="form-control validate" value="${recruitment.state_people }/${recruitment.total_people }">
+                                    <input class="form-control validate col-1" disabled="true" value="${recruitment.state_people }/${recruitment.total_people }">
                                 </div>
                                 <div class="form-group">
-                                    <label for="phone">Phone</label>
-                                    <input placeholder="010-030-0440" id="phone" name="phone" type="tel" class="form-control validate">
+                                    <label for="phone">연락처</label>
+                                    <input  class="form-control validate col-4" value="${email }" disabled="true">
                                 </div>
                                 <div class="row">
                                     <div class="col-12 col-sm-4">
-                                        <button type="submit" class="btn btn-primary">Update
+                                        <button class="btn btn-primary">참여요청하기
                                         </button>
                                     </div>
                                     <div class="col-12 col-sm-8 tm-btn-right">
-                                        <button type="submit" class="btn btn-danger">Delete Account
-                                        </button>
+                                        
                                     </div>
                                 </div>
 
