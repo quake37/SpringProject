@@ -14,5 +14,7 @@ public interface RecruitmentMapper {
 	public int getTotal(Criteria cri);
 
 	public RecruitmentVO read(int recru_no);
+	
+	public List<RecruitmentVO> getMyList(String userId);
 
 }

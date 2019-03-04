@@ -1,5 +1,6 @@
 package com.StudyDamoyeo.controller.user;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.StudyDamoyeo.domain.RecruitmentVO;
 import com.StudyDamoyeo.domain.RoomVO;
+import com.StudyDamoyeo.service.RecruitmentService;
 import com.StudyDamoyeo.service.RoomService;
 
 @Controller
@@ -17,12 +20,15 @@ import com.StudyDamoyeo.service.RoomService;
 public class UserPageController {
 	@Autowired
 	RoomService roomservice;
+	@Autowired
+	RecruitmentService recruitService;
 	
 	@GetMapping("/mainpage")
 	public String mainpage() {return "/user/mainUser";}
 	@GetMapping("/myStatus")
-	public String myStatus() {
-		
+	public String myStatus(Principal principal, Model model) {
+		List<RecruitmentVO> list =recruitService.getMyList(principal.getName());
+		model.addAttribute("list", list);
 		return "/user/myStatus";
 	}
 	@GetMapping("/roomList")
