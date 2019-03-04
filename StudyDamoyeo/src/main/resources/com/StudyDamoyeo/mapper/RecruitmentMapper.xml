@@ -23,8 +23,8 @@
   ]]>
       
   <![CDATA[    
-      rownum <= #{pageNum} * #{amount} 
-      )
+      rownum <= #{pageNum} * #{amount} order by recru_no desc
+      ) 
   where rn > (#{pageNum} -1) * #{amount}  
   ]]>
   </select>
@@ -41,4 +41,7 @@
     <select id="read" resultType="com.StudyDamoyeo.domain.RecruitmentVO">
 		SELECT * From recruitment WHERE recru_no = #{recru_no}
 	</select>
+	<update id="update">
+		update recruitment set state_people =#{state_people} where recru_no = #{recru_no}
+	</update>
 </mapper>

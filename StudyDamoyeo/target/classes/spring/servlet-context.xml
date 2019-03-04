@@ -32,6 +32,8 @@
 		base-package="com.StudyDamoyeo.controller" />
 	<context:component-scan
 		base-package="com.StudyDamoyeo.controller.com" />
+		<context:component-scan
+		base-package="com.StudyDamoyeo.controller.user" />
 	<security:global-method-security
 			pre-post-annotations="enabled" secured-annotations="enabled" />
 	<beans:bean id="multipartResolver"

@@ -67,6 +67,7 @@ public class RecruitmentController {
 		System.out.println(recru_no);
 		RecruitmentVO vo = service.read(recru_no);
 		MemberVO membervo = memberservice.read(vo.getUserid());
+		model.addAttribute("recru_no", recru_no);
 		model.addAttribute("nickname",membervo.getNickname());
 		model.addAttribute("email",membervo.getEmail());
 		model.addAttribute("recruitment", vo);

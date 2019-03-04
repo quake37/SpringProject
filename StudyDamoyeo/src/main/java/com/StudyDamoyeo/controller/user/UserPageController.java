@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.StudyDamoyeo.domain.ApplicationVO;
 import com.StudyDamoyeo.domain.RecruitmentVO;
 import com.StudyDamoyeo.domain.RoomVO;
+import com.StudyDamoyeo.service.ApplicationService;
 import com.StudyDamoyeo.service.RecruitmentService;
 import com.StudyDamoyeo.service.RoomService;
 
@@ -22,13 +24,17 @@ public class UserPageController {
 	RoomService roomservice;
 	@Autowired
 	RecruitmentService recruitService;
+	@Autowired
+	ApplicationService applicationService;
 	
 	@GetMapping("/mainpage")
 	public String mainpage() {return "/user/mainUser";}
 	@GetMapping("/myStatus")
 	public String myStatus(Principal principal, Model model) {
-		List<RecruitmentVO> list =recruitService.getMyList(principal.getName());
-		model.addAttribute("list", list);
+		List<RecruitmentVO> recruitList =recruitService.getMyList(principal.getName());
+		model.addAttribute("recruitList", recruitList);
+		List<ApplicationVO> appliList = applicationService.getList(principal.getName());
+		model.addAttribute("applicationList", appliList);
 		return "/user/myStatus";
 	}
 	@GetMapping("/roomList")
@@ -52,4 +58,5 @@ public class UserPageController {
 		model.addAttribute("room", vo);
 		return "/user/roomDetail";
 	}
+	
 }

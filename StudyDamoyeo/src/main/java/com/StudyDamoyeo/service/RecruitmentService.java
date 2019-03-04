@@ -39,4 +39,7 @@ public class RecruitmentService {
 		// TODO Auto-generated method stub
 		return mapper.getTotal(cri);
 	}
+	public void update(RecruitmentVO vo) {
+		 mapper.update(vo);
+	}
 }

@@ -16,5 +16,7 @@ public interface RecruitmentMapper {
 	public RecruitmentVO read(int recru_no);
 	
 	public List<RecruitmentVO> getMyList(String userId);
+	
+	public void update(RecruitmentVO vo);
 
 }

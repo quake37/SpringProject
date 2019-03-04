@@ -47,7 +47,7 @@
                                  </tr>
                                 </thead>
                                 <tbody>
-                               <c:forEach items="${list}" var="recruit">
+                               <c:forEach items="${recruitList}" var="recruit">
                                     <tr class="tm-product-name">
                                       <td>${recruit.location }</td>
                                       <td>${recruit.title }</td>
@@ -73,12 +73,24 @@
                         <div class="table-responsive">
                             <table class="table table-hover table-striped tm-table-striped-even mt-3">
                                 <thead>
-                                 
+                                  <tr>
+                                 <th>모집자</th>
+                                 <th>승인여부</th>
+                                 <th>요청취소</th>
+                                 </tr>
                                 </thead>
                                 <tbody>
                                
                                     <tr class="tm-product-name">
-                                      
+                                      <c:forEach items="${applicationList}" var="application">
+                                    <tr class="tm-product-name">
+                                      <td>${application.recruiter }</td>
+                                      <c:if test="${application.result==0 }"><td>대기중</td></c:if>
+                                      <c:if test="${application.result==1 }"><td>승인</td></c:if>
+                                       <c:if test="${application.result==-1 }"><td>거절</td></c:if>
+                                      <td><button>취소</button></td>
+                                    </tr>
+                                 </c:forEach>
                                     </tr>
                                    
                                 </tbody>
