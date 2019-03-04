@@ -92,7 +92,7 @@
 							</div>
 							<div class="row">
 								<div class="col-12 col-sm-4">
-									<c:if test="${userId } == ${recruitment.userid }">
+									<c:if test="${recruitment.userid!=userId}">
 										<button class="btn btn-primary" onclick="request();"
 											type="button">참여요청하기</button>
 									</c:if>
