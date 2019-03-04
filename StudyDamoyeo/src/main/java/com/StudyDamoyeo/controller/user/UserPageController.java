@@ -59,7 +59,7 @@ public class UserPageController {
 	}
 	@GetMapping("/roomdetail")
 	public String roomdetail(@RequestParam("rno") int rno,Model model){
-		System.out.println(rno);
+		
 		RoomVO vo = roomservice.read_int(rno);
 		String[] locationsplit = vo.getLocation().split("#");
 		vo.setLocation1(locationsplit[0]);
