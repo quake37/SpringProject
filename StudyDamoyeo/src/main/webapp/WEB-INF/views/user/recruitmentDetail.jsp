@@ -66,7 +66,11 @@
 					<div class="row">
 						<div class="col-12">
 							<input type="hidden" id="recruit_no" value="${recru_no }">
-
+							<div class="form-group">
+								<label for="name">모집자</label> <input id="recruiter"
+									class="form-control validate" value="${nickname }"
+									disabled="true">
+							</div>
 							<div class="form-group">
 								<label for="email">내용 </label>
 								<textarea class="form-control validate" disabled="true" rows="5">${recruitment.content }</textarea>
@@ -86,17 +90,17 @@
 									class="form-control validate col-4" value="${email }"
 									disabled="true">
 							</div>
-							<c:if test="${userId }!=${recruitment.userid }">
 							<div class="row">
 								<div class="col-12 col-sm-4">
-									
+									<c:if test="${userId } == ${recruitment.userid }">
 										<button class="btn btn-primary" onclick="request();"
 											type="button">참여요청하기</button>
-									
+									</c:if>
 								</div>
 								<div class="col-12 col-sm-8 tm-btn-right"></div>
 							</div>
-							</c:if>	
+
+
 						</div>
 					</div>
 				</div>
