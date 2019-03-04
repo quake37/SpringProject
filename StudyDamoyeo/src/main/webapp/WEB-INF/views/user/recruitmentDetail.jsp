@@ -42,7 +42,7 @@
 			success : function(data) {
 				alert("참여신청이 완료되었습니다.");
 			},
-			
+
 		});
 		alert("참여신청이 완료되었습니다.");
 	}
@@ -92,8 +92,10 @@
 							</div>
 							<div class="row">
 								<div class="col-12 col-sm-4">
-									<button class="btn btn-primary" onclick="request();" type="button">참여요청하기
-									</button>
+									<c:if test="${userId } == ${recruitment.userid }">
+										<button class="btn btn-primary" onclick="request();"
+											type="button">참여요청하기</button>
+									</c:if>
 								</div>
 								<div class="col-12 col-sm-8 tm-btn-right"></div>
 							</div>

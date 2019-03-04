@@ -62,7 +62,7 @@ public class RecruitmentController {
 	}
 	
 	@GetMapping("/readRecruitment")
-	public String roomRead(@RequestParam("recru_no") int recru_no,Model model) {
+	public String roomRead(@RequestParam("recru_no") int recru_no,Model model, Principal principal) {
 		
 		System.out.println(recru_no);
 		RecruitmentVO vo = service.read(recru_no);
@@ -71,6 +71,9 @@ public class RecruitmentController {
 		model.addAttribute("nickname",membervo.getNickname());
 		model.addAttribute("email",membervo.getEmail());
 		model.addAttribute("recruitment", vo);
+		model.addAttribute("userId", principal.getName());
+		System.out.println("pri: "+principal.getName()+"/"+ vo.getUserid());
+		
 		return "/user/recruitmentDetail";
 	}
 }
