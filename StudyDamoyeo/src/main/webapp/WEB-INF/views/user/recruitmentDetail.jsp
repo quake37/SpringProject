@@ -81,7 +81,6 @@
 									class="form-control validate col-1" disabled="true"
 									value="${recruitment.state_people }/${recruitment.total_people }">
 							</div>
-<<<<<<< HEAD
 							<div class="form-group">
 								<label for="phone">연락처</label> <input
 									class="form-control validate col-4" value="${email }"
@@ -98,9 +97,6 @@
 								<div class="col-12 col-sm-8 tm-btn-right"></div>
 							</div>
 							</c:if>
-=======
-
->>>>>>> branch 'master' of https://github.com/quake37/SpringProject.git
 						</div>
 					</div>
 				</div>

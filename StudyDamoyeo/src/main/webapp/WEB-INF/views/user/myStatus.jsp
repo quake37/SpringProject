@@ -52,39 +52,7 @@
 </head>
 <body class="bg03">
 	<div class="container">
-
-<<<<<<< HEAD
 		<%@include file="include/header.jsp"%>
-=======
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-hover table-striped tm-table-striped-even mt-3">
-                                <thead>
-                                <tr>
-                                 <th>지역</th>
-                                 <th>제목</th>
-                                 <th>모집상태</th>
-                                 <th>참여요청</th>
-                                 </tr>
-                                </thead>
-                                <tbody>
-                               <c:forEach items="${recruitList}" var="recruit">
-                               
-                                    <tr class="tm-product-name">
-                                      <td hidden="true">${recruit.recru_no }</td>
-                                      <td>${recruit.location }</td>
-                                      <td>${recruit.title }</td>
-                                      <c:if test="${recruit.recruitment_state==0 }"><td>모집중</td></c:if>
-                                      <c:if test="${recruit.recruitment_state==1 }"><td>모집완료</td></c:if>
-                                      <td>0</td>
-                                    </tr>
-                               
-                                 </c:forEach>
-                                </tbody>
-                            </table>
-                        </div>
->>>>>>> branch 'master' of https://github.com/quake37/SpringProject.git
 
 		<!-- row -->
 		<div class="row tm-content-row tm-mt-big">
@@ -113,6 +81,7 @@
 							<tbody>
 								<c:forEach items="${recruitList}" var="recruit">
 									<tr class="tm-product-name">
+										<td hidden="true">${recruit.recru_no }</td>
 										<td>${recruit.location }</td>
 										<td>${recruit.title }</td>
 										<c:if test="${recruit.recruitment_state==0 }">
@@ -128,7 +97,7 @@
 						</table>
 					</div>
 
-<<<<<<< HEAD
+
 				</div>
 			</div>
 			<div class="tm-col tm-col-big-6">
@@ -217,14 +186,7 @@
 	<!-- https://jqueryui.com/download/ -->
 	<script src="/resources/user/js/bootstrap.min.js"></script>
 	<!-- https://getbootstrap.com/ -->
-	<script>
-=======
-    <script src="/resources/user/js/jquery-3.3.1.min.js"></script>
-    <!-- https://jquery.com/download/ -->
-    <script src="/resources/user/jquery-ui-datepicker/jquery-ui.min.js"></script>
-    <!-- https://jqueryui.com/download/ -->
-    <script src="/resources/user/js/bootstrap.min.js"></script>
-    <!-- https://getbootstrap.com/ -->
+	
    <script>
    $(function () {
        $('.tm-product-name').on('click', function () {
@@ -234,7 +196,7 @@
        	window.location.href = "/recruitment/requestRecruitment?recru_no="+td.eq(0).text();;
        });
    })
->>>>>>> branch 'master' of https://github.com/quake37/SpringProject.git
+
    $('#3').addClass('active');
    </script>
 </body>
