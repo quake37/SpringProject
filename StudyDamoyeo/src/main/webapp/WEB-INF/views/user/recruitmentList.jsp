@@ -35,7 +35,7 @@
                             <table class="table table-hover table-striped tm-table-striped-even mt-3">
                                 <thead>
                                     <tr class="tm-bg-gray">
-                                        <th scope="col">&nbsp;</th>
+                                        
                                         <th scope="col"class="text-center">제목</th>
                                         <th scope="col"class="text-center">모집구분</th>
                                         <th scope="col" class="text-center">지역</th>
@@ -48,9 +48,10 @@
                                 <tbody>
                                 <c:forEach items="${list}" var="recruitment">
                                     <tr class="tm-product-name">
-                                        <th scope="row">
+                                        <td scope="row" hidden="true">
                                            ${recruitment.recru_no }
-                                        </th>
+                                        </td>
+                                     
                                         <td class="text-center">${recruitment.title }</td>
                                         <td class="text-center">${recruitment.recruitment_type }</td>
                                         <td class="text-center">${recruitment.location }</td>

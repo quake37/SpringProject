@@ -48,13 +48,16 @@
                                 </thead>
                                 <tbody>
                                <c:forEach items="${recruitList}" var="recruit">
+                               
                                     <tr class="tm-product-name">
+                                      <td hidden="true">${recruit.recru_no }</td>
                                       <td>${recruit.location }</td>
                                       <td>${recruit.title }</td>
                                       <c:if test="${recruit.recruitment_state==0 }"><td>모집중</td></c:if>
                                       <c:if test="${recruit.recruitment_state==1 }"><td>모집완료</td></c:if>
                                       <td>0</td>
                                     </tr>
+                               
                                  </c:forEach>
                                 </tbody>
                             </table>
@@ -139,6 +142,14 @@
     <script src="/resources/user/js/bootstrap.min.js"></script>
     <!-- https://getbootstrap.com/ -->
    <script>
+   $(function () {
+       $('.tm-product-name').on('click', function () {
+       	var tr=$(this);
+       	var td=tr.children();   
+       	
+       	window.location.href = "/recruitment/requestRecruitment?recru_no="+td.eq(0).text();;
+       });
+   })
    $('#3').addClass('active');
    </script>
 </body>
