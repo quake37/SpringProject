@@ -11,4 +11,6 @@ public interface ApplicationMapper {
 	public List<ApplicationVO> getList(String userId);
 	
 	public void delete(int no);
+	
+	public int search(ApplicationVO vo);
 }

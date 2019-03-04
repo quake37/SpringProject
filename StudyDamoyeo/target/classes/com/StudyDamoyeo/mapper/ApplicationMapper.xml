@@ -14,5 +14,7 @@
 <delete id="delete">
 	delete  from application where no = #{no}
 </delete>
-
+<select id="search" resultType="int">
+	select count(*) from application where recruit_no =#{recruit_no} and userId = #{userId}
+</select>
 </mapper>

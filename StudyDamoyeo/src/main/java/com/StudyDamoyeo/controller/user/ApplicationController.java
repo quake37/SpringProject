@@ -16,8 +16,6 @@ import com.StudyDamoyeo.domain.RecruitmentVO;
 import com.StudyDamoyeo.service.ApplicationService;
 import com.StudyDamoyeo.service.RecruitmentService;
 
-
-
 @Controller
 @RequestMapping("/application")
 public class ApplicationController {
@@ -26,24 +24,28 @@ public class ApplicationController {
 	ApplicationService applicationService;
 	@Autowired
 	RecruitmentService recruitService;
-	
+
 	@ResponseBody
 	@PostMapping("/insert")
 	public ResponseEntity<String> insert(Principal principal, @RequestBody int recruit_no) {
 		ApplicationVO vo = new ApplicationVO();
 		vo.setRecruit_no(recruit_no);
 		RecruitmentVO rvo = recruitService.read(recruit_no);
-		String recruiter =rvo.getUserid();
+		String recruiter = rvo.getUserid();
 		vo.setRecruiter(recruiter);
 		vo.setUserId(principal.getName());
-		applicationService.insert(vo);
-		return new ResponseEntity<>("success", HttpStatus.OK);
+		if (applicationService.search(vo) > 0)
+			return new ResponseEntity<>("fail", HttpStatus.INTERNAL_SERVER_ERROR);
+		else {
+			applicationService.insert(vo);
+			return new ResponseEntity<>("success", HttpStatus.OK);
+		}
 	}
-	
+
 	@ResponseBody
 	@PostMapping("/delete")
 	public ResponseEntity<String> delete(@RequestBody int no) {
-		
+
 		applicationService.delete(no);
 		return new ResponseEntity<>("success", HttpStatus.OK);
 	}

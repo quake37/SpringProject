@@ -26,4 +26,8 @@ public class ApplicationService {
 	public void delete(int no) {
 		mapper.delete(no);
 	}
+	
+	public int search(ApplicationVO vo) {
+		return mapper.search(vo);
+	}
 }

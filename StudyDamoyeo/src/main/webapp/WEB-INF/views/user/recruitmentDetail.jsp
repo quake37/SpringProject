@@ -40,11 +40,15 @@
 				xhr.setRequestHeader(header, token);
 			},
 			success : function(data) {
-				alert("참여신청이 완료되었습니다.");
 			},
+			error: function(request,status,error) {     
+				if(request.responseText =='fail')
+                	alert("이미 신청이 완료된 스터디입니다.");
+				else
+					alert('스터디에 참여 요청을 보냈습니다.')
+            }
 
 		});
-		alert("참여신청이 완료되었습니다.");
 	}
 </script>
 <title>StudyDamoyeo</title>
