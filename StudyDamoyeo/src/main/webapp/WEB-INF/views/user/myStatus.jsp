@@ -43,6 +43,7 @@
                                  <th>지역</th>
                                  <th>제목</th>
                                  <th>모집상태</th>
+                                 <th>참여요청</th>
                                  </tr>
                                 </thead>
                                 <tbody>
@@ -52,6 +53,7 @@
                                       <td>${recruit.title }</td>
                                       <c:if test="${recruit.recruitment_state==0 }"><td>모집중</td></c:if>
                                       <c:if test="${recruit.recruitment_state==1 }"><td>모집완료</td></c:if>
+                                      <td>0</td>
                                     </tr>
                                  </c:forEach>
                                 </tbody>
@@ -97,14 +99,10 @@
                         <div class="table-responsive">
                             <table class="table table-hover table-striped tm-table-striped-even mt-3">
                                 <thead>
-                                 
                                 </thead>
                                 <tbody>
-                               
                                     <tr class="tm-product-name">
-                                      
                                     </tr>
-                                   
                                 </tbody>
                             </table>
                         </div>
