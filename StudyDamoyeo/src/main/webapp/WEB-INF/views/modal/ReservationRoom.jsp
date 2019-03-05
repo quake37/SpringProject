@@ -51,6 +51,7 @@
 						</div>
 						
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
+							<input type="hidden" name="rno" value="${room.rno}">
 					</div>
 					<div class="box-footer">
 						<button class="btn btn-primary" type="submit" >예약하기</button>

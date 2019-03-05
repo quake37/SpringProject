@@ -11,7 +11,7 @@
   from 
       (
       select 
-        rownum rn, no, roomname, status, people, resdate
+        rownum rn, no, roomname, status, people, resdate,userid,regdate
       from reservation
       where 
   ]]>

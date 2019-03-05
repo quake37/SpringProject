@@ -59,9 +59,11 @@
 						<tr>
 							<th>번호</th>
 							<th>지점명</th>
+							<th>예약인</th>
 							<th>예약상태</th>
 							<th>예약인원</th>
 							<th>예약신청일</th>
+							<th>등록날짜</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -69,11 +71,14 @@
 						<tr>
 							<td><c:out value="${reservation.no}" /></td>
 							<td><c:out value="${reservation.roomname}" /></td>
+							<td><c:out value="${reservation.userid}" /></td>
 							<c:if test="${reservation.status ==-1 }"><td>예약대기</td></c:if>
 							<c:if test="${reservation.status ==0 }"><td>입금대기</td></c:if>
 							<c:if test="${reservation.status ==1 }"><td>예약완료</td></c:if>
 							<td><c:out value="${reservation.people}" /></td>
 							<td><c:out value="${reservation.resdate}" /></td>
+							<td><fmt:formatDate pattern="MM/dd/yyyy" value="${reservation.regdate }" /></td>
+							
 						</tr>
 					</c:forEach>
 					</tbody>
