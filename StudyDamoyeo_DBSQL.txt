@@ -131,3 +131,14 @@ CREATE TABLE APPLICATION
 CREATE SEQUENCE APPLICATION_SEQ INCREMENT BY 1 START WITH 1;
 ALTER TABLE APPLICATION RENAME COLUMN COLUMN1 TO RECRUIT_NO;
 alter table "STUDY"."APPLICATION" add constraint appliction_fk foreign key("RECRUIT_NO") references "RECRUITMENT"("RECRU_NO");
+
+=============2019-03-05==================
+
+alter table reservation rename column room to roomname;
+alter table reservation modify(roomname varchar2(100));
+
+ALTER TABLE RESERVATION RENAME COLUMN RESDATE TO REGDATE;
+
+ALTER TABLE RESERVATION 
+ADD (RESDATE VARCHAR2(50) NOT NULL);
+

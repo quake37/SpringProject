@@ -1,4 +1,4 @@
-package com.StudyDamoyeo.controller.com;
+package com.StudyDamoyeo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,4 +27,6 @@ public class ReservationController {
 		
 		return "/com/reservation";
 	}
+	
+	
 }
