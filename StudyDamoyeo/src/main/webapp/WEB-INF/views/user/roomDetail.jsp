@@ -171,7 +171,8 @@
 							<div id="map" style="width: 100%; height: 400px;"></div>
 
 						</div>
-
+				<a href="#" class="button alt" data-toggle="modal"
+									data-target="#ReservationRoom"><button class="btn btn-primary" type="button">예약신청하기</button></a>
 					</div>
 
 				</div>
@@ -179,10 +180,10 @@
 
 
 		</div>
-
+		<%@include file="../modal/ReservationRoom.jsp"%>
 		<%@include file="include/footer.jsp"%>
 	</div>
-
+	
 
 	<script src="/resources/user/js/jquery-3.3.1.min.js"></script>
 	<!-- https://jquery.com/download/ -->

@@ -115,10 +115,10 @@
 
 
   
-        $(function () {
-            $('#expire_date').datepicker();
-        });
         
+    $(function () {
+        $('#expire_date').datepicker();
+    });
         $('#navbarDropdown').addClass('active');
         
         $('document').ready(function() {

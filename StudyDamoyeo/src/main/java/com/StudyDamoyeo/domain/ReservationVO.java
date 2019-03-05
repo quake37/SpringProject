@@ -6,7 +6,7 @@ public class ReservationVO {
 	
 	private String userId;
 	private int no;
-	private String room;
+	private String roomname;
 	private int status;
 	private int people;
 	private Date resdate;
@@ -22,11 +22,12 @@ public class ReservationVO {
 	public void setNo(int no) {
 		this.no = no;
 	}
-	public String getRoom() {
-		return room;
+	
+	public String getRoomname() {
+		return roomname;
 	}
-	public void setRoom(String room) {
-		this.room = room;
+	public void setRoomname(String roomname) {
+		this.roomname = roomname;
 	}
 	public int getStatus() {
 		return status;

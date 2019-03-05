@@ -68,7 +68,7 @@
 					<c:forEach items="${list}" var="reservation">
 						<tr>
 							<td><c:out value="${reservation.no}" /></td>
-							<td><c:out value="${reservation.room}" /></td>
+							<td><c:out value="${reservation.roomname}" /></td>
 							<c:if test="${reservation.status ==-1 }"><td>예약대기</td></c:if>
 							<c:if test="${reservation.status ==0 }"><td>입금대기</td></c:if>
 							<c:if test="${reservation.status ==1 }"><td>예약완료</td></c:if>
