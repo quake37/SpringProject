@@ -142,3 +142,8 @@ ALTER TABLE RESERVATION RENAME COLUMN RESDATE TO REGDATE;
 ALTER TABLE RESERVATION 
 ADD (RESDATE VARCHAR2(50) NOT NULL);
 alter table reservation modify(status int default -1);
+
+ALTER TABLE RESERVATION 
+ADD (RNO NUMBER );
+
+alter table "STUDY"."RESERVATION" add constraint reservation_fk1 foreign key("RNO") references "ROOM"("RNO");
