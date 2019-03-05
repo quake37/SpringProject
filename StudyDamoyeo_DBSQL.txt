@@ -136,3 +136,9 @@ alter table "STUDY"."APPLICATION" add constraint appliction_fk foreign key("RECR
 
 alter table reservation rename column room to roomname;
 alter table reservation modify(roomname varchar2(100));
+
+ALTER TABLE RESERVATION RENAME COLUMN RESDATE TO REGDATE;
+
+ALTER TABLE RESERVATION 
+ADD (RESDATE VARCHAR2(50) NOT NULL);
+
