@@ -122,7 +122,7 @@
 
 								<tr class="tm-product-name">
 									<c:forEach items="${applicationList}" var="application">
-										<tr class="tm-product-name">
+										
 											<td class="text-center">${application.recruiter }</td>
 											<c:if test="${application.result==0 }">
 												<td class="text-center">대기중</td>
@@ -137,7 +137,7 @@
 											<input type="hidden" id="no" value="${application.no }"/></td>
 											<td class="text-center"><button class="btn btn-primary" type="button"
 													onclick="cancle();">취소</button></td>
-										</tr>
+										
 									</c:forEach>
 								</tr>
 
@@ -160,9 +160,30 @@
 						<table
 							class="table table-hover table-striped tm-table-striped-even mt-3">
 							<thead>
+								<tr>
+									<th class="text-center">스터디카페명</th>
+									<th class="text-center">예약인원</th>
+									<th class="text-center">예약상태</th>
+									<th class="text-center">예약날짜</th>
+								</tr>
 							</thead>
 							<tbody>
-								<tr class="tm-product-name">
+								<tr class="tm-product-name list">
+									<c:forEach items="${reservationList}" var="reservation">
+										<td hidden="true">${reservation.no }</td>
+										<td class="text-center">${reservation.roomname }</td>
+										<td class="text-center">${reservation.people }</td>
+										<c:if test="${reservation.status==-1 }">
+											<td class="text-center">예약요청</td>
+										</c:if>
+										<c:if test="${reservation.status==0 }">
+											<td class="text-center">입금대기</td>
+										</c:if>
+										<c:if test="${reservation.status==1 }">
+											<td class="text-center">예약확정</td>
+										</c:if>
+										<td class="text-center">${reservation.resdate }</td>
+									</c:forEach>
 								</tr>
 							</tbody>
 						</table>

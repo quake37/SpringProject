@@ -118,7 +118,7 @@
             	window.location.href = "/recruitment/readRecruitment?recru_no="+td.eq(0).text();;
             });
         })
-         
+         ('#navbarDropdown').addClass('active');
     </script>
 </body>
 
