@@ -26,5 +26,12 @@
   <select id="getTotal" resultType="int">
   	select count(*) from reservation where  no > 0  
   </select>
-  
+  <insert id="insert">
+		insert into reservation (no,userid, roomname, people,regdate,resdate)
+		values(reservation_seq.nextval, #{userid},#{roomname},#{people},sysdate,#{resdate})
+	</insert>
+	<select id="getMyList" resultType="com.StudyDamoyeo.domain.ReservationVO">
+ 		select * from reservation where userid = #{userid}
+  	</select>
+	
  </mapper>

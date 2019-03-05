@@ -23,4 +23,12 @@ public class ReservationService {
 
 		return mapper.getTotal(cri);
 	}
+	public void insert(ReservationVO vo) {
+		mapper.insert(vo);
+		
+	}
+	public List<ReservationVO> getMyList(String userid) {
+		// TODO Auto-generated method stub
+		return mapper.getMyList(userid);
+	}
 }

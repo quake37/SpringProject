@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.StudyDamoyeo.domain.ApplicationVO;
 import com.StudyDamoyeo.domain.RecruitmentVO;
+import com.StudyDamoyeo.domain.ReservationVO;
 import com.StudyDamoyeo.domain.RoomVO;
 import com.StudyDamoyeo.service.ApplicationService;
 import com.StudyDamoyeo.service.RecruitmentService;
+import com.StudyDamoyeo.service.ReservationService;
 import com.StudyDamoyeo.service.RoomService;
 
 @Controller
@@ -26,6 +28,8 @@ public class UserPageController {
 	RecruitmentService recruitService;
 	@Autowired
 	ApplicationService applicationService;
+	@Autowired
+	ReservationService reservationService;
 	
 	@GetMapping("/mainpage")
 	public String mainpage(Model model) {
@@ -42,6 +46,8 @@ public class UserPageController {
 		model.addAttribute("recruitList", recruitList);
 		List<ApplicationVO> appliList = applicationService.getList(principal.getName());
 		model.addAttribute("applicationList", appliList);
+		List<ReservationVO> reservationList = reservationService.getMyList(principal.getName());
+		model.addAttribute("reservationList", reservationList);	
 		return "/user/myStatus";
 	}
 	@GetMapping("/roomList")

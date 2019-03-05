@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.StudyDamoyeo.domain.Criteria;
 import com.StudyDamoyeo.domain.PageDTO;
+import com.StudyDamoyeo.domain.ReservationVO;
 import com.StudyDamoyeo.service.ReservationService;
 
 
@@ -27,6 +28,13 @@ public class ReservationController {
 		
 		return "/com/reservation";
 	}
-	
+	@GetMapping("/insert")
+	public String reservationInsert(ReservationVO vo) {		
+		service.insert(vo);
+		return "redirect:/user/myStatus";
+		
+		
+	}
+			
 	
 }

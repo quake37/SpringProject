@@ -4,18 +4,19 @@ import java.util.Date;
 
 public class ReservationVO {
 	
-	private String userId;
+	private String userid;
 	private int no;
 	private String roomname;
 	private int status;
 	private int people;
 	private String resdate;
 	private Date regdate;
-	public String getUserId() {
-		return userId;
+	
+	public String getUserid() {
+		return userid;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 	public int getNo() {
 		return no;
@@ -54,6 +55,6 @@ public class ReservationVO {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-	
+		
 	
 }
