@@ -9,7 +9,8 @@ public class ReservationVO {
 	private String roomname;
 	private int status;
 	private int people;
-	private Date resdate;
+	private String resdate;
+	private Date regdate;
 	public String getUserId() {
 		return userId;
 	}
@@ -41,11 +42,17 @@ public class ReservationVO {
 	public void setPeople(int people) {
 		this.people = people;
 	}
-	public Date getResdate() {
+	public String getResdate() {
 		return resdate;
 	}
-	public void setResdate(Date resdate) {
+	public void setResdate(String resdate) {
 		this.resdate = resdate;
+	}
+	public Date getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
 	}
 	
 	
