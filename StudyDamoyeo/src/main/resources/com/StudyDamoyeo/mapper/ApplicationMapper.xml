@@ -17,4 +17,8 @@
 <select id="search" resultType="int">
 	select count(*) from application where recruit_no =#{recruit_no} and userId = #{userId}
 </select>
+<select id="getApplicants" resultType="com.StudyDamoyeo.domain.ApplicationVO">
+	select * from application where recruit_no =#{recruit_no}
+	
+</select>
 </mapper>

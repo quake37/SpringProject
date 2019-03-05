@@ -30,4 +30,8 @@ public class ApplicationService {
 	public int search(ApplicationVO vo) {
 		return mapper.search(vo);
 	}
+	
+	public List<ApplicationVO> getApplicants(int recruit_no){
+		return mapper.getApplicants(recruit_no);
+	}
 }

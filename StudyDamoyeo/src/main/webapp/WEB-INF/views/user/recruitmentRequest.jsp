@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -20,7 +19,28 @@
 <link rel="stylesheet" href="/resources/user/css/bootstrap.min.css">
 <!-- https://getbootstrap.com/ -->
 <link rel="stylesheet" href="/resources/user/css/tooplate.css">
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		applicationList();
+	});
+	function applicationList() {
+		var recruit_no = ${recruitment.recru_no}
+		$.getJSON("/application/getList/" + recruit_no + ".json",
+					function(data) {
+							var str = "<h2 class='tm-block-title d-inline-block'>스터디 신청자 명단</h2>";
+							
+							$(data)
+									.each(
+											function() {
+												str += this.userId +"<p>"
+														
+											});
 
+							$("#applicants").html(str);
+						});
+	}
+</script>
 <title>StudyDamoyeo</title>
 </head>
 <body class="bg03">
@@ -42,8 +62,8 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<input type="hidden" id="recruit_no" value="${recru_no }">
-							
+							<input type="hidden" id="recruit_no" value="${recruitment.recru_no}">
+
 							<div class="form-group">
 								<label for="email">내용 </label>
 								<textarea class="form-control validate" disabled="true" rows="5">${recruitment.content }</textarea>
@@ -58,7 +78,7 @@
 									class="form-control validate col-1" disabled="true"
 									value="${recruitment.state_people }/${recruitment.total_people }">
 							</div>
-							
+
 						</div>
 					</div>
 
@@ -67,8 +87,8 @@
 			<div class="tm-col tm-col-big-4">
 				<div class="bg-white tm-block">
 					<div class="row">
-						<div class="col-md-8 col-sm-12">
-							<h2 class="tm-block-title d-inline-block">스터디 신청자 명단</h2>
+						<div class="col-md-8 col-sm-12" id="applicants">
+							
 
 						</div>
 					</div>

@@ -13,4 +13,6 @@ public interface ApplicationMapper {
 	public void delete(int no);
 	
 	public int search(ApplicationVO vo);
+	
+	public List<ApplicationVO> getApplicants(int recruit_no);
 }

@@ -79,7 +79,6 @@ public class RecruitmentController {
 	public String requestRecruitment(@RequestParam("recru_no") int recru_no,Model model, Principal principal) {
 		RecruitmentVO vo = service.read(recru_no);
 		model.addAttribute("recruitment", vo);
-		
 		return "/user/recruitmentRequest";
 	}
 }
