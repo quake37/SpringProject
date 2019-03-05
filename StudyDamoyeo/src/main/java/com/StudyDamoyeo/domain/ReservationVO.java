@@ -55,6 +55,11 @@ public class ReservationVO {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
+	@Override
+	public String toString() {
+		return "ReservationVO [userid=" + userid + ", no=" + no + ", roomname=" + roomname + ", status=" + status
+				+ ", people=" + people + ", resdate=" + resdate + ", regdate=" + regdate + "]";
+	}
 		
 	
 }

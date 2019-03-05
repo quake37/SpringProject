@@ -26,14 +26,14 @@
 						
 							<label for="userid">신청자 아이디 </label>				
 							<input type="text" name="userid" class="form-control col-xl-11" id="ReservationID"
-								 autofocus="autofocus" disabled="disabled" value="<sec:authentication property="principal.username"/>">
+								readonly="readonly" value="<sec:authentication property="principal.username"/>">
 
 						</div>
 						<div class="form-group">
 						
 							<label for="userid">스터디카페명 </label>				
 							<input type="text" name="roomname" class="form-control col-xl-11" id="ReservationRoomname"
-								 autofocus="autofocus" disabled="disabled" value="${room.roomname }">
+								readonly="readonly"  value="${room.roomname }">
 
 						</div>
 

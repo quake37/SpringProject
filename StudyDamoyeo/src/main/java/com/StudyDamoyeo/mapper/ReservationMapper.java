@@ -12,7 +12,7 @@ public interface ReservationMapper {
 	
 	public int getTotal(Criteria cri);
 
-	public ReservationVO insert(ReservationVO vo);
+	public void insert(ReservationVO vo);
 
 	public List<ReservationVO> getMyList(String userid);
 }
