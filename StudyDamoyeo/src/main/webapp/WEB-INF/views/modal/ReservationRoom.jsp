@@ -45,7 +45,7 @@
 						
 						<div class="form-group">
 						
-							<label for="inputEmail">예약날짜</label> 
+							<label for="inputEmail">예약날짜 </label> 
 							 <input id="expire_date" name="resdate" type="text" class="form-control validate col-xl-7 col-lg-8 col-md-8 col-sm-7"
                                         data-large-mode="true" required >
 						</div>

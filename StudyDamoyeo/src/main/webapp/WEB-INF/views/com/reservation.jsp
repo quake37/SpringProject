@@ -31,7 +31,7 @@
 	<section class="content">
 		<div class="card">
 			<div class="card-header">
-				<h3 class="card-title">예약 목록 </h3>
+				<h3 class="card-title">예약 목록</h3>
 			</div>
 			<!-- /.card-header -->
 			<div class="card-body">
@@ -57,35 +57,49 @@
 				<table id="example1" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-							<th>번호</th>
+
 							<th>지점명</th>
 							<th>예약인</th>
 							<th>예약상태</th>
 							<th>예약인원</th>
 							<th>예약신청일</th>
 							<th>등록날짜</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
-					<c:forEach items="${list}" var="reservation">
-						<tr>
-							<td><c:out value="${reservation.no}" /></td>
-							<td><c:out value="${reservation.roomname}" /></td>
-							<td><c:out value="${reservation.userid}" /></td>
-							<c:if test="${reservation.status ==-1 }"><td>예약대기</td></c:if>
-							<c:if test="${reservation.status ==0 }"><td>입금대기</td></c:if>
-							<c:if test="${reservation.status ==1 }"><td>예약완료</td></c:if>
-							<td><c:out value="${reservation.people}" /></td>
-							<td><c:out value="${reservation.resdate}" /></td>
-							<td><fmt:formatDate pattern="MM/dd/yyyy" value="${reservation.regdate }" /></td>
-							
-						</tr>
-					</c:forEach>
+						<c:forEach items="${list}" var="reservation">
+							<tr>
+								<td hidden="true"><c:out value="${reservation.no}" /></td>
+								<td><c:out value="${reservation.roomname}" /></td>
+								<td><c:out value="${reservation.userid}" /></td>
+								<c:if test="${reservation.status ==-1 }">
+									<td>예약대기</td>
+								</c:if>
+								<c:if test="${reservation.status ==0 }">
+									<td>입금대기</td>
+								</c:if>
+								<c:if test="${reservation.status ==1 }">
+									<td>예약완료</td>
+								</c:if>
+								<td><c:out value="${reservation.people}" /></td>
+								<td><c:out value="${reservation.resdate}" /></td>
+								<td><fmt:formatDate pattern="MM/dd/yyyy"
+										value="${reservation.regdate }" /></td>
+								<td class="text-center"><c:if
+										test="${reservation.status ==-1 }">
+										<button class="btn btn-primary" type="button" onclick="">예약확인</button>
+									</c:if> <c:if test="${reservation.status ==0 }">
+										<button class="btn btn-primary" type="button" onclick="">입금확인</button>
+									</c:if></td>
+
+							</tr>
+						</c:forEach>
 					</tbody>
 
 				</table>
-				
-				<div >
+
+				<div>
 					<ul class="pagination">
 						<c:if test="${pageMaker.prev}">
 							<li class="paginate_button previous"><a
@@ -110,8 +124,8 @@
 		</div>
 		<!-- /.card -->
 
-</section>
-<!-- /.content -->
+	</section>
+	<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 <script>

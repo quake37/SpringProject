@@ -39,11 +39,11 @@
 				xhr.setRequestHeader(header, token);
 			},
 			success : function(data) {
-				
+
 			},
-			error: function(request,status,error) {                   
-            }
-			
+			error : function(request, status, error) {
+			}
+
 		});
 		location.reload();
 	}
@@ -76,6 +76,7 @@
 									<th class="text-center">제목</th>
 									<th class="text-center">모집상태</th>
 									<th class="text-center">참여요청</th>
+
 								</tr>
 							</thead>
 							<tbody>
@@ -122,22 +123,23 @@
 
 								<tr class="tm-product-name">
 									<c:forEach items="${applicationList}" var="application">
-										
-											<td class="text-center">${application.recruiter }</td>
-											<c:if test="${application.result==0 }">
-												<td class="text-center">대기중</td>
-											</c:if>
-											<c:if test="${application.result==1 }">
-												<td class="text-center">승인</td>
-											</c:if>
-											<c:if test="${application.result==-1 }">
-												<td class="text-center">거절</td>
-											</c:if>
-											<td hidden="true">
-											<input type="hidden" id="no" value="${application.no }"/></td>
-											<td class="text-center"><button class="btn btn-primary" type="button"
-													onclick="cancle();">취소</button></td>
-										
+
+										<td class="text-center">${application.recruiter }</td>
+										<c:if test="${application.result==0 }">
+											<td class="text-center">대기중</td>
+										</c:if>
+										<c:if test="${application.result==1 }">
+											<td class="text-center">승인</td>
+										</c:if>
+										<c:if test="${application.result==-1 }">
+											<td class="text-center">거절</td>
+										</c:if>
+										<td hidden="true"><input type="hidden" id="no"
+											value="${application.no }" /></td>
+										<td class="text-center"><button class="btn btn-primary"
+												type="button" onclick="cancle();"
+												style="padding: 10px 15px;">취소</button></td>
+
 									</c:forEach>
 								</tr>
 
@@ -165,11 +167,12 @@
 									<th class="text-center">예약인원</th>
 									<th class="text-center">예약상태</th>
 									<th class="text-center">예약날짜</th>
+									<th class="text-center"></th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr class="tm-product-name list">
-									<c:forEach items="${reservationList}" var="reservation">
+								<c:forEach items="${reservationList}" var="reservation">
+									<tr class="tm-product-name">
 										<td hidden="true">${reservation.no }</td>
 										<td class="text-center">${reservation.roomname }</td>
 										<td class="text-center">${reservation.people }</td>
@@ -183,8 +186,17 @@
 											<td class="text-center">예약확정</td>
 										</c:if>
 										<td class="text-center">${reservation.resdate }</td>
-									</c:forEach>
-								</tr>
+
+
+										<td class="text-center"><c:if
+												test="${reservation.status==0 }">
+												<button class="btn btn-primary" type="button" onclick=""
+													style="padding: 10px 15px;">입금하기</button>
+											</c:if></td>
+
+
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -208,18 +220,23 @@
 	<!-- https://jqueryui.com/download/ -->
 	<script src="/resources/user/js/bootstrap.min.js"></script>
 	<!-- https://getbootstrap.com/ -->
-	
-   <script>
-   $(function () {
-       $('.list').on('click', function () {
-       	var tr=$(this);
-       	var td=tr.children();   
-       	
-       	window.location.href = "/recruitment/requestRecruitment?recru_no="+td.eq(0).text();;
-       });
-   })
 
-   $('#3').addClass('active');
-   </script>
+	<script>
+		$(function() {
+			$('.list')
+					.on(
+							'click',
+							function() {
+								var tr = $(this);
+								var td = tr.children();
+
+								window.location.href = "/recruitment/requestRecruitment?recru_no="
+										+ td.eq(0).text();
+								;
+							});
+		})
+
+		$('#3').addClass('active');
+	</script>
 </body>
 </html>
