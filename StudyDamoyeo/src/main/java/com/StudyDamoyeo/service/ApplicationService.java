@@ -34,4 +34,9 @@ public class ApplicationService {
 	public List<ApplicationVO> getApplicants(int recruit_no){
 		return mapper.getApplicants(recruit_no);
 	}
+	
+	public void update(ApplicationVO vo) {
+		mapper.update(vo);
+		System.out.println("vo result"+vo.getResult());
+	}
 }

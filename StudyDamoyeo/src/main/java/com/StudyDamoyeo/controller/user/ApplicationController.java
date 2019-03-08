@@ -60,5 +60,12 @@ public class ApplicationController {
 		
 		return new ResponseEntity<>(applicationService.getApplicants(recruit_no), HttpStatus.OK);
 	}
+	
+	@PostMapping(value = "/update", consumes = "application/json", produces = { MediaType.TEXT_PLAIN_VALUE })
+	public ResponseEntity<String> create(@RequestBody ApplicationVO vo) {
+		System.out.println(vo.getResult() );
+		applicationService.update(vo);
+		return new ResponseEntity<>("success", HttpStatus.OK);
+	}
 
 }

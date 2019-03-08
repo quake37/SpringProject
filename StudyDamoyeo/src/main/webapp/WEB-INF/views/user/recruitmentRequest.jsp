@@ -6,6 +6,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta id="_csrf" name="_csrf" content="${_csrf.token}" />
+<!-- default header name is X-CSRF-TOKEN -->
+<meta id="_csrf_header" name="_csrf_header"
+	content="${_csrf.headerName}" />
 <meta charset="UTF-8">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
@@ -26,45 +30,82 @@
 	});
 	function applicationList() {
 		var recruit_no = ${recruitment.recru_no}
-		$.getJSON("/application/getList/" + recruit_no + ".json",
-					function(data) {
+		$.getJSON(
+						"/application/getList/" + recruit_no + ".json",
+						function(data) {
 							var str = "<h2 class='tm-block-title d-inline-block'>스터디 신청자 명단</h2>";
-							
+
 							$(data)
 									.each(
 											function() {
-												
-												str += this.userId +
-												"&nbsp;&nbsp;<button class='btn btn-primary' type='button'"+
-												"onclick='confirm();'>승인</button>"+
-												"<button class='btn btn-primary' type='button'"+
-												"onclick='reject();'>거절</button>"+
-												"<input type='hidden' id='no' value='"+this.no+"'>"
-												+"<p>"
+
+												str += this.userId
+														+ "&nbsp;&nbsp;<button class='btn btn-primary' type='button'"
+														+ "onclick='confirm("
+														+ this.no
+														+ ");'>승인</button>"
+														+ "<button class='btn btn-primary' type='button'"
+														+ "onclick='reject();'>거절</button>"
+												if (this.result == 0)
+													str += "대기중 <p>"
+												if (this.result == 2)
+													str += "거절완료<p>"
+												if (this.result == 1)
+													str += "승인완료<p>"
 											});
 
 							$("#applicants").html(str);
 						});
 	}
-	
-	/* function confirm(){
+
+	 function confirm(no) {
+		var no = no;
+		var token = $("meta[name='_csrf']").attr("content");
+		var header = $("meta[name='_csrf_header']").attr("content");
 		$.ajax({
-			type: 'post',
+			type : 'post',
 			url : '/application/update',
-			data: JSON.stringify({reply : $('#reply').val(), replyer : $('#replyer').val(), bno: ${boardVO.bno} }) ,
+			data : JSON.stringify({
+				no : no,
+				result : 1
+			}),
 			contentType : "application/json; charset=utf-8",
-			success : function(result, status, xhr){
-				alert('등록했습니다');
-				$('#reply').val("");
-				$('#replyer').val("");
-				replyList();
+			beforeSend : function(xhr) {
+				xhr.setRequestHeader(header, token);
 			},
-			error : function(er, status, xhr){
+			success : function(result, status, xhr) {
+				alert('승인했습니다');
+				applicationList();
+			},
+			error : function(er, status, xhr) {
 				alert(er);
 			}
 		});
-	} */
-	
+	} 
+	 function reject(no) {
+			var no = no;
+			var token = $("meta[name='_csrf']").attr("content");
+			var header = $("meta[name='_csrf_header']").attr("content");
+			$.ajax({
+				type : 'post',
+				url : '/application/update',
+				data : JSON.stringify({
+					no : no,
+					result : 2
+				}),
+				contentType : "application/json; charset=utf-8",
+				beforeSend : function(xhr) {
+					xhr.setRequestHeader(header, token);
+				},
+				success : function(result, status, xhr) {
+					alert('거절했습니다');
+					applicationList();
+				},
+				error : function(er, status, xhr) {
+					alert(er);
+				}
+			});
+		} 
 </script>
 <title>StudyDamoyeo</title>
 </head>
@@ -87,7 +128,8 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<input type="hidden" id="recruit_no" value="${recruitment.recru_no}">
+							<input type="hidden" id="recruit_no"
+								value="${recruitment.recru_no}">
 
 							<div class="form-group">
 								<label for="email">내용 </label>
@@ -112,10 +154,7 @@
 			<div class="tm-col tm-col-big-4">
 				<div class="bg-white tm-block">
 					<div class="row">
-						<div class="col-md-8 col-sm-12" id="applicants">
-							
-
-						</div>
+						<div class="col-md-8 col-sm-12" id="applicants"></div>
 					</div>
 					<div class="table-responsive">
 						<table

@@ -21,4 +21,7 @@
 	select * from application where recruit_no =#{recruit_no}
 	
 </select>
+<update id="update" >
+	update application  set result =#{result} where no =#{no}
+</update>
 </mapper>

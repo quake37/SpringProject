@@ -15,4 +15,6 @@ public interface ApplicationMapper {
 	public int search(ApplicationVO vo);
 	
 	public List<ApplicationVO> getApplicants(int recruit_no);
+	
+	public void update(ApplicationVO vo);
 }
