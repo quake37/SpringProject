@@ -49,7 +49,10 @@ public class CommonController {
 		else
 			return "/com/mainCom";
 	}
-
+	@GetMapping("/loginFail")
+	public String loginFail(Model model) {
+		return "index";
+	}
 
 	@GetMapping("/customLogout")
 	public void logoutGET() {

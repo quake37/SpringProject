@@ -34,7 +34,7 @@
 			ref="customAccessDenied" />
 	<!-- <security:csrf disabled="true" /> --> 
 		<security:form-login login-page="/customlogin"
-			default-target-url="/loginSuccess" />
+			default-target-url="/loginSuccess"  authentication-failure-url="/loginFail"/>
 		<security:logout logout-url="/customLogout"
 			invalidate-session="true" delete-cookies="remember-me,JSESSION_ID" />
 	</security:http>

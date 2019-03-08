@@ -38,16 +38,15 @@
 							$(data)
 									.each(
 											function() {
-
-												str += this.userId
-														+ "&nbsp;&nbsp;<button class='btn btn-primary' type='button'"
+												str+= this.userId+ "&nbsp;&nbsp;"
+												if (this.result == 0){
+													str +="<button class='btn btn-primary' type='button'"
 														+ "onclick='confirm("
 														+ this.no+","+this.recruit_no
 														+ ");'>승인</button>"
 														+ "<button class='btn btn-primary' type='button'"
-														+ "onclick='reject("+this.no+");'>거절</button>"
-												if (this.result == 0)
-													str += "대기중 <p>"
+														+ "onclick='reject("+this.no+");'>거절</button> 대기중 <p>"
+												}
 												if (this.result == 2)
 													str += "거절완료<p>"
 												if (this.result == 1)
@@ -176,11 +175,6 @@
 
 				</div>
 			</div>
-
-
-
-
-
 
 
 		</div>
