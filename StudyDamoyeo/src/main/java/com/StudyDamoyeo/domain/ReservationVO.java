@@ -11,6 +11,7 @@ public class ReservationVO {
 	private int people;
 	private String resdate;
 	private Date regdate;
+	private int rno;
 	
 	public String getUserid() {
 		return userid;
@@ -55,6 +56,19 @@ public class ReservationVO {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
+	
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+	@Override
+	public String toString() {
+		return "ReservationVO [userid=" + userid + ", no=" + no + ", roomname=" + roomname + ", status=" + status
+				+ ", people=" + people + ", resdate=" + resdate + ", regdate=" + regdate + ", rno=" + rno + "]";
+	}
+	
 		
 	
 }

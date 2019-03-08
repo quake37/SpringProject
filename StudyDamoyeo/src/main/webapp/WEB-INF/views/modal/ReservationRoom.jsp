@@ -26,14 +26,14 @@
 						
 							<label for="userid">신청자 아이디 </label>				
 							<input type="text" name="userid" class="form-control col-xl-11" id="ReservationID"
-								 autofocus="autofocus" disabled="disabled" value="<sec:authentication property="principal.username"/>">
+								readonly="readonly" value="<sec:authentication property="principal.username"/>">
 
 						</div>
 						<div class="form-group">
 						
 							<label for="userid">스터디카페명 </label>				
 							<input type="text" name="roomname" class="form-control col-xl-11" id="ReservationRoomname"
-								 autofocus="autofocus" disabled="disabled" value="${room.roomname }">
+								readonly="readonly"  value="${room.roomname }">
 
 						</div>
 
@@ -45,12 +45,13 @@
 						
 						<div class="form-group">
 						
-							<label for="inputEmail">예약날짜</label> 
+							<label for="inputEmail">예약날짜 </label> 
 							 <input id="expire_date" name="resdate" type="text" class="form-control validate col-xl-7 col-lg-8 col-md-8 col-sm-7"
                                         data-large-mode="true" required >
 						</div>
 						
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
+							<input type="hidden" name="rno" value="${room.rno}">
 					</div>
 					<div class="box-footer">
 						<button class="btn btn-primary" type="submit" >예약하기</button>

@@ -31,4 +31,12 @@ public class ReservationService {
 		// TODO Auto-generated method stub
 		return mapper.getMyList(userid);
 	}
+	public void updateStatus(ReservationVO vo) {
+		mapper.updateStatus(vo);
+		
+	}
+	public ReservationVO getVo(int no) {
+		// TODO Auto-generated method stub
+		return mapper.getVo(no);
+	}
 }
