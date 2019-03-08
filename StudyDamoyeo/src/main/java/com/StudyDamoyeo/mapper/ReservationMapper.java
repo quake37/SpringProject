@@ -15,4 +15,8 @@ public interface ReservationMapper {
 	public void insert(ReservationVO vo);
 
 	public List<ReservationVO> getMyList(String userid);
+
+	public void updateStatus(ReservationVO vo);
+
+	public ReservationVO getVo(int no);
 }

@@ -2,7 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<meta id="_csrf" name="_csrf" content="${_csrf.token}" />
+<!-- default header name is X-CSRF-TOKEN -->
+<meta id="_csrf_header" name="_csrf_header"
+	content="${_csrf.headerName}" />
 
 <%@include file="include/header.jsp"%>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -69,10 +72,10 @@
 					</thead>
 					<tbody>
 						<c:forEach items="${list}" var="reservation">
-							<tr>
+							<tr class="cd">
 								<td hidden="true"><c:out value="${reservation.no}" /></td>
 								<td><c:out value="${reservation.roomname}" /></td>
-								<td><c:out value="${reservation.userid}" /></td>
+								<td id="userid"><c:out value="${reservation.userid}" /></td>
 								<c:if test="${reservation.status ==-1 }">
 									<td>예약대기</td>
 								</c:if>
@@ -86,11 +89,14 @@
 								<td><c:out value="${reservation.resdate}" /></td>
 								<td><fmt:formatDate pattern="MM/dd/yyyy"
 										value="${reservation.regdate }" /></td>
-								<td class="text-center"><c:if
-										test="${reservation.status ==-1 }">
-										<button class="btn btn-primary" type="button" onclick="">예약확인</button>
-									</c:if> <c:if test="${reservation.status ==0 }">
+								<td class="text-center">
+									<c:if test="${reservation.status ==-1 }">
+										<button class="btn btn-primary comfirmReservation1" type="button">예약확인</button>
+										<button class="btn btn-primary comfirmReservation2" type="button">취소</button>
+									</c:if> 
+									<c:if test="${reservation.status ==0 }">
 										<button class="btn btn-primary" type="button" onclick="">입금확인</button>
+										<button class="btn btn-primary" type="button" onclick="">취소</button>
 									</c:if></td>
 
 							</tr>
@@ -128,9 +134,12 @@
 	<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+<script src="/resources/com/dist/js/comfirmReservation.js"></script>
 <script>
 	$('#2').addClass('menu-open');
 	$('#2-2').addClass('active');
 	$('#2-2-1').addClass('active');
+
+	
 </script>
 <%@include file="include/footer.jsp"%>
