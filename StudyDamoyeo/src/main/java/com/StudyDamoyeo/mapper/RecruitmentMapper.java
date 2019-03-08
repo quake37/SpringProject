@@ -20,5 +20,6 @@ public interface RecruitmentMapper {
 	public void update(RecruitmentVO vo);
 
 	public List<RecruitmentVO> getMainList();
+	
 
 }

@@ -42,10 +42,10 @@
 												str += this.userId
 														+ "&nbsp;&nbsp;<button class='btn btn-primary' type='button'"
 														+ "onclick='confirm("
-														+ this.no
+														+ this.no+","+this.recruit_no
 														+ ");'>승인</button>"
 														+ "<button class='btn btn-primary' type='button'"
-														+ "onclick='reject();'>거절</button>"
+														+ "onclick='reject("+this.no+");'>거절</button>"
 												if (this.result == 0)
 													str += "대기중 <p>"
 												if (this.result == 2)
@@ -58,8 +58,9 @@
 						});
 	}
 
-	 function confirm(no) {
+	 function confirm(no, recru_no) {
 		var no = no;
+		var recruit_no = recru_no;
 		var token = $("meta[name='_csrf']").attr("content");
 		var header = $("meta[name='_csrf_header']").attr("content");
 		$.ajax({
@@ -67,7 +68,8 @@
 			url : '/application/update',
 			data : JSON.stringify({
 				no : no,
-				result : 1
+				result : 1,
+				recruit_no : recruit_no
 			}),
 			contentType : "application/json; charset=utf-8",
 			beforeSend : function(xhr) {
@@ -76,6 +78,7 @@
 			success : function(result, status, xhr) {
 				alert('승인했습니다');
 				applicationList();
+				$('#statePeople').reload();
 			},
 			error : function(er, status, xhr) {
 				alert(er);
@@ -140,7 +143,7 @@
 									class="form-control validate col-3" disabled="true"
 									value="${recruitment.location }">
 							</div>
-							<div class="form-group">
+							<div class="form-group" id ="statePeople">
 								<label for="password2">현재인원/모집인원</label> <input
 									class="form-control validate col-1" disabled="true"
 									value="${recruitment.state_people }/${recruitment.total_people }">

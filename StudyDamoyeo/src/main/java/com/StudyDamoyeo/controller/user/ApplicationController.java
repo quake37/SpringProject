@@ -63,7 +63,12 @@ public class ApplicationController {
 	
 	@PostMapping(value = "/update", consumes = "application/json", produces = { MediaType.TEXT_PLAIN_VALUE })
 	public ResponseEntity<String> create(@RequestBody ApplicationVO vo) {
-		System.out.println(vo.getResult() );
+		
+		if(vo.getResult() ==1) {
+			RecruitmentVO recruitVO = recruitService.read(vo.getRecruit_no());
+			recruitVO.setState_people(recruitVO.getState_people()+1);
+			recruitService.update(recruitVO);
+		}
 		applicationService.update(vo);
 		return new ResponseEntity<>("success", HttpStatus.OK);
 	}

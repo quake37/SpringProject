@@ -49,4 +49,5 @@
 	<update id="update">
 		update recruitment set state_people =#{state_people} where recru_no = #{recru_no}
 	</update>
+	
 </mapper>
