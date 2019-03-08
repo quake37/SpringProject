@@ -33,13 +33,38 @@
 							$(data)
 									.each(
 											function() {
-												str += this.userId +"<p>"
-														
+												
+												str += this.userId +
+												"&nbsp;&nbsp;<button class='btn btn-primary' type='button'"+
+												"onclick='confirm();'>승인</button>"+
+												"<button class='btn btn-primary' type='button'"+
+												"onclick='reject();'>거절</button>"+
+												"<input type='hidden' id='no' value='"+this.no+"'>"
+												+"<p>"
 											});
 
 							$("#applicants").html(str);
 						});
 	}
+	
+	/* function confirm(){
+		$.ajax({
+			type: 'post',
+			url : '/application/update',
+			data: JSON.stringify({reply : $('#reply').val(), replyer : $('#replyer').val(), bno: ${boardVO.bno} }) ,
+			contentType : "application/json; charset=utf-8",
+			success : function(result, status, xhr){
+				alert('등록했습니다');
+				$('#reply').val("");
+				$('#replyer').val("");
+				replyList();
+			},
+			error : function(er, status, xhr){
+				alert(er);
+			}
+		});
+	} */
+	
 </script>
 <title>StudyDamoyeo</title>
 </head>
